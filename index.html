@@ -263,7 +263,7 @@
 
         async function loadQuestions() {
             try {
-                const response = await fetch('questions.json');
+                const response = await fetch('./questions.json');
                 allQuestions = await response.json();
                 return true;
             } catch (error) {
