@@ -11,7 +11,7 @@
     "id": 2,
     "question": "Quelle veuve s’occupe de l’Ancien après sa réinstallation chemin des Trous du Talus ?",
     "bonneReponse": "La veuve Grogne.",
-    "reponseBonus": "Le veuve Fouille.",
+    "reponseBonus": "La veuve Fouille.",
     "autreReponse1": "La veuve Marmonne.",
     "autreReponse2": "La veuve Gromelle."
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "question": "Quel type de feuilles trouve Merry à Isengard ?",
     "bonneReponse": "De la Feuille de Longoulet.",
-    "reponseBonus": "De la régulière de Hobold.",
+    "reponseBonus": "De la régulière de Hobbit.",
     "autreReponse1": "Du Sudlinch.",
     "autreReponse2": "Du Vieux Toby."
   },
@@ -141,13 +141,13 @@
     "bonneReponse": "Je ne ferais pas aux Etoiles mes adieux.",
     "reponseBonus": "Tout va bien, reposez-vous à l’abri, les Etoiles veillent sur nous.",
     "autreReponse1": "Ni questionner ce que je suis devenu.",
-    "autreReponse2": "Le soleil est parti de la mer, des collines, de la terres."
+    "autreReponse2": "Le soleil est parti de la mer, des collines, de la terre."
   },
   {
     "id": 19,
     "question": "A qui demande-t-on de prendre le palantir d’Orthanc des mains de Gandalf ?",
     "bonneReponse": "Aragorn.",
-    "reponseBonus": "Sylverbarbe.",
+    "reponseBonus": "Sylvebarbe.",
     "autreReponse1": "Merry.",
     "autreReponse2": "Theoden."
   },
@@ -204,15 +204,15 @@
     "question": "Comment Sylvebarbe décrit les Ents dans sa chanson ?",
     "bonneReponse": "L’Ent, né de la terre, vieux comme les montagnes.",
     "reponseBonus": "L’Ent, le plus grand, aussi grand que sa forêt.",
-    "autreReponse1": "L’Ent, le plus fort, profondes sont ses racins.",
+    "autreReponse1": "L’Ent, le plus fort, profondes sont ses racines.",
     "autreReponse2": "L’Ent, le berger des arbres, longue est sa mémoire."
   },
   {
     "id": 27,
     "question": "Que dit le vieil homme aux trois chasseurs qui le dévisagent ?",
-    "bonneReponse": "“ils traquent deux jeunes hobbits.”",
+    "bonneReponse": "“Ils traquent deux jeunes hobbits.”",
     "reponseBonus": "Il leur raconte l’histoire de Beren et Luthien.",
-    "autreReponse1": "“ils ont échappés aux tromperies de la Dame des Galadhrim.”",
+    "autreReponse1": "“ils ont échappé aux tromperies de la Dame des Galadhrim.”",
     "autreReponse2": "il sait qu’ils sont liés aux événements autour de l’Anneau Unique."
   },
   {
@@ -348,7 +348,7 @@
     "question": "Quel est le nom de la petite auberge sur la route de Lézeau ?",
     "bonneReponse": "Le Buisson de Lierre.",
     "reponseBonus": "Le Retour des Vagabonds.",
-    "autreReponse1": "Le Taureau Noir .",
+    "autreReponse1": "Le Taureau Noir.",
     "autreReponse2": "L’auberge des Lanterniers."
   },
   {
@@ -373,7 +373,7 @@
     "bonneReponse": "Il touche le sol de son front.",
     "reponseBonus": "Il croise les bras sur sa poitrine et s’incline.",
     "autreReponse1": "Il frotte son nez contre celui de Theoden.",
-    "autreReponse2": "Il tape dans la main de Theoden en parlant dans sa langue guturale."
+    "autreReponse2": "Il tape dans la main de Theoden en parlant dans sa langue gutturale."
   },
   {
     "id": 48,
@@ -413,7 +413,7 @@
     "bonneReponse": "Elrond.",
     "reponseBonus": "Gandalf.",
     "autreReponse1": "Aragorn.",
-    "autreReponse2": "Glorfinde.l"
+    "autreReponse2": "Glorfindel."
   },
   {
     "id": 53,
@@ -537,7 +537,7 @@
   },
   {
     "id": 68,
-    "question": "Quiest le porte-étendard d’Aragorn ?",
+    "question": "Qui est le porte-étendard d’Aragorn ?",
     "bonneReponse": "Halbarad.",
     "reponseBonus": "Herugrim.",
     "autreReponse1": "Hama.",
@@ -547,7 +547,7 @@
     "id": 69,
     "question": "Que fait Vifsorbier à chaque fois qu’il voit un sorbier ?",
     "bonneReponse": "Il s’arrête et lui chante une chanson.",
-    "reponseBonus": "Il arrose ses racines et lui clame un poême.",
+    "reponseBonus": "Il arrose ses racines et lui clame un poème.",
     "autreReponse1": "Il rit et applaudit.",
     "autreReponse2": "Il le caresse et lui dit des mots en Entique."
   },
@@ -617,7 +617,7 @@
   },
   {
     "id": 78,
-    "question": "Qui a bâtit Meduseld ?",
+    "question": "Qui a bâti Meduseld ?",
     "bonneReponse": "Brego, fils d’Eorl.",
     "reponseBonus": "Eorl le Jeune.",
     "autreReponse1": "Theoden, fils de Thengel.",
@@ -745,7 +745,7 @@
   },
   {
     "id": 94,
-    "question": "Quel nom cri Legolas quand Gandalf se dévoile à Fangorn ?",
+    "question": "Quel nom crie Legolas quand Gandalf se dévoile à Fangorn ?",
     "bonneReponse": "Mithrandir.",
     "reponseBonus": "Gandalf.",
     "autreReponse1": "Saroumane.",
@@ -805,7 +805,7 @@
     "bonneReponse": "Il rompt sa lance et la jette au sol.",
     "reponseBonus": "Il disparait en brouillard.",
     "autreReponse1": "Il pose son épée aux pieds d’Aragorn.",
-    "autreReponse2": "Il enleve sa couronne et la pose sur un rocher."
+    "autreReponse2": "Il enlève sa couronne et la pose sur un rocher."
   },
   {
     "id": 102,
@@ -1025,7 +1025,7 @@
   },
   {
     "id": 129,
-    "question": "Quand Faramir voit Pippin, il dit : \"Ce n’est pas le premier semi homme que j’ai vu sortir ...\" ?",
+    "question": "Quand Faramir voit Pippin, il dit : \"Ce n’est pas le premier semi-homme que j’ai vu sortir ...\" ?",
     "bonneReponse": "Des légendes du Nord.",
     "reponseBonus": "Des anciens contes pour enfants.",
     "autreReponse1": "Des chansons elfes des jours anciens.",
@@ -1089,7 +1089,7 @@
   },
   {
     "id": 137,
-    "question": "Que est le nom du grand puit à Fort le Cor, où les Orques furent enterrés ?",
+    "question": "Quel est le nom du grand puits à Fort le Cor, où les Orques furent enterrés ?",
     "bonneReponse": "La Colline de la Mort.",
     "reponseBonus": "Le Trou aux Orques.",
     "autreReponse1": "Le tombeau maudit.",
@@ -1097,7 +1097,7 @@
   },
   {
     "id": 138,
-    "question": "Quel est le nom Orque de le Tour Noire ?",
+    "question": "Quel est le nom Orque de la Tour Noire ?",
     "bonneReponse": "Lugburz.",
     "reponseBonus": "Buglurz.",
     "autreReponse1": "Tharkun.",
@@ -1116,7 +1116,7 @@
     "question": "Quelle est la première chose que dit Eowyn quand Aragorn la ranime ?",
     "bonneReponse": "Eomer ! Quelle est donc cette joie ?",
     "reponseBonus": "Mon Seigneur, je m’éveille à quoi ?",
-    "autreReponse1": "Eomer ! Quel terrible cauchemard !",
+    "autreReponse1": "Eomer ! Quel terrible cauchemar !",
     "autreReponse2": "Vous étiez pour moi comme un père, Roi Theoden !"
   },
   {
@@ -1129,7 +1129,7 @@
   },
   {
     "id": 142,
-    "question": "Qui est envoyé pour surveiller Pippin et Merry quand ils courrent à la recherche de Frodon à Parth Galen ?",
+    "question": "Qui est envoyé pour surveiller Pippin et Merry quand ils courent à la recherche de Frodon à Parth Galen ?",
     "bonneReponse": "Boromir.",
     "reponseBonus": "Sam.",
     "autreReponse1": "Legolas.",
@@ -1217,7 +1217,7 @@
   },
   {
     "id": 153,
-    "question": "Comment Pippin interrompt-il la Chambre des Ents ?",
+    "question": "Comment Pippin interrompt-il le Cercle des Ents ?",
     "bonneReponse": "Il rote.",
     "reponseBonus": "Il a le hoquet.",
     "autreReponse1": "Il baille.",
@@ -1377,7 +1377,7 @@
   },
   {
     "id": 173,
-    "question": "En quoi sont faîtes les portes de la Moria ?",
+    "question": "En quoi sont faites les portes de la Moria ?",
     "bonneReponse": "En ithildin.",
     "reponseBonus": "En or.",
     "autreReponse1": "En diamants.",
@@ -1539,7 +1539,7 @@
     "id": 193,
     "question": "Que répond Frodon à Faramir quand celui-ci lui demande ce qu’est le Fléau d’Isildur ?",
     "bonneReponse": "Je n’en ai jamais entendu parler.",
-    "reponseBonus": "c’est mon maître d’armes.",
+    "reponseBonus": "C’est mon maître d’armes.",
     "autreReponse1": "J’ai promis à Gandalf de ne pas en parler.",
     "autreReponse2": "C’est secret."
   },
