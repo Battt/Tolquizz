@@ -1,0 +1,359 @@
+[
+  {
+    "question": "Quand la Compagnie quitte Fondcombe, qui chevauche derrière Aragorn ?",
+    "bonneReponse": "Pippin.",
+    "reponseBonus": "Gandalf.",
+    "autreReponse1": "Frodon.",
+    "autreReponse2": "Merry."
+  },
+  {
+    "question": "Pourquoi Sam pense-t-il que les terres vertes sous l'Emyn Muil sont un dangereux marécage ?",
+    "bonneReponse": "Il se souvient l'avoir vu sur une carte à Fondcombe.",
+    "reponseBonus": "Aragorn les a mis en garde à ce propos.",
+    "autreReponse1": "Il voit les trouées d'eau et les berges boueuses.",
+    "autreReponse2": "Il peut le sentir."
+  },
+  {
+    "question": "Quel est le nom que donne Gollum au soleil ?",
+    "bonneReponse": "Œiljaune.",
+    "reponseBonus": "Lampe du Jour.",
+    "autreReponse1": "Grosse Boule Orange.",
+    "autreReponse2": "Face Jaune."
+  },
+  {
+    "question": "Quel est le premier cavalier de Rohan ayant parlé à Aragorn ?",
+    "bonneReponse": "Éomer.",
+    "reponseBonus": "Denethor.",
+    "autreReponse1": "Théoden.",
+    "autreReponse2": "Anborn."
+  },
+  {
+    "question": "Où Merry portera-t-il une cicatrice brune jusqu'à la fin de ses jours ?",
+    "bonneReponse": "Sur le front.",
+    "reponseBonus": "Sur la jambe.",
+    "autreReponse1": "Sur le bras.",
+    "autreReponse2": "Sur la joue."
+  },
+  {
+    "question": "Qu'aurait fait Sylvebarbe s'il avait vu les Hobbits avant de les entendre ?",
+    "bonneReponse": "Il les aurait simplement ignorés, les prenant pour des Hommes.",
+    "reponseBonus": "Il les aurait simplement capturés, les prenant pour des Nains.",
+    "autreReponse1": "Il les aurait simplement écrasés, les prenant pour des Orques.",
+    "autreReponse2": "Il les aurait simplement écrasés, les prenant pour des petits Orques."
+  },
+  {
+    "question": "Que dit Gimli qu'il aurait pu faire en trouvant Pippin sous une pile de corps ?",
+    "bonneReponse": "Serrer ses poings jusqu'au sang.",
+    "reponseBonus": "S'armer de la hache.",
+    "autreReponse1": "S'arracher les cheveux.",
+    "autreReponse2": "S'écraser les pieds."
+  },
+  {
+    "question": "Quel titre donne le Roi à la Garde de Faramir ?",
+    "bonneReponse": "Les Forestiers de Faramir.",
+    "reponseBonus": "La Légion d'Osgiliath.",
+    "autreReponse1": "La Troupe d'Ithilien.",
+    "autreReponse2": "La Compagnie Blanche."
+  },
+  {
+    "question": "Qu'espère Saroumane que la Langue de Serpent a fait au corps de Lotho ?",
+    "bonneReponse": "Qu'il l'a bien caché.",
+    "reponseBonus": "Qu'il l'a brûlé.",
+    "autreReponse1": "Qu'il l'a mangé.",
+    "autreReponse2": "Qu'il l'a enterré."
+  },
+  {
+    "question": "Qui est le premier à proposer d'accompagner Frodon en Mordor ?",
+    "bonneReponse": "Sam.",
+    "reponseBonus": "Gandalf.",
+    "autreReponse1": "Legolas.",
+    "autreReponse2": "Gimli."
+  },
+  {
+    "question": "Quelle mixture Gandalf fait-il boire aux membres de la Compagnie pour leur éviter de mourir de froid dans le Caradhras ?",
+    "bonneReponse": "Du Miruvor.",
+    "reponseBonus": "Du vin.",
+    "autreReponse1": "Du brandy.",
+    "autreReponse2": "Du Cours d'Argent."
+  },
+  {
+    "question": "Gandalf ordonne au Balrog :",
+    "bonneReponse": "Dans les profondeurs.",
+    "reponseBonus": "En enfer.",
+    "autreReponse1": "De retourner...",
+    "autreReponse2": "Dans les ténèbres."
+  },
+  {
+    "question": "Sous quelle forme héroïque Sam se voit-il quand il est tenté par l'Anneau en Mordor ?",
+    "bonneReponse": "Samsagace le Fort.",
+    "reponseBonus": "Sam l'Homme.",
+    "autreReponse1": "Samsagace le Sage.",
+    "autreReponse2": "Sam l'Ancien et le clan des Jardiniers."
+  },
+  {
+    "question": "Quel rôle ont les petits Orques dont la vue est plus aiguisée que l'odorat ?",
+    "bonneReponse": "Traqueurs.",
+    "reponseBonus": "Cordonniers.",
+    "autreReponse1": "Voleurs.",
+    "autreReponse2": "Artisans."
+  },
+  {
+    "question": "Alors que Sam et Frodon sont assis au pied du Mont du Destin, que regrette Sam d'avoir laissé derrière lui ?",
+    "bonneReponse": "Gollum.",
+    "reponseBonus": "Ses bottes.",
+    "autreReponse1": "Son bâton de marche.",
+    "autreReponse2": "Sa couverture."
+  },
+  {
+    "question": "Que signifie Tinuviel dans le langage commun ?",
+    "bonneReponse": "Rossignol.",
+    "reponseBonus": "Grive.",
+    "autreReponse1": "Alouette.",
+    "autreReponse2": "Coucou."
+  },
+  {
+    "question": "Sur le Caradhras, à qui Gandalf dit-il : 'Si les Elfes pouvaient voler par-dessus les montagnes, ils pourraient aller chercher le soleil pour nous sauver' ?",
+    "bonneReponse": "Legolas.",
+    "reponseBonus": "Arwen.",
+    "autreReponse1": "Gimli.",
+    "autreReponse2": "Frodon."
+  },
+  {
+    "question": "Quand Aragorn va à la défense de Gandalf sur le pont de la Moria, quel nom invoque-t-il ?",
+    "bonneReponse": "Eru.",
+    "reponseBonus": "Arwen.",
+    "autreReponse1": "Narsil.",
+    "autreReponse2": "Elendil."
+  },
+  {
+    "question": "Qui construisit 'les Dents de Mordor' en Morannon ?",
+    "bonneReponse": "Les Hommes du Gondor.",
+    "reponseBonus": "Saroumane.",
+    "autreReponse1": "Les Hommes de Rhun.",
+    "autreReponse2": "Sauron."
+  },
+  {
+    "question": "Après avoir quitté la Porte Noire, quelle contrée traverse Sam, Frodon et Gollum ?",
+    "bonneReponse": "Ithilien.",
+    "reponseBonus": "Anorien.",
+    "autreReponse1": "Gorgoroth.",
+    "autreReponse2": "Wetwang."
+  },
+  {
+    "question": "Qui d'après Frodon a le plus grand droit sur l'Anneau ?",
+    "bonneReponse": "Boromir.",
+    "reponseBonus": "Bilbon.",
+    "autreReponse1": "Aragorn.",
+    "autreReponse2": "Gollum."
+  },
+  {
+    "question": "Que pense avoir vu Gimli la nuit avant que les 3 chasseurs n'entrent à Fangorn ?",
+    "bonneReponse": "Le fantôme de Saroumane.",
+    "reponseBonus": "Quelque ruse de Sauron pour les capturer.",
+    "autreReponse1": "Un fantôme d'une ancienne bataille.",
+    "autreReponse2": "Un elfe de Lorien avec un message de Galadriel."
+  },
+  {
+    "question": "Qui était le roi du Rohan avant Théoden ?",
+    "bonneReponse": "Thengel.",
+    "reponseBonus": "Hama.",
+    "autreReponse1": "Eomer.",
+    "autreReponse2": "Théodred."
+  },
+  {
+    "question": "Après la première bataille d'Isengard, qu'ordonne Théoden de donner à Ceorl ?",
+    "bonneReponse": "Un cheval frais.",
+    "reponseBonus": "Une médaille.",
+    "autreReponse1": "Le titre de chevalier.",
+    "autreReponse2": "Un petit déjeuner."
+  },
+  {
+    "question": "Que dit Legolas à propos de la tension qui émane de Fangorn ?",
+    "bonneReponse": "Cela se rapproche, je peux presque le sentir.",
+    "reponseBonus": "Je peux le sentir dans l'air qui nous entoure.",
+    "autreReponse1": "Quelque chose se rapproche, je le sens.",
+    "autreReponse2": "Cela me coupe le souffle."
+  },
+  {
+    "question": "Comment les gardes appellent-ils Grima, le conseiller du Roi ?",
+    "bonneReponse": "Langue de Serpent.",
+    "reponseBonus": "Le Glissant.",
+    "autreReponse1": "Requin.",
+    "autreReponse2": "Le moucharde."
+  },
+  {
+    "question": "Qui chevauche toute la nuit avec Aragorn et Legolas vers le Gouffre de Helm ?",
+    "bonneReponse": "Erkenbrand.",
+    "reponseBonus": "Eorl.",
+    "autreReponse1": "Eomer.",
+    "autreReponse2": "Eowyn."
+  },
+  {
+    "question": "Qu'est-ce que Gimli considère comme étant l'une des merveilles du Monde Nord ?",
+    "bonneReponse": "Les cavernes du Gouffre de Helm.",
+    "reponseBonus": "La Montagne Solitaire.",
+    "autreReponse1": "Les Cheveux de Galadriel.",
+    "autreReponse2": "Sa hache."
+  },
+  {
+    "question": "Quelle est la marque inscrite sur les tonneaux d'herbe à pipe que Merry trouve en Isengard ?",
+    "bonneReponse": "Quartier Sud.",
+    "reponseBonus": "Portebretelles.",
+    "autreReponse1": "Sonnecor.",
+    "autreReponse2": "Boffin."
+  },
+  {
+    "question": "D'après Gandalf, qu'aurait dû faire Saroumane de sa vie ?",
+    "bonneReponse": "Grand Seigneur.",
+    "reponseBonus": "Magicien.",
+    "autreReponse1": "Vagabond.",
+    "autreReponse2": "Fou du Roi."
+  },
+  {
+    "question": "Gwaihir dit à Gandalf qu'il volera plus vite que... pour sauver les Hobbits.",
+    "bonneReponse": "Le Vent du Nord.",
+    "reponseBonus": "Le vent de la mer.",
+    "autreReponse1": "Une avalanche.",
+    "autreReponse2": "Les tours tombantes des Dents."
+  },
+  {
+    "question": "Qui quitte Minas Tirith pour se joindre aux festivités au Champ de Cormallen ?",
+    "bonneReponse": "Eowyn.",
+    "reponseBonus": "Hurin.",
+    "autreReponse1": "Merry.",
+    "autreReponse2": "Faramir."
+  },
+  {
+    "question": "Qui s'en va avec la Compagnie après la fête d'adieu à Edoras ?",
+    "bonneReponse": "Elrond.",
+    "reponseBonus": "Imrahil.",
+    "autreReponse1": "Faramir.",
+    "autreReponse2": "Arwen."
+  },
+  {
+    "question": "Qui est entré dans une tombe isolée, dans l'ombre de Fort le Cor ?",
+    "bonneReponse": "Theodred.",
+    "reponseBonus": "Gamling.",
+    "autreReponse1": "Hama.",
+    "autreReponse2": "Erkenbrand."
+  },
+  {
+    "question": "Quelle quantité d'herbe à pipe les Hobbits trouvent-ils dans les décombres d'Isengard ?",
+    "bonneReponse": "2 petits tonneaux.",
+    "reponseBonus": "3 grands tonneaux.",
+    "autreReponse1": "Un coffre complet rempli à ras bord.",
+    "autreReponse2": "Assez pour une pipe chacun."
+  },
+  {
+    "question": "Qui dit à Saroumane 'Fussiez-vous 20 fois plus sage, vous n'auriez aucun droit de me gouverner.' ?",
+    "bonneReponse": "Gandalf.",
+    "reponseBonus": "Gimli.",
+    "autreReponse1": "Théoden.",
+    "autreReponse2": "Aragorn."
+  },
+  {
+    "question": "Par quel nom plus connu le 'Pèlerin Gris' ?",
+    "bonneReponse": "Gandalf.",
+    "reponseBonus": "Bilbon.",
+    "autreReponse1": "Gripoil.",
+    "autreReponse2": "Saroumane."
+  },
+  {
+    "question": "Faramir dit que Frodon est libre d'aller et venir sur les terres de Gondor pour une durée de :",
+    "bonneReponse": "Un an et un jour.",
+    "reponseBonus": "Un buisson.",
+    "autreReponse1": "Un mois et un jour.",
+    "autreReponse2": "Jusqu'au Nouvel An."
+  },
+  {
+    "question": "Qu'a-t-on mis sur la statue à la Croisée des Chemins en guise de tête ?",
+    "bonneReponse": "Une pierre avec un œil unique peint dessus.",
+    "reponseBonus": "Un amas de boucliers.",
+    "autreReponse1": "Une pierre.",
+    "autreReponse2": "Une couronne brisée."
+  },
+  {
+    "question": "Quel Hobbit prend le Palantir des mains endormies de Gandalf ?",
+    "bonneReponse": "Pippin.",
+    "reponseBonus": "Frodon.",
+    "autreReponse1": "Sam.",
+    "autreReponse2": "Merry."
+  },
+  {
+    "question": "En Emyn Muil, 'Il est toujours plus facile d'aller...' ?",
+    "bonneReponse": "Vers le bas que vers le haut.",
+    "reponseBonus": "Se faire capturer par les Orques plutôt que de leur échapper.",
+    "autreReponse1": "Là-bas et de revenir.",
+    "autreReponse2": "En Mordor plutôt que d'en revenir."
+  },
+  {
+    "question": "Que demande Smeagol à propos du Lembas ?",
+    "bonneReponse": "On peut le grignoter ? Cela est délicieux ?",
+    "reponseBonus": "C'est croustillant ? Cela nourrit bien ?",
+    "autreReponse1": "On peut le croquer ? Cela a du goût ?",
+    "autreReponse2": "On peut le mâcher ? Cela est acidulé ?"
+  },
+  {
+    "question": "Quand les '3 chasseurs' rencontrent pour la première fois le vieil homme dans la forêt de Fangorn, que porte-t-il en main ?",
+    "bonneReponse": "Un bâton.",
+    "reponseBonus": "Une paire de sacs de selle.",
+    "autreReponse1": "Une épée.",
+    "autreReponse2": "Un livre ancien."
+  },
+  {
+    "question": "Que doivent laisser de côté Aragorn et la compagnie avant de voir Théoden ?",
+    "bonneReponse": "Leurs chevaux.",
+    "reponseBonus": "Leurs armes.",
+    "autreReponse1": "Leur argent.",
+    "autreReponse2": "Leurs capes."
+  },
+  {
+    "question": "Quelle ancienne tranchée se remplit de l'autre côté de la Combe en Ouesfoide ?",
+    "bonneReponse": "Le Fossé de Helm.",
+    "reponseBonus": "La Porte de Helm.",
+    "autreReponse1": "La Douve de Helm.",
+    "autreReponse2": "Le Barrage de Helm."
+  },
+  {
+    "question": "Combien de cavaliers Legolas voit chevaucher vers eux depuis Fangorn ?",
+    "bonneReponse": "405.",
+    "reponseBonus": "105.",
+    "autreReponse1": "5.",
+    "autreReponse2": "1005."
+  },
+  {
+    "question": "Qui gagne la bataille entre les Orques en Rohan ?",
+    "bonneReponse": "Ceux d'Isengard.",
+    "reponseBonus": "Les Nazgûls.",
+    "autreReponse1": "Ceux du Nord.",
+    "autreReponse2": "Les Goblins."
+  },
+  {
+    "question": "Comment Sylvebarbe décrit-il les hommes dans sa chanson ?",
+    "bonneReponse": "L'Homme, le maître, coupeur de bois.",
+    "reponseBonus": "L'Homme, le faiseur, grands sont ses halls.",
+    "autreReponse1": "L'Homme, l'errant, longs sont ses voyages.",
+    "autreReponse2": "L'Homme, mortel, maître des chevaux."
+  },
+  {
+    "question": "Qu'est-ce qui apparait dans les rêves de Sam en descendant l'Anduin ?",
+    "bonneReponse": "Une bûche avec des yeux.",
+    "reponseBonus": "Un poisson qui chante.",
+    "autreReponse1": "Des arbres qui bougent.",
+    "autreReponse2": "Des oiseaux qui parlent."
+  },
+  {
+    "question": "Quel est l'autre nom d'Amon Hen ?",
+    "bonneReponse": "Le Siège de la Vue.",
+    "reponseBonus": "Le Palantir.",
+    "autreReponse1": "Ce qui voit tout.",
+    "autreReponse2": "La Tour de Garde."
+  },
+  {
+    "question": "Vers quelle chute d'eau la compagnie envoie-t-elle les corps de Boromir ?",
+    "bonneReponse": "Les Chutes de Rauros.",
+    "reponseBonus": "Les Chutes de Ringo.",
+    "autreReponse1": "Les Chutes de la Rivière Courante.",
+    "autreReponse2": "Les Chutes d'Aglarond."
+  }
+]
