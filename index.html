@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Tolkien - Le Seigneur des Anneaux</title>
+    <title>Tolquiizz - Le Seigneur des Anneaux</title>
     <style>
         * {
             margin: 0;
@@ -61,14 +61,21 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .start-section {
+        .difficulty-section {
             text-align: center;
         }
 
-        .start-section p {
+        .difficulty-section p {
             font-size: 1.2em;
             margin-bottom: 30px;
             line-height: 1.6;
+        }
+
+        .difficulty-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -90,6 +97,12 @@
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
+        .btn small {
+            display: block;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
         .question-container {
             margin: 30px 0;
         }
@@ -97,9 +110,19 @@
         .question-header {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
             color: #b8b8b8;
             font-size: 0.9em;
+        }
+
+        .difficulty-badge {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid #d4af37;
         }
 
         .question-text {
@@ -168,25 +191,46 @@
             margin-bottom: 40px;
             line-height: 1.8;
         }
+
+        .loading {
+            text-align: center;
+            color: #d4af37;
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>⚔️ Quiz Tolkien ⚔️</h1>
+        <h1>⚔️ Tolquiizz ⚔️</h1>
         <p class="subtitle">Le Seigneur des Anneaux</p>
 
-        <!-- Écran de démarrage -->
-        <div id="startScreen" class="screen active">
-            <div class="start-section">
-                <p>Testez vos connaissances sur la Terre du Milieu avec ce quiz sur l'univers du Seigneur des Anneaux !</p>
-                <button class="btn" onclick="startQuiz()">Commencer le Quiz</button>
+        <!-- Écran de sélection de difficulté -->
+        <div id="difficultyScreen" class="screen active">
+            <div class="difficulty-section">
+                <p>Choisissez votre difficulté et testez vos connaissances sur la Terre du Milieu</p>
+                <div class="difficulty-buttons">
+                    <button class="btn" onclick="startQuiz('facile')">
+                        Facile
+                        <small>3 réponses</small>
+                    </button>
+                    <button class="btn" onclick="startQuiz('normal')">
+                        Normal
+                        <small>4 réponses</small>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- Écran de chargement -->
+        <div id="loadingScreen" class="screen">
+            <p class="loading">Chargement des questions...</p>
         </div>
 
         <!-- Écran de quiz -->
         <div id="quizScreen" class="screen">
             <div class="question-header">
                 <span id="questionNumber">Question 1/10</span>
+                <span class="difficulty-badge" id="difficultyBadge">Facile</span>
                 <span id="score">Score: 0/0</span>
             </div>
             <div class="question-container">
@@ -210,86 +254,45 @@
     </div>
 
     <script>
-        const questions = [
-            {"question": "Quand la Compagnie quitte Fondecombe, qui chevauche derrière Aragorn ?", "reponses": ["Frodon", "Merry", "Pippin", "Sam"], "correcte": 2},
-            {"question": "Pourquoi Sam pense-t-il que les terres vertes sous l'Emyn Muil sont un dangereux marécage ?", "reponses": ["Aragorn les a mis en garde à ce propos", "Il voit les trouées d'eau et les berges boueuses", "Il peut le sentir", "Il se souvient l'avoir vu sur une carte à Fondecombe"], "correcte": 3},
-            {"question": "Quel est le nom que donne Gollum au soleil ?", "reponses": ["Œiljaune", "Grosse Boule Orange", "Face Jaune"], "correcte": 0},
-            {"question": "Quel est le premier cavalier de Rohan ayant parlé à Aragorn ?", "reponses": ["Éomer", "Théoden", "Anborn"], "correcte": 0},
-            {"question": "Où Merry portera-t-il une cicatrice brune jusqu'à la fin de ses jours ?", "reponses": ["Sur le bras", "Sur le front", "Sur la joue"], "correcte": 1},
-            {"question": "Qu'aurait fait Sylvebarbe s'il avait vu les Hobbits avant de les entendre ?", "reponses": ["Il les aurait simplement écrasés, les prenant pour des Orques", "Il les aurait simplement écrasés, les prenant pour des petits Orques", "Il les aurait simplement capturés, les prenant pour des Nains"], "correcte": 2},
-            {"question": "Que dit Gimli qu'il aurait pu faire en trouvant Pippin sous une pile de corps ?", "reponses": ["S'armer de la hache", "S'arracher les cheveux", "S'écraser les pieds", "Serrer ses poings jusqu'au sang"], "correcte": 3},
-            {"question": "Quel titre donne le Roi à la Garde de Faramir ?", "reponses": ["La Troupe d'Ithilien", "La Compagnie Blanche", "Les Forestiers de Faramir"], "correcte": 2},
-            {"question": "Qu'espère Saroumane que la Langue de Serpent a fait au corps de Lotho ?", "reponses": ["Qu'il l'a brûlé", "Qu'il l'a mangé", "Qu'il l'a enterré", "Qu'il l'a bien caché"], "correcte": 3},
-            {"question": "Qui est le premier à proposer d'accompagner Frodon en Mordor ?", "reponses": ["Gandalf", "Legolas", "Gimli", "Sam"], "correcte": 3},
-            {"question": "Quelle mixture Gandalf fait-il boire aux membres de la Compagnie pour leur éviter de mourir de froid dans le Caradhras ?", "reponses": ["Du brandy", "Du Miruvor", "Du Cours d'Argent"], "correcte": 1},
-            {"question": "Gandalf ordonne au Balrog :", "reponses": ["De retourner...", "Dans les ténèbres", "Dans les profondeurs"], "correcte": 2},
-            {"question": "Sous quelle forme héroïque Sam se voit-il quand il est tenté par l'Anneau en Mordor ?", "reponses": ["Samsagace le Sage", "Sam l'Ancien et le clan des Jardiniers", "Samsagace le Fort"], "correcte": 2},
-            {"question": "Quel rôle ont les petits Orques dont la vue est plus aiguisée que l'odorat ?", "reponses": ["Traqueurs", "Voleurs", "Artisans"], "correcte": 0},
-            {"question": "Alors que Sam et Frodon sont assis au pied du Mont du Destin, que regrette Sam d'avoir laissé derrière lui ?", "reponses": ["Son bâton de marche", "Sa couverture", "Gollum"], "correcte": 2},
-            {"question": "Que signifie Tinuviel dans le langage commun ?", "reponses": ["Alouette", "Rossignol", "Coucou"], "correcte": 1},
-            {"question": "Sur le Caradhras, à qui Gandalf dit-il : 'Si les Elfes pouvaient voler par-dessus les montagnes, ils pourraient aller chercher le soleil pour nous sauver' ?", "reponses": ["Gimli", "Legolas", "Frodon"], "correcte": 1},
-            {"question": "Quand Aragorn va à la défense de Gandalf sur le pont de la Moria, quel nom invoque-t-il ?", "reponses": ["Narsil", "Elendil", "Arwen"], "correcte": 1},
-            {"question": "Qui construisit 'les Dents de Mordor' en Morannon ?", "reponses": ["Les Hommes de Rhun", "Sauron", "Les Hommes du Gondor"], "correcte": 2},
-            {"question": "Après avoir quitté la Porte Noire, quelle contrée traverse Sam, Frodon et Gollum ?", "reponses": ["Gorgoroth", "Wetwang", "Ithilien"], "correcte": 2},
-            {"question": "Qui d'après Frodon a le plus grand droit sur l'Anneau ?", "reponses": ["Aragorn", "Gollum", "Boromir"], "correcte": 2},
-            {"question": "Que pense avoir vu Gimli la nuit avant que les 3 chasseurs n'entrent à Fangorn ?", "reponses": ["Un fantôme d'une ancienne bataille", "Un elfe de Lorien avec un message de Galadriel", "Le fantôme de Saroumane"], "correcte": 2},
-            {"question": "Qui était le roi du Rohan avant Théoden ?", "reponses": ["Thengel", "Eomer"], "correcte": 0},
-            {"question": "Après la première bataille d'Isengard, qu'ordonne Théoden de donner à Ceorl ?", "reponses": ["Le titre de chevalier", "Un petit déjeuner", "Un cheval frais"], "correcte": 2},
-            {"question": "Que dit Legolas à propos de la tension qui émane de Fangorn ?", "reponses": ["Quelque chose se rapproche, je le sens", "Cela me coupe le souffle", "Cela se rapproche, je peux presque le sentir"], "correcte": 2},
-            {"question": "Comment les gardes appellent-ils Grima, le conseiller du Roi ?", "reponses": ["Langue de Serpent", "Requin", "Le moucharde"], "correcte": 0},
-            {"question": "Qui chevauche toute la nuit avec Aragorn et Legolas vers le Gouffre de Helm ?", "reponses": ["Eomer", "Erkenbrand", "Eowyn"], "correcte": 1},
-            {"question": "Qu'est-ce que Gimli considère comme étant l'une des merveilles du Monde Nord ?", "reponses": ["Les cavernes du Gouffre de Helm", "Les Cheveux de Galadriel", "Sa hache"], "correcte": 0},
-            {"question": "Quelle est la marque inscrite sur les tonneaux d'herbe à pipe que Merry trouve en Isengard ?", "reponses": ["Sonnecor", "Boffin", "Quartier Sud"], "correcte": 2},
-            {"question": "D'après Gandalf, qu'aurait dû faire Saroumane de sa vie ?", "reponses": ["Vagabond", "Fou du Roi", "Grand Seigneur"], "correcte": 2},
-            {"question": "Gwaihir dit à Gandalf qu'il volera plus vite que... pour sauver les Hobbits.", "reponses": ["Une avalanche", "Les tours tombantes des Dents", "Le Vent du Nord"], "correcte": 2},
-            {"question": "Qui quitte Minas Tirith pour se joindre aux festivités au Champ de Cormallen ?", "reponses": ["Merry", "Eowyn", "Faramir"], "correcte": 1},
-            {"question": "Qui s'en va avec la Compagnie après la fête d'adieu à Edoras ?", "reponses": ["Faramir", "Arwen", "Elrond"], "correcte": 2},
-            {"question": "Qui est entré dans une tombe isolée, dans l'ombre de Fort le Cor ?", "reponses": ["Hama", "Theodred", "Erkenbrand"], "correcte": 1},
-            {"question": "Quelle quantité d'herbe à pipe les Hobbits trouvent-ils dans les décombres d'Isengard ?", "reponses": ["Un coffre complet rempli à ras bord", "Assez pour une pipe chacun", "2 petits tonneaux"], "correcte": 2},
-            {"question": "Qui dit à Saroumane 'Fussiez-vous 20 fois plus sage, vous n'auriez aucun droit de me gouverner.' ?", "reponses": ["Gandalf", "Gimli", "Théoden"], "correcte": 0},
-            {"question": "Par quel nom plus connu le 'Pèlerin Gris' ?", "reponses": ["Gandalf", "Gripoil", "Saroumane"], "correcte": 0},
-            {"question": "Faramir dit que Frodon est libre d'aller et venir sur les terres de Gondor pour une durée de :", "reponses": ["Un mois et un jour", "Jusqu'au Nouvel An", "Un an et un jour"], "correcte": 2},
-            {"question": "Qu'a-t-on mis sur la statue à la Croisée des Chemins en guise de tête ?", "reponses": ["Une pierre", "Un amas de boucliers", "Une pierre avec un œil unique peint dessus"], "correcte": 2},
-            {"question": "Quel Hobbit prend le Palantir des mains endormies de Gandalf ?", "reponses": ["Sam", "Pippin"], "correcte": 1},
-            {"question": "En Emyn Muil, 'Il est toujours plus facile d'aller...' ?", "reponses": ["Là-bas et de revenir", "En Mordor plutôt que d'en revenir", "Vers le bas que vers le haut"], "correcte": 2},
-            {"question": "Que demande Smeagol à propos du Lembas ?", "reponses": ["On peut le croquer ? Cela a du goût ?", "On peut le mâcher ? Cela est acidulé ?", "On peut le grignoter ? Cela est délicieux ?"], "correcte": 2},
-            {"question": "Quand les '3 chasseurs' rencontrent pour la première fois le vieil homme dans la forêt de Fangorn, que porte-t-il en main ?", "reponses": ["Un bâton", "Une épée", "Un bâton"], "correcte": 0},
-            {"question": "Que doivent laisser de côté Aragorn et la compagnie avant de voir Théoden ?", "reponses": ["Leur argent", "Leurs capes", "Leurs chevaux"], "correcte": 2},
-            {"question": "Quelle ancienne tranchée se remplit de l'autre côté de la Combe en Ouesfoide ?", "reponses": ["La Douve de Helm", "Le Barrage de Helm", "Le Fossé de Helm"], "correcte": 2},
-            {"question": "Combien de cavaliers Legolas voit chevaucher vers eux depuis Fangorn ?", "reponses": ["5", "105", "405"], "correcte": 2},
-            {"question": "Qui gagne la bataille entre les Orques en Rohan ?", "reponses": ["Ceux d'Isengard", "Ceux du Nord", "Les Goblins"], "correcte": 0},
-            {"question": "Comment Sylvebarbe décrit-il les hommes dans sa chanson ?", "reponses": ["L'Homme, l'errant, longs sont ses voyages", "L'Homme, mortel, maître des chevaux", "L'Homme, le maître, coupeur de bois"], "correcte": 2},
-            {"question": "Qu'est-ce qui apparait dans les rêves de Sam en descendant l'Anduin ?", "reponses": ["Des arbres qui bougent", "Des oiseaux qui parlent", "Une bûche avec des yeux"], "correcte": 2},
-            {"question": "Quel est l'autre nom d'Amon Hen ?", "reponses": ["Ce qui voit tout", "Le Siège de la Vue"], "correcte": 1},
-            {"question": "Vers quelle chute d'eau la compagnie envoie-t-elle les corps de Boromir ?", "reponses": ["Les Chutes de Rauros", "Les Chutes de la Rivière Courante", "Les Chutes d'Aglarond"], "correcte": 0},
-            {"question": "D'après Poiredebeurré, depuis le départ des rôdeurs, qui est venu hurler aux portes de la ville tout l'hiver ?", "reponses": ["Les ouargues", "Les loups", "Les bêtes"], "correcte": 2},
-            {"question": "Comment Merry soulevait-il les gens de la Comté quand il revient à Lézeau ?", "reponses": ["Il allume des feux", "Il met des drapeaux sur le haut des arbres", "Il fait sonner le Cor du Rohan"], "correcte": 2},
-            {"question": "Où Sam plante la graine d'argent qui se trouve dans la boîte que lui donna Galadriel ?", "reponses": ["Dans le Champ de la Fête", "Dans un jardin", "Sur les rives de la rivière"], "correcte": 0},
-            {"question": "En partant de Lorien, qui mena la Compagnie lors de la descente du fleuve ?", "reponses": ["Aragorn", "Boromir", "Gandalf"], "correcte": 1},
-            {"question": "Qu'était Parth Galen ?", "reponses": ["Une montagne", "Une rivière", "Une grande pelouse verte"], "correcte": 2},
-            {"question": "Qui trouva Boromir blessé dans la petite vallée près de Parth Galen ?", "reponses": ["Sam", "Aragorn", "Gandalf", "Frodon"], "correcte": 1},
-            {"question": "Quel membre de la Compagnie n'a pas confiance en Galadriel ?", "reponses": ["Sam", "Boromir", "Gimli"], "correcte": 2},
-            {"question": "Qui vomit des ténèbres ?", "reponses": ["Arachne", "Smaug", "Morgoth"], "correcte": 2},
-            {"question": "Combien d'Orques transportaient le corps de Frodo depuis l'antre d'Arachne ?", "reponses": ["1", "8", "6", "4"], "correcte": 2},
-            {"question": "Qui Aragorn refuse-t-il d'emmener à la Passe des Morts ?", "reponses": ["Eowyn", "Merry", "Eomer"], "correcte": 1},
-            {"question": "Comment Théoden appelle-t-il Minas Tirith ?", "reponses": ["Mundeli", "Mundburg", "Oldbury"], "correcte": 1},
-            {"question": "Quand Gandalf annonce qu'il ne tolérera plus qu'un seul 'maïs' pour ce soir, quel sujet aborde alors Pippin ?", "reponses": ["L'utilisation du palantir d'Orthanc par Aragorn", "L'arrivée de Merry et des Rohirrim"], "correcte": 1},
-            {"question": "Quelle race de Hobbits est généralement plus brune de peau ?", "reponses": ["Les Pieds Velus", "Les Palés", "Les Isengrims"], "correcte": 0},
-            {"question": "Qui vit 3 chemins des Trous-du-Talus ?", "reponses": ["L'Ancien", "Le Rouquin", "Maître Gorbadoc"], "correcte": 2},
-            {"question": "Que n'y a-t-il plus dans les Landes du Nord ?", "reponses": ["Des touffes d'herbe", "Des maraudeurs", "Des ornes"], "correcte": 2}
-        ];
-
+        let allQuestions = [];
+        let currentDifficulty = '';
         let currentQuestionIndex = 0;
         let currentScore = 0;
         let answeredQuestions = 0;
         let selectedQuestions = [];
 
-        function startQuiz() {
-            selectedQuestions = shuffleArray([...questions]).slice(0, 10);
+        async function loadQuestions() {
+            try {
+                const response = await fetch('questions.json');
+                allQuestions = await response.json();
+                return true;
+            } catch (error) {
+                console.error('Erreur lors du chargement des questions:', error);
+                alert('Erreur lors du chargement des questions. Assurez-vous que le fichier questions.json existe.');
+                return false;
+            }
+        }
+
+        async function startQuiz(difficulty) {
+            currentDifficulty = difficulty;
+            showScreen('loadingScreen');
+            
+            if (allQuestions.length === 0) {
+                const loaded = await loadQuestions();
+                if (!loaded) {
+                    showScreen('difficultyScreen');
+                    return;
+                }
+            }
+
+            // Sélectionner 10 questions aléatoires
+            selectedQuestions = shuffleArray([...allQuestions]).slice(0, 10);
             currentQuestionIndex = 0;
             currentScore = 0;
             answeredQuestions = 0;
 
+            document.getElementById('difficultyBadge').textContent = difficulty === 'facile' ? 'Facile' : 'Normal';
+            
             showScreen('quizScreen');
             displayQuestion();
         }
@@ -311,33 +314,64 @@
             const answersContainer = document.getElementById('answersContainer');
             answersContainer.innerHTML = '';
             
-            question.reponses.forEach((reponse, index) => {
+            // Préparer les réponses selon la difficulté
+            let answers = [];
+            let correctIndex = 0;
+            
+            if (currentDifficulty === 'facile') {
+                // Mode facile : 3 réponses (bonne + 2 autres)
+                answers = [
+                    question.bonneReponse,
+                    question.autreReponse1,
+                    question.autreReponse2
+                ];
+            } else {
+                // Mode normal : 4 réponses (bonne + réponse bonus + 2 autres)
+                answers = [
+                    question.bonneReponse,
+                    question.reponseBonus,
+                    question.autreReponse1,
+                    question.autreReponse2
+                ];
+            }
+            
+            // Mélanger les réponses et garder la trace de la bonne
+            const shuffledAnswers = answers.map((ans, idx) => ({answer: ans, isCorrect: idx === 0}));
+            for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
+            }
+            
+            // Trouver le nouvel index de la bonne réponse
+            correctIndex = shuffledAnswers.findIndex(item => item.isCorrect);
+            
+            // Créer les boutons
+            shuffledAnswers.forEach((item, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'answer-btn';
-                btn.textContent = reponse;
-                btn.onclick = () => selectAnswer(index);
+                btn.textContent = item.answer;
+                btn.onclick = () => selectAnswer(index, correctIndex);
                 answersContainer.appendChild(btn);
             });
 
             document.getElementById('nextBtn').style.display = 'none';
         }
 
-        function selectAnswer(selectedIndex) {
-            const question = selectedQuestions[currentQuestionIndex];
+        function selectAnswer(selectedIndex, correctIndex) {
             const buttons = document.querySelectorAll('.answer-btn');
             
             buttons.forEach((btn, index) => {
                 btn.disabled = true;
-                if (index === question.correcte) {
+                if (index === correctIndex) {
                     btn.classList.add('correct');
                 }
-                if (index === selectedIndex && index !== question.correcte) {
+                if (index === selectedIndex && index !== correctIndex) {
                     btn.classList.add('incorrect');
                 }
             });
 
             answeredQuestions++;
-            if (selectedIndex === question.correcte) {
+            if (selectedIndex === correctIndex) {
                 currentScore++;
             }
 
@@ -378,7 +412,7 @@
             currentScore = 0;
             answeredQuestions = 0;
             selectedQuestions = [];
-            showScreen('startScreen');
+            showScreen('difficultyScreen');
         }
 
         function showScreen(screenId) {
