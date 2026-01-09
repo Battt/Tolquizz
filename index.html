@@ -315,7 +315,12 @@
 
         function displayQuestion() {
             const question = selectedQuestions[currentQuestionIndex];
-            document.getElementById('questionNumber').textContent = `Question ${currentQuestionIndex + 1}/${selectedQuestions.length}`;
+            
+            // --- MODIFICATION ICI ---
+            // On affiche le numéro unique de la carte (ID) + la progression dans le quiz
+            document.getElementById('questionNumber').textContent = `Question #${question.id} (${currentQuestionIndex + 1}/${selectedQuestions.length})`;
+            // ------------------------
+
             document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
             document.getElementById('questionText').textContent = question.question;
             
