@@ -35,9 +35,16 @@
         h1 {
             text-align: center;
             color: #d4af37;
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
         }
 
         .subtitle {
@@ -263,7 +270,7 @@
 
         async function loadQuestions() {
             try {
-                const response = await fetch('./questions.json');
+                const response = await fetch('questions.json');
                 allQuestions = await response.json();
                 return true;
             } catch (error) {
