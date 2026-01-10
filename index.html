@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tolquizz - Le Seigneur des Anneaux</title>
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%23d4af37%22 stroke-width=%2210%22 fill=%22none%22/></svg>">
+
     <style>
         * {
             margin: 0;
@@ -31,21 +33,16 @@
             border-radius: 15px;
             padding: 40px;
             box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            position: relative;
         }
 
         h1 {
             text-align: center;
             color: #d4af37;
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
-        }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
         }
 
         .subtitle {
@@ -68,6 +65,38 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* --- STYLES SÉLECTION CATÉGORIE --- */
+        .category-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .category-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #d4af37;
+            font-size: 1.1em;
+        }
+
+        .category-select {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background: rgba(30, 30, 50, 0.8);
+            border: 1px solid #d4af37;
+            color: #e8e8e8;
+            border-radius: 5px;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            outline: none;
+        }
+
+        .category-select:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        /* ---------------------------------- */
 
         .difficulty-section {
             text-align: center;
@@ -113,6 +142,8 @@
 
         .question-container {
             margin: 30px 0;
+            position: relative;
+            padding-bottom: 30px; /* Espace pour le numéro */
         }
 
         .question-header {
@@ -123,6 +154,17 @@
             color: #b8b8b8;
             font-size: 0.9em;
         }
+
+        /* --- STYLE NUMÉRO QUESTION (BAS DROITE) --- */
+        .question-footer-number {
+            text-align: right;
+            font-size: 0.9em;
+            color: #d4af37; /* Couleur dorée */
+            margin-top: 15px;
+            font-style: italic;
+            opacity: 0.8;
+        }
+        /* ----------------------------------------- */
 
         .difficulty-badge {
             background: rgba(212, 175, 55, 0.2);
@@ -180,7 +222,7 @@
         }
 
         .next-btn {
-            margin-top: 30px;
+            margin-top: 20px;
             width: 100%;
         }
 
@@ -209,13 +251,22 @@
 </head>
 <body>
     <div class="container">
-        <h1>⚔️ Tolquiizz ⚔️</h1>
-        <p class="subtitle">Le Seigneur des Anneaux</p>
+        <h1>⚔️ Tolquizz ⚔️</h1>
+        <p class="subtitle">Testez vos connaissances sur la Terre du Milieu</p>
 
-        <!-- Écran de sélection de difficulté -->
         <div id="difficultyScreen" class="screen active">
+            
+            <div class="category-container">
+                <label for="categorySelect" class="category-label">Choisissez votre thème :</label>
+                <select id="categorySelect" class="category-select">
+                    <option value="all">Tout l'univers</option>
+                    <option value="SdA">Le Seigneur des Anneaux</option>
+                    <option value="Silmarillion">Le Silmarillion</option>
+                </select>
+            </div>
+
             <div class="difficulty-section">
-                <p>Choisissez votre difficulté et testez vos connaissances sur la Terre du Milieu</p>
+                <p>Puis choisissez la difficulté :</p>
                 <div class="difficulty-buttons">
                     <button class="btn" onclick="startQuiz('facile')">
                         Facile
@@ -229,211 +280,33 @@
             </div>
         </div>
 
-        <!-- Écran de chargement -->
         <div id="loadingScreen" class="screen">
-            <p class="loading">Chargement des questions...</p>
+            <p class="loading">Chargement des archives...</p>
         </div>
 
-        <!-- Écran de quiz -->
         <div id="quizScreen" class="screen">
             <div class="question-header">
-                <span id="questionNumber">Question 1/10</span>
-                <span class="difficulty-badge" id="difficultyBadge">Facile</span>
                 <span id="score">Score: 0/0</span>
+                <span class="difficulty-badge" id="difficultyBadge">Facile</span>
             </div>
+            
             <div class="question-container">
                 <p class="question-text" id="questionText"></p>
                 <div class="answers" id="answersContainer"></div>
+                
+                <div class="question-footer-number" id="questionNumber">
+                    Question #0
+                </div>
             </div>
+
             <button class="btn next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
                 Question suivante
             </button>
         </div>
 
-        <!-- Écran de résultats -->
         <div id="resultsScreen" class="screen">
             <div class="results">
                 <h2 style="color: #d4af37; margin-bottom: 20px;">Quiz terminé !</h2>
                 <div class="score" id="finalScore"></div>
                 <p class="results-text" id="resultsMessage"></p>
-                <button class="btn" onclick="restartQuiz()">Recommencer</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let allQuestions = [];
-        let currentDifficulty = '';
-        let currentQuestionIndex = 0;
-        let currentScore = 0;
-        let answeredQuestions = 0;
-        let selectedQuestions = [];
-
-        async function loadQuestions() {
-            try {
-                const response = await fetch('questions.json');
-                allQuestions = await response.json();
-                return true;
-            } catch (error) {
-                console.error('Erreur lors du chargement des questions:', error);
-                alert('Erreur lors du chargement des questions. Assurez-vous que le fichier questions.json existe.');
-                return false;
-            }
-        }
-
-        async function startQuiz(difficulty) {
-            currentDifficulty = difficulty;
-            showScreen('loadingScreen');
-            
-            if (allQuestions.length === 0) {
-                const loaded = await loadQuestions();
-                if (!loaded) {
-                    showScreen('difficultyScreen');
-                    return;
-                }
-            }
-
-            // Sélectionner 10 questions aléatoires
-            selectedQuestions = shuffleArray([...allQuestions]).slice(0, 10);
-            currentQuestionIndex = 0;
-            currentScore = 0;
-            answeredQuestions = 0;
-
-            document.getElementById('difficultyBadge').textContent = difficulty === 'facile' ? 'Facile' : 'Normal';
-            
-            showScreen('quizScreen');
-            displayQuestion();
-        }
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        function displayQuestion() {
-            const question = selectedQuestions[currentQuestionIndex];
-            
-            // --- MODIFICATION ICI ---
-            // On affiche le numéro unique de la carte (ID) + la progression dans le quiz
-            document.getElementById('questionNumber').textContent = `Question #${question.id} (${currentQuestionIndex + 1}/${selectedQuestions.length})`;
-            // ------------------------
-
-            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
-            document.getElementById('questionText').textContent = question.question;
-            
-            const answersContainer = document.getElementById('answersContainer');
-            answersContainer.innerHTML = '';
-            
-            // Préparer les réponses selon la difficulté
-            let answers = [];
-            let correctIndex = 0;
-            
-            if (currentDifficulty === 'facile') {
-                // Mode facile : 3 réponses (bonne + 2 autres)
-                answers = [
-                    question.bonneReponse,
-                    question.autreReponse1,
-                    question.autreReponse2
-                ];
-            } else {
-                // Mode normal : 4 réponses (bonne + réponse bonus + 2 autres)
-                answers = [
-                    question.bonneReponse,
-                    question.reponseBonus,
-                    question.autreReponse1,
-                    question.autreReponse2
-                ];
-            }
-            
-            // Mélanger les réponses et garder la trace de la bonne
-            const shuffledAnswers = answers.map((ans, idx) => ({answer: ans, isCorrect: idx === 0}));
-            for (let i = shuffledAnswers.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
-            }
-            
-            // Trouver le nouvel index de la bonne réponse
-            correctIndex = shuffledAnswers.findIndex(item => item.isCorrect);
-            
-            // Créer les boutons
-            shuffledAnswers.forEach((item, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'answer-btn';
-                btn.textContent = item.answer;
-                btn.onclick = () => selectAnswer(index, correctIndex);
-                answersContainer.appendChild(btn);
-            });
-
-            document.getElementById('nextBtn').style.display = 'none';
-        }
-
-        function selectAnswer(selectedIndex, correctIndex) {
-            const buttons = document.querySelectorAll('.answer-btn');
-            
-            buttons.forEach((btn, index) => {
-                btn.disabled = true;
-                if (index === correctIndex) {
-                    btn.classList.add('correct');
-                }
-                if (index === selectedIndex && index !== correctIndex) {
-                    btn.classList.add('incorrect');
-                }
-            });
-
-            answeredQuestions++;
-            if (selectedIndex === correctIndex) {
-                currentScore++;
-            }
-
-            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
-            document.getElementById('nextBtn').style.display = 'block';
-        }
-
-        function nextQuestion() {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < selectedQuestions.length) {
-                displayQuestion();
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            const percentage = Math.round((currentScore / selectedQuestions.length) * 100);
-            document.getElementById('finalScore').textContent = `${currentScore}/${selectedQuestions.length}`;
-            
-            let message = '';
-            if (percentage >= 90) {
-                message = 'Exceptionnel ! Vous êtes un véritable expert de la Terre du Milieu ! 🏆';
-            } else if (percentage >= 70) {
-                message = 'Très bien ! Vous connaissez bien l\'univers de Tolkien ! ⚔️';
-            } else if (percentage >= 50) {
-                message = 'Pas mal ! Continuez à explorer la Terre du Milieu ! 📖';
-            } else {
-                message = 'Il est temps de relire les œuvres du Professeur ! 📚';
-            }
-            
-            document.getElementById('resultsMessage').textContent = message;
-            showScreen('resultsScreen');
-        }
-
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            currentScore = 0;
-            answeredQuestions = 0;
-            selectedQuestions = [];
-            showScreen('difficultyScreen');
-        }
-
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(screen => {
-                screen.classList.remove('active');
-            });
-            document.getElementById(screenId).classList.add('active');
-        }
-    </script>
-</body>
-</html>
+                <button class="btn" onclick
