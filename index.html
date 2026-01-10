@@ -28,13 +28,13 @@
         .container {
             max-width: 800px;
             width: 100%;
-            background: rgba(15, 15, 30, 0.9);
+            background: rgba(15, 15, 30, 0.95);
             border: 2px solid #d4af37;
             border-radius: 15px;
             padding: 40px;
             box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
             position: relative;
-            min-height: 500px; /* Hauteur min pour éviter les sauts */
+            min-height: 550px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -78,7 +78,7 @@
             margin-bottom: 30px;
         }
 
-        /* --- STYLES DES BOUTONS DE SÉLECTION --- */
+        /* --- SÉLECTION --- */
         .selection-grid {
             display: flex;
             flex-direction: column;
@@ -117,21 +117,20 @@
             opacity: 0.8;
             font-style: italic;
         }
-        /* -------------------------------------- */
 
+        /* --- QUIZ UI --- */
         .question-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #b8b8b8;
             font-size: 0.9em;
         }
 
         .question-container {
-            margin: 30px 0;
+            margin: 20px 0;
             position: relative;
-            padding-bottom: 30px;
         }
 
         .question-text {
@@ -140,17 +139,35 @@
             line-height: 1.6;
             color: #e8e8e8;
             text-align: center;
+            min-height: 60px; /* Évite les sauts de taille */
         }
 
-        /* Numéro de question en bas à droite */
-        .question-footer-number {
-            text-align: right;
-            font-size: 0.9em;
-            color: #d4af37;
-            margin-top: 15px;
-            font-style: italic;
-            opacity: 0.8;
+        /* --- NOUVELLE BARRE DE PROGRESSION --- */
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin-top: 30px;
+            overflow: hidden;
+            position: relative;
         }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #b5932a, #d4af37, #fff8dc);
+            width: 0%;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .progress-text {
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 5px;
+        }
+        /* ------------------------------------ */
 
         .difficulty-badge {
             background: rgba(212, 175, 55, 0.2);
@@ -175,7 +192,7 @@
             color: #e8e8e8;
             cursor: pointer;
             border-radius: 8px;
-            transition: all 0.3s;
+            transition: all 0.2s;
             text-align: left;
             font-family: 'Georgia', serif;
         }
@@ -188,20 +205,22 @@
 
         .answer-btn.correct {
             border-color: #4caf50;
-            background: rgba(76, 175, 80, 0.2);
+            background: rgba(76, 175, 80, 0.3);
+            color: #fff;
         }
 
         .answer-btn.incorrect {
             border-color: #f44336;
-            background: rgba(244, 67, 54, 0.2);
+            background: rgba(244, 67, 54, 0.3);
+            opacity: 0.7;
         }
 
         .answer-btn:disabled {
-            cursor: not-allowed;
+            cursor: default;
         }
 
         .next-btn {
-            margin-top: 20px;
+            margin-top: 25px;
             width: 100%;
             padding: 15px;
             font-size: 1.1em;
@@ -212,10 +231,12 @@
             cursor: pointer;
             font-family: 'Georgia', serif;
             font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         
         .next-btn:hover {
             background: #b5932a;
+            transform: translateY(-2px);
         }
 
         .results {
@@ -240,7 +261,6 @@
             font-size: 1.2em;
         }
         
-        /* Bouton retour simple */
         .back-link {
             position: absolute;
             top: 20px;
@@ -249,6 +269,7 @@
             text-decoration: none;
             font-size: 0.9em;
             cursor: pointer;
+            transition: color 0.3s;
         }
         .back-link:hover { color: #d4af37; }
 
@@ -275,6 +296,12 @@
                     <small>Les Légendes du Premier Âge</small>
                 </button>
             </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button onclick="resetHistory()" style="background:none; border:none; color:#555; cursor:pointer; font-size:0.8em; text-decoration:underline;">
+                    Réinitialiser mon historique de questions
+                </button>
+            </div>
         </div>
 
         <div id="difficultyScreen" class="screen">
@@ -293,7 +320,7 @@
         </div>
 
         <div id="loadingScreen" class="screen">
-            <p class="loading">Ouverture des archives...</p>
+            <p class="loading">Consultation des archives...</p>
         </div>
 
         <div id="quizScreen" class="screen">
@@ -306,9 +333,10 @@
                 <p class="question-text" id="questionText"></p>
                 <div class="answers" id="answersContainer"></div>
                 
-                <div class="question-footer-number" id="questionNumber">
-                    Question #0
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar"></div>
                 </div>
+                <div class="progress-text" id="progressText">1 / 10</div>
             </div>
 
             <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
@@ -321,7 +349,7 @@
                 <h2 style="color: #d4af37; margin-bottom: 20px;">Aventure terminée !</h2>
                 <div class="score" id="finalScore"></div>
                 <p class="results-text" id="resultsMessage"></p>
-                <button class="btn-large" onclick="restartQuiz()">Recommencer</button>
+                <button class="btn-large" onclick="restartQuiz()">Nouvelle Aventure</button>
             </div>
         </div>
     </div>
@@ -334,58 +362,104 @@
         let currentScore = 0;
         let answeredQuestions = 0;
         let selectedQuestions = [];
+        
+        // Clé pour le stockage local
+        const STORAGE_KEY = 'tolquizz_played_ids';
 
-        // Chargement initial des questions dès le lancement
+        // Chargement initial
         window.onload = function() {
             loadQuestions();
         };
 
         async function loadQuestions() {
             try {
-                // Charge le fichier JSON (ajoute un timestamp pour éviter le cache)
                 const response = await fetch('questions.json?v=' + new Date().getTime());
                 allQuestions = await response.json();
                 console.log("Questions chargées : " + allQuestions.length);
             } catch (error) {
-                console.error('Erreur lors du chargement:', error);
-                alert('Erreur: Impossible de charger les questions.');
+                console.error('Erreur:', error);
+                alert('Erreur: Impossible de charger les questions (vérifiez JSON ou serveur local).');
             }
         }
 
-        // ÉTAPE 1 : CHOIX DE LA CATÉGORIE
+        // --- GESTION DE L'HISTORIQUE ---
+        function getPlayedHistory() {
+            const history = localStorage.getItem(STORAGE_KEY);
+            return history ? JSON.parse(history) : [];
+        }
+
+        function addToHistory(id) {
+            const history = getPlayedHistory();
+            if (!history.includes(id)) {
+                history.push(id);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
+            }
+        }
+
+        function resetHistory() {
+            if(confirm("Voulez-vous vraiment oublier quelles questions vous avez déjà vues ?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                alert("Mémoire effacée. Toutes les questions peuvent réapparaître.");
+            }
+        }
+        // -------------------------------
+
         function chooseCategory(category) {
             currentCategory = category;
             showScreen('difficultyScreen');
         }
 
-        // ÉTAPE 2 : DÉMARRAGE DU QUIZ
         function startQuiz(difficulty) {
             currentDifficulty = difficulty;
             
             if (allQuestions.length === 0) {
-                // Si les questions n'ont pas encore chargé (connexion lente)
                 showScreen('loadingScreen');
-                // On réessaie dans 1 seconde
                 setTimeout(() => startQuiz(difficulty), 1000);
                 return;
             }
 
             // 1. Filtrer par catégorie
-            let filteredQuestions = allQuestions;
+            let categoryQuestions = allQuestions;
             if (currentCategory !== 'all') {
-                filteredQuestions = allQuestions.filter(q => q.category === currentCategory);
+                categoryQuestions = allQuestions.filter(q => q.category === currentCategory);
             }
 
-            if (filteredQuestions.length === 0) {
-                alert("Aucune question trouvée pour cette catégorie !");
+            if (categoryQuestions.length === 0) {
+                alert("Pas de questions dans cette catégorie !");
                 showScreen('categoryScreen');
                 return;
             }
 
-            // 2. Mélanger et prendre 10 questions
-            selectedQuestions = shuffleArray([...filteredQuestions]).slice(0, 10);
+            // 2. Filtrer les questions déjà jouées (Historique)
+            const playedIds = getPlayedHistory();
+            let availableQuestions = categoryQuestions.filter(q => !playedIds.includes(q.id));
+
+            // 3. Gestion de la pénurie de questions
+            if (availableQuestions.length < 10) {
+                console.log("Plus assez de nouvelles questions. Réinitialisation partielle ou mélange.");
+                
+                // Si on a moins de 10 nouvelles, on complète avec des anciennes
+                // Ou alors on réinitialise tout si vraiment tout est joué
+                if (availableQuestions.length === 0) {
+                    // Reset implicite pour ce tour (sans effacer le localStorage définitivement pour ne pas frustrer, 
+                    // mais on pioche dans tout le pool)
+                    availableQuestions = [...categoryQuestions];
+                    alert("Vous avez fait le tour de toutes les questions de cette catégorie ! On recommence à zéro !");
+                    // Optionnel : Effacer l'historique réel
+                    localStorage.removeItem(STORAGE_KEY);
+                } else {
+                    // On complète avec des anciennes questions pour faire 10
+                    const needed = 10 - availableQuestions.length;
+                    const oldQuestions = categoryQuestions.filter(q => playedIds.includes(q.id));
+                    const randomOld = shuffleArray([...oldQuestions]).slice(0, needed);
+                    availableQuestions = availableQuestions.concat(randomOld);
+                }
+            }
+
+            // 4. Mélanger et prendre 10
+            selectedQuestions = shuffleArray([...availableQuestions]).slice(0, 10);
             
-            // 3. Reset des scores
+            // 5. Initialisation
             currentQuestionIndex = 0;
             currentScore = 0;
             answeredQuestions = 0;
@@ -407,8 +481,16 @@
         function displayQuestion() {
             const question = selectedQuestions[currentQuestionIndex];
             
-            const questionId = question.id ? `#${question.id} ` : '';
-            document.getElementById('questionNumber').textContent = `Question ${questionId}(${currentQuestionIndex + 1}/${selectedQuestions.length})`;
+            // Sauvegarde dans l'historique dès l'affichage
+            if (question.id) {
+                addToHistory(question.id);
+            }
+
+            // Mise à jour de la barre de progression
+            const progressPercent = ((currentQuestionIndex) / selectedQuestions.length) * 100; 
+            // Astuce UX : on commence à 0%, mais on affichera l'avancement après
+            document.getElementById('progressBar').style.width = ((currentQuestionIndex + 1) / selectedQuestions.length * 100) + '%';
+            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1} / ${selectedQuestions.length}`;
 
             document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
             document.getElementById('questionText').textContent = question.question;
@@ -420,18 +502,9 @@
             let correctIndex = 0;
             
             if (currentDifficulty === 'facile') {
-                answers = [
-                    question.bonneReponse,
-                    question.autreReponse1,
-                    question.autreReponse2
-                ];
+                answers = [question.bonneReponse, question.autreReponse1, question.autreReponse2];
             } else {
-                answers = [
-                    question.bonneReponse,
-                    question.reponseBonus,
-                    question.autreReponse1,
-                    question.autreReponse2
-                ];
+                answers = [question.bonneReponse, question.reponseBonus, question.autreReponse1, question.autreReponse2];
             }
             
             const shuffledAnswers = answers.map((ans, idx) => ({answer: ans, isCorrect: idx === 0}));
@@ -508,7 +581,7 @@
             currentScore = 0;
             answeredQuestions = 0;
             selectedQuestions = [];
-            showScreen('categoryScreen'); // Retour au tout début
+            showScreen('categoryScreen');
         }
 
         function showScreen(screenId) {
