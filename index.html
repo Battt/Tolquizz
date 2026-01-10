@@ -539,4 +539,67 @@
         function selectAnswer(selectedIndex, correctIndex) {
             const buttons = document.querySelectorAll('.answer-btn');
             
-            buttons.forEach((btn,
+            buttons.forEach((btn, index) => {
+                btn.disabled = true;
+                if (index === correctIndex) {
+                    btn.classList.add('correct');
+                }
+                if (index === selectedIndex && index !== correctIndex) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            answeredQuestions++;
+            if (selectedIndex === correctIndex) {
+                currentScore++;
+            }
+
+            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
+            document.getElementById('nextBtn').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < selectedQuestions.length) {
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            const percentage = Math.round((currentScore / selectedQuestions.length) * 100);
+            document.getElementById('finalScore').textContent = `${currentScore}/${selectedQuestions.length}`;
+            
+            let message = '';
+            if (percentage >= 90) {
+                message = 'Exceptionnel ! Un véritable Maître du Savoir ! 🏆';
+            } else if (percentage >= 70) {
+                message = 'Très bien ! La Terre du Milieu n\'a plus de secrets pour vous ! ⚔️';
+            } else if (percentage >= 50) {
+                message = 'Pas mal ! Continuez votre voyage ! 📖';
+            } else {
+                message = 'Même les plus petits peuvent changer le cours de l\'avenir. Réessayez ! 📚';
+            }
+            
+            document.getElementById('resultsMessage').textContent = message;
+            showScreen('resultsScreen');
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            currentScore = 0;
+            answeredQuestions = 0;
+            selectedQuestions = [];
+            showScreen('categoryScreen');
+        }
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
