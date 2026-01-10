@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "category": "SdA",
     "question": "Qui parmi les suivants n’est pas un des fils Chaumine ?",
     "bonneReponse": "Faramir.",
     "reponseBonus": "Jolly.",
@@ -9,6 +10,7 @@
   },
   {
     "id": 2,
+    "category": "SdA",
     "question": "Quelle veuve s’occupe de l’Ancien après sa réinstallation chemin des Trous du Talus ?",
     "bonneReponse": "La veuve Grogne.",
     "reponseBonus": "La veuve Fouille.",
@@ -17,6 +19,7 @@
   },
   {
     "id": 3,
+    "category": "SdA",
     "question": "Comment les Hobbits appellent un objet qu’ils ne peuvent se résoudre à jeter ?",
     "bonneReponse": "Un mathom.",
     "reponseBonus": "Un hollin.",
@@ -25,6 +28,7 @@
   },
   {
     "id": 4,
+    "category": "SdA",
     "question": "Que vit Frodon à Amon Hen qui lui redonna espoir ?",
     "bonneReponse": "Minas Tirith.",
     "reponseBonus": "Les aigles.",
@@ -33,6 +37,7 @@
   },
   {
     "id": 5,
+    "category": "SdA",
     "question": "Que déposa la Compagnie sur le corps de Boromir dans le bateau ?",
     "bonneReponse": "Son cor fendu et les morceaux de son épée.",
     "reponseBonus": "L’Anneau Unique.",
@@ -41,6 +46,7 @@
   },
   {
     "id": 6,
+    "category": "SdA",
     "question": "A quelle distance étaient les cavaliers quand Legolas les vit dans les plaines du Rohan ?",
     "bonneReponse": "5 lieues.",
     "reponseBonus": "7 lieues.",
@@ -49,6 +55,7 @@
   },
   {
     "id": 7,
+    "category": "SdA",
     "question": "Que couvre les sols des cavernes du Gouffre de Helm ?",
     "bonneReponse": "Des graviers.",
     "reponseBonus": "De la boue.",
@@ -57,6 +64,7 @@
   },
   {
     "id": 8,
+    "category": "SdA",
     "question": "Quel type de feuilles trouve Merry à Isengard ?",
     "bonneReponse": "De la Feuille de Longoulet.",
     "reponseBonus": "De la régulière de Hobbit.",
@@ -65,6 +73,7 @@
   },
   {
     "id": 9,
+    "category": "SdA",
     "question": "Que demande Gandalf à Saroumane comme gage de sa bonne conduite ?",
     "bonneReponse": "Son bâton et les clefs d’Orthanc.",
     "reponseBonus": "Un anneau et un livre.",
@@ -73,6 +82,7 @@
   },
   {
     "id": 10,
+    "category": "SdA",
     "question": "Quel chef des Elfes les Hobbits rencontrèrent-ils dans la Comté ?",
     "bonneReponse": "Gildor Inglorion.",
     "reponseBonus": "Finrod Felegund.",
@@ -81,6 +91,7 @@
   },
   {
     "id": 11,
+    "category": "SdA",
     "question": "Quel est le nom du chien du père Magotte qui fuit à l’arrivée du Cavalier Noir ?",
     "bonneReponse": "Etau.",
     "reponseBonus": "Coup.",
@@ -89,6 +100,7 @@
   },
   {
     "id": 12,
+    "category": "SdA",
     "question": "La Haute Barrière s’achève à Fin de Barrière, où commence-t-elle ?",
     "bonneReponse": "Au Pont de Brandevin.",
     "reponseBonus": "A Bree.",
@@ -97,6 +109,7 @@
   },
   {
     "id": 13,
+    "category": "SdA",
     "question": "Qui est le garde de Theoden ?",
     "bonneReponse": "Hama.",
     "reponseBonus": "Eowyn.",
@@ -105,6 +118,7 @@
   },
   {
     "id": 14,
+    "category": "SdA",
     "question": "Quel est le nom du vieil homme qui dirige la garde au Gouffre de Helm ?",
     "bonneReponse": "Gamling.",
     "reponseBonus": "Ioreth.",
@@ -113,6 +127,7 @@
   },
   {
     "id": 15,
+    "category": "SdA",
     "question": "Les cavernes du Gouffre de Helm sont aussi connues comme ?",
     "bonneReponse": "Les cavernes étincelantes d’Aglarond.",
     "reponseBonus": "Les Tunnels scintillants de Turinbar.",
@@ -121,6 +136,7 @@
   },
   {
     "id": 16,
+    "category": "SdA",
     "question": "Qu’appelle Gandalf \"La fondation de Barad-dur\" ?",
     "bonneReponse": "L’Anneau de Pouvoir.",
     "reponseBonus": "Le Mont du Destin.",
@@ -129,6 +145,7 @@
   },
   {
     "id": 17,
+    "category": "SdA",
     "question": "Comment le lieutenant de la tour de Barad-dur se fait-il appeler ?",
     "bonneReponse": "La Bouche de Sauron.",
     "reponseBonus": "La Volonté de Sauron.",
@@ -137,6 +154,7 @@
   },
   {
     "id": 18,
+    "category": "SdA",
     "question": "Quel est la prochaine ligne de la chanson de Sam \"Je ne dirais pas \"le jour est fini\",...\" ?",
     "bonneReponse": "Je ne ferais pas aux Etoiles mes adieux.",
     "reponseBonus": "Tout va bien, reposez-vous à l’abri, les Etoiles veillent sur nous.",
@@ -145,6 +163,7 @@
   },
   {
     "id": 19,
+    "category": "SdA",
     "question": "A qui demande-t-on de prendre le palantir d’Orthanc des mains de Gandalf ?",
     "bonneReponse": "Aragorn.",
     "reponseBonus": "Sylvebarbe.",
@@ -153,6 +172,7 @@
   },
   {
     "id": 20,
+    "category": "SdA",
     "question": "Quel terrible bruit entendent Frodon et Sam en descendant l’Emyn Muil ?",
     "bonneReponse": "Le cri strident d’un Nazgûl.",
     "reponseBonus": "Le cri des Orques aux alentours.",
@@ -161,6 +181,7 @@
   },
   {
     "id": 21,
+    "category": "SdA",
     "question": "Lors de leur première nuit ensemble dans les marais, comment Sam vérifie-t-il que Gollum est vraiment endormi ?",
     "bonneReponse": "Il lui murmure \"poisson\" près de l’oreille.",
     "reponseBonus": "Il lui murmure \"Sacquet\" près de l’oreille.",
@@ -169,6 +190,7 @@
   },
   {
     "id": 22,
+    "category": "SdA",
     "question": "Quand la belle Compagnie arrive à Isengard, où les accueille Sylvebarbe ?",
     "bonneReponse": "Au Clos d’Orthanc.",
     "reponseBonus": "Dans les Bois des Woses.",
@@ -177,6 +199,7 @@
   },
   {
     "id": 23,
+    "category": "SdA",
     "question": "Qui d’après Gandalf portait déjà un certain intérêt à la Comté avant Mordor ?",
     "bonneReponse": "Saroumane.",
     "reponseBonus": "Le Roi Brand.",
@@ -185,6 +208,7 @@
   },
   {
     "id": 24,
+    "category": "SdA",
     "question": "Où le Chef des Brigands menaça d’emmener 50 Hobbits s’ils ne se dispersaient pas ?",
     "bonneReponse": "Dans les trous prisons pour un an.",
     "reponseBonus": "Enfermés une semaine dans des tonneaux.",
@@ -193,1370 +217,7 @@
   },
   {
     "id": 25,
+    "category": "SdA",
     "question": "Comment Pippin récupéra le couteau qui lui servit à trancher les liens orques qui le retenaient ?",
     "bonneReponse": "Il est tombé sur lui pendant la bataille.",
-    "reponseBonus": "On lui a donné.",
-    "autreReponse1": "Il le prit à un garde endormi.",
-    "autreReponse2": "Merry le vola à un garde."
-  },
-  {
-    "id": 26,
-    "question": "Comment Sylvebarbe décrit les Ents dans sa chanson ?",
-    "bonneReponse": "L’Ent, né de la terre, vieux comme les montagnes.",
-    "reponseBonus": "L’Ent, le plus grand, aussi grand que sa forêt.",
-    "autreReponse1": "L’Ent, le plus fort, profondes sont ses racines.",
-    "autreReponse2": "L’Ent, le berger des arbres, longue est sa mémoire."
-  },
-  {
-    "id": 27,
-    "question": "Que dit le vieil homme aux trois chasseurs qui le dévisagent ?",
-    "bonneReponse": "“Ils traquent deux jeunes hobbits.”",
-    "reponseBonus": "Il leur raconte l’histoire de Beren et Luthien.",
-    "autreReponse1": "“ils ont échappé aux tromperies de la Dame des Galadhrim.”",
-    "autreReponse2": "il sait qu’ils sont liés aux événements autour de l’Anneau Unique."
-  },
-  {
-    "id": 28,
-    "question": "Qui guida la Compagnie de Caras Galadhon au fleuve ?",
-    "bonneReponse": "Celeborn.",
-    "reponseBonus": "Galadriel.",
-    "autreReponse1": "Haldir.",
-    "autreReponse2": "Legolas."
-  },
-  {
-    "id": 29,
-    "question": "Sur l’Anduin, que rencontre de manière inattendue la Compagnie ?",
-    "bonneReponse": "Des rapides.",
-    "reponseBonus": "Un groupe d’Elfes.",
-    "autreReponse1": "Une armée naine.",
-    "autreReponse2": "Une chute d’eau."
-  },
-  {
-    "id": 30,
-    "question": "Que voit Frodon depuis Amon Hen qui lui fait perdre tout espoir ?",
-    "bonneReponse": "Barad-dur.",
-    "reponseBonus": "Des feux.",
-    "autreReponse1": "Les Orques.",
-    "autreReponse2": "Les ténèbres."
-  },
-  {
-    "id": 31,
-    "question": "Qui a fait pire que \"attraper des lapins\" dans les hautes terres ?",
-    "bonneReponse": "Gollum.",
-    "reponseBonus": "Glaurung.",
-    "autreReponse1": "Grima.",
-    "autreReponse2": "Galadriel."
-  },
-  {
-    "id": 32,
-    "question": "Comment Frodon, Sam et Gollum sont-ils emmenés hors d’Henneth Annun ?",
-    "bonneReponse": "Avec les yeux bandés.",
-    "reponseBonus": "Avec une capuche sur la tête.",
-    "autreReponse1": "Un par un à 10 minutes d’intervalle.",
-    "autreReponse2": "Attachés ensemble."
-  },
-  {
-    "id": 33,
-    "question": "Comment Minas Morgul répond-elle au signal de Sauron pour marcher sur le Gondor ?",
-    "bonneReponse": "Avec des éclairs et une flamme bleue.",
-    "reponseBonus": "Avec une lettre.",
-    "autreReponse1": "Avec un Palantir.",
-    "autreReponse2": "Avec un grand flash rouge et le tonnerre."
-  },
-  {
-    "id": 34,
-    "question": "Qui dit que sa mort l’attend au-delà de la porte du Chemin des Morts ?",
-    "bonneReponse": "Halbarad.",
-    "reponseBonus": "Gimli.",
-    "autreReponse1": "Aragorn.",
-    "autreReponse2": "Legolas."
-  },
-  {
-    "id": 35,
-    "question": "Sur quel cheval Merry fait-il la route d’Edoras à Minas Tirith ?",
-    "bonneReponse": "Winfola.",
-    "reponseBonus": "Gripoil.",
-    "autreReponse1": "Stybba.",
-    "autreReponse2": "Nivacrin."
-  },
-  {
-    "id": 36,
-    "question": "D’après Gandalf, que doit-on faire dès le début du combat dans les champs ?",
-    "bonneReponse": "Une sortie doit être tentée.",
-    "reponseBonus": "Tous les blessés doivent être évacués vers Lossarnach.",
-    "autreReponse1": "La porte de Minas Tirith doit être fermée et barrée.",
-    "autreReponse2": "Les murs de la cité doivent être tenus jusqu’à l’arrivée des Rohirrims."
-  },
-  {
-    "id": 37,
-    "question": "Qui prend le commandement des défenses de la ville quand Denethor refuse de quitter le chevet de Faramir ?",
-    "bonneReponse": "Gandalf.",
-    "reponseBonus": "Golasgil, Seigneur d’Anfalas.",
-    "autreReponse1": "Imrahil.",
-    "autreReponse2": "Forlong le Gros, Seigneur de Lossarnach."
-  },
-  {
-    "id": 38,
-    "question": "Combien y a-t-il d’étoiles sur l’étendard du bateau d’Aragorn ?",
-    "bonneReponse": "7.",
-    "reponseBonus": "6.",
-    "autreReponse1": "5.",
-    "autreReponse2": "9."
-  },
-  {
-    "id": 39,
-    "question": "Sur le banc de quelle rivière la Compagnie participe-t-elle à une fête d’adieux avec Celeborn et Galadriel ?",
-    "bonneReponse": "Le Cours d’Argent.",
-    "reponseBonus": "La rivière Courante.",
-    "autreReponse1": "Le Baranduin.",
-    "autreReponse2": "Le Celebrant."
-  },
-  {
-    "id": 40,
-    "question": "Qu’utilise-t-on pour couvrir le corps de Denethor ?",
-    "bonneReponse": "Un grand drap d’or.",
-    "reponseBonus": "De nombreux boucliers.",
-    "autreReponse1": "Le drapeau du Rohan.",
-    "autreReponse2": "Une couverture d’argent."
-  },
-  {
-    "id": 41,
-    "question": "Qui d’après Legolas était \"Un juste seigneur et un grand capitaine des Hommes.\"",
-    "bonneReponse": "Imrahil.",
-    "reponseBonus": "Boromir.",
-    "autreReponse1": "Elrond.",
-    "autreReponse2": "Faramir."
-  },
-  {
-    "id": 42,
-    "question": "Qui représente la Comté dans le dernier assaut sur le Mordor ?",
-    "bonneReponse": "Pippin.",
-    "reponseBonus": "Sam.",
-    "autreReponse1": "Merry.",
-    "autreReponse2": "Frodon."
-  },
-  {
-    "id": 43,
-    "question": "Comment appelle-t-on le langage courant des Hobbits ? Westron ou encore ?",
-    "bonneReponse": "Le langage commun.",
-    "reponseBonus": "Tengwar.",
-    "autreReponse1": "Numenoréen.",
-    "autreReponse2": "Rohirric."
-  },
-  {
-    "id": 44,
-    "question": "Quel est le nom de la petite auberge sur la route de Lézeau ?",
-    "bonneReponse": "Le Buisson de Lierre.",
-    "reponseBonus": "Le Retour des Vagabonds.",
-    "autreReponse1": "Le Taureau Noir.",
-    "autreReponse2": "L’auberge des Lanterniers."
-  },
-  {
-    "id": 45,
-    "question": "Où furent forgés les Anneaux Elfiques ?",
-    "bonneReponse": "En Eregion.",
-    "reponseBonus": "Aux Havres Gris.",
-    "autreReponse1": "En Annuminas.",
-    "autreReponse2": "À Fondcombe."
-  },
-  {
-    "id": 46,
-    "question": "Depuis combien de temps Faramir dit à Gandalf qu’il a quitté Frodon ?",
-    "bonneReponse": "Le matin deux jours auparavant.",
-    "reponseBonus": "Hier vers midi.",
-    "autreReponse1": "Vendredi dernier à l’heure du thé.",
-    "autreReponse2": "La soirée de dimanche dernier."
-  },
-  {
-    "id": 47,
-    "question": "Que fait Ghan-buri-ghan pour dire au revoir à Theoden ?",
-    "bonneReponse": "Il touche le sol de son front.",
-    "reponseBonus": "Il croise les bras sur sa poitrine et s’incline.",
-    "autreReponse1": "Il frotte son nez contre celui de Theoden.",
-    "autreReponse2": "Il tape dans la main de Theoden en parlant dans sa langue gutturale."
-  },
-  {
-    "id": 48,
-    "question": "Qui dit : \"Un sinistre matin, une heureuse journée et un coucher de soleil doré !\" ?",
-    "bonneReponse": "Theoden.",
-    "reponseBonus": "Celeborn.",
-    "autreReponse1": "Gandalf.",
-    "autreReponse2": "Denethor."
-  },
-  {
-    "id": 49,
-    "question": "Quel magicien est l’ami des oiseaux ?",
-    "bonneReponse": "Radagast le Brun.",
-    "reponseBonus": "Gandalf le Gris.",
-    "autreReponse1": "Saroumane le Blanc.",
-    "autreReponse2": "Istari l’Ivoire."
-  },
-  {
-    "id": 50,
-    "question": "Comment les hommes appellent-ils la région appelée Eregion par les Elfes ?",
-    "bonneReponse": "Hollin.",
-    "reponseBonus": "La Forêt de Fangorn.",
-    "autreReponse1": "La Comté.",
-    "autreReponse2": "Mordor."
-  },
-  {
-    "id": 51,
-    "question": "Après être entrée en Moria, combien de marches la compagnie a-t-elle dû grimper pour atteindre le niveau du sol ?",
-    "bonneReponse": "200.",
-    "reponseBonus": "99.",
-    "autreReponse1": "50.",
-    "autreReponse2": "39."
-  },
-  {
-    "id": 52,
-    "question": "Qui est le père d’Elladan et d’Elrohir ?",
-    "bonneReponse": "Elrond.",
-    "reponseBonus": "Gandalf.",
-    "autreReponse1": "Aragorn.",
-    "autreReponse2": "Glorfindel."
-  },
-  {
-    "id": 53,
-    "question": "Comment les gardes annoncent-ils le retour du Roi à Harrowdale ?",
-    "bonneReponse": "En sonnant du Cor.",
-    "reponseBonus": "En chantant.",
-    "autreReponse1": "Avec des flèches enflammées.",
-    "autreReponse2": "En allumant une série de feux d’alerte."
-  },
-  {
-    "id": 54,
-    "question": "Quelle demande de Denethor rend Pippin mélancolique ?",
-    "bonneReponse": "Chanter.",
-    "reponseBonus": "Danser.",
-    "autreReponse1": "Raconter des histoires.",
-    "autreReponse2": "Réciter de la poésie."
-  },
-  {
-    "id": 55,
-    "question": "Finissez la chanson de marche de Frodon \" Dans l’âtre le feu est rouge. Sous le toit, ... \"",
-    "bonneReponse": "Il y a un lit.",
-    "reponseBonus": "Je serais marié.",
-    "autreReponse1": "Il y a un abri.",
-    "autreReponse2": "Le chat est mort."
-  },
-  {
-    "id": 56,
-    "question": "Qu’est ce que le Stock ?",
-    "bonneReponse": "Une rivière.",
-    "reponseBonus": "Une large écuelle de soupe.",
-    "autreReponse1": "Un futur livre sur l’herbe à pipe.",
-    "autreReponse2": "Un pont en bois."
-  },
-  {
-    "id": 57,
-    "question": "Quel est le village principal du Pays de Bouc ?",
-    "bonneReponse": "Châteaubouc.",
-    "reponseBonus": "Ville de Bouc.",
-    "autreReponse1": "Marais de Bouc.",
-    "autreReponse2": "Boucville."
-  },
-  {
-    "id": 58,
-    "question": "Qui a dit \" Porteur de l’Anneau... pour vous j’ai préparé ceci \".",
-    "bonneReponse": "Galadriel.",
-    "reponseBonus": "Gandalf.",
-    "autreReponse1": "Elrond.",
-    "autreReponse2": "Boromir."
-  },
-  {
-    "id": 59,
-    "question": "Quand Sam porte un coup d’épée aux yeux d’Arachne, combien s’enténébrent ?",
-    "bonneReponse": "1.",
-    "reponseBonus": "3.",
-    "autreReponse1": "4.",
-    "autreReponse2": "5."
-  },
-  {
-    "id": 60,
-    "question": "Qui se porte garant de Pippin devant Denethor ?",
-    "bonneReponse": "Gandalf.",
-    "reponseBonus": "Saroumane.",
-    "autreReponse1": "Aragorn.",
-    "autreReponse2": "Ghan-buri-Ghan."
-  },
-  {
-    "id": 61,
-    "question": "Lors de la bataille de la Porte Noire, quel cri surprenant entend Pippin, en perdant connaissance ?",
-    "bonneReponse": "\"Les Aigles arrivent.\"",
-    "reponseBonus": "\"Les Ouargs arrivent.\"",
-    "autreReponse1": "\"Les Nazgûls arrivent.\"",
-    "autreReponse2": "\"Les Béornides arrivent.\""
-  },
-  {
-    "id": 62,
-    "question": "D’après Galadriel, qu’est ce qui protège la Lorien de l’œil de Sauron ?",
-    "bonneReponse": "L’anneau Nenya.",
-    "reponseBonus": "Les Cavaliers de Rohan.",
-    "autreReponse1": "Les Ouargs.",
-    "autreReponse2": "Le fait qu’elle soit loin de tout."
-  },
-  {
-    "id": 63,
-    "question": "Quand la Compagnie quitte la Lorien, quel cadeau donne Galadriel à Sam ?",
-    "bonneReponse": "Une boîte de terre.",
-    "reponseBonus": "Une poêle de cuisine.",
-    "autreReponse1": "De l’argent pour son mariage.",
-    "autreReponse2": "Un livre de jardinage."
-  },
-  {
-    "id": 64,
-    "question": "Qui vit dans les petites baraques, juste à l’intérieur des portes de Bree ?",
-    "bonneReponse": "Les gardiens des portes.",
-    "reponseBonus": "Les vendeurs de tartes.",
-    "autreReponse1": "Les charpentiers.",
-    "autreReponse2": "Les selliers."
-  },
-  {
-    "id": 65,
-    "question": "Que dit Gandalf à M. Poiredebeurré à propos du menton de Frodon ?",
-    "bonneReponse": "Qu’il a une fossette au menton.",
-    "reponseBonus": "Qu’il a des grains de beauté.",
-    "autreReponse1": "Qu’il était poilu.",
-    "autreReponse2": "Qu’il a un double menton."
-  },
-  {
-    "id": 66,
-    "question": "Que donnent Nob et Bob à Frodon comme cadeau d’adieu ?",
-    "bonneReponse": "Une sacoche pleine de pommes.",
-    "reponseBonus": "Une sacoche pleine de caramels.",
-    "autreReponse1": "Une sacoche pleine de billes.",
-    "autreReponse2": "Une sacoche pleine de poussière d’étoile."
-  },
-  {
-    "id": 67,
-    "question": "Quel nom donne-t-on à \"la Rue du Silence\" dans les Lieux Consacrés de Minas Tirith ?",
-    "bonneReponse": "Rath Dinen.",
-    "reponseBonus": "Rathloriel.",
-    "autreReponse1": "Rath Vorondil.",
-    "autreReponse2": "Rath Numen."
-  },
-  {
-    "id": 68,
-    "question": "Qui est le porte-étendard d’Aragorn ?",
-    "bonneReponse": "Halbarad.",
-    "reponseBonus": "Herugrim.",
-    "autreReponse1": "Hama.",
-    "autreReponse2": "Hurin."
-  },
-  {
-    "id": 69,
-    "question": "Que fait Vifsorbier à chaque fois qu’il voit un sorbier ?",
-    "bonneReponse": "Il s’arrête et lui chante une chanson.",
-    "reponseBonus": "Il arrose ses racines et lui clame un poème.",
-    "autreReponse1": "Il rit et applaudit.",
-    "autreReponse2": "Il le caresse et lui dit des mots en Entique."
-  },
-  {
-    "id": 70,
-    "question": "Qui disait toujours à Sam qu’il finirait mal s’il ne faisait pas attention où il mettait les pieds ?",
-    "bonneReponse": "Son père.",
-    "reponseBonus": "Frodon.",
-    "autreReponse1": "Sa mère.",
-    "autreReponse2": "Gandalf."
-  },
-  {
-    "id": 71,
-    "question": "Qu’apprennent les Hobbits, avant même d’apprendre à lire et écrire ?",
-    "bonneReponse": "À cuisiner.",
-    "reponseBonus": "À pêcher.",
-    "autreReponse1": "À chasser.",
-    "autreReponse2": "À faire du vélo."
-  },
-  {
-    "id": 72,
-    "question": "Qui a dit \"Si vous croyez que mon maître a assassiné ce Boromir et puis s’est enfui, vous n’avez aucun sens commun\" ?",
-    "bonneReponse": "Sam.",
-    "reponseBonus": "Pippin.",
-    "autreReponse1": "Gollum.",
-    "autreReponse2": "Langue de Serpent."
-  },
-  {
-    "id": 73,
-    "question": "Quel nom donne Gandalf au Balrog ?",
-    "bonneReponse": "Flamme d’Udun.",
-    "reponseBonus": "Flamme d’Arnor.",
-    "autreReponse1": "Flamme d’ombres.",
-    "autreReponse2": "Feu de Sauron."
-  },
-  {
-    "id": 74,
-    "question": "Quel est le premier Elfe à accueillir Frodon à la lisière de la Lorien ?",
-    "bonneReponse": "Haldir.",
-    "reponseBonus": "Hob.",
-    "autreReponse1": "Hurin.",
-    "autreReponse2": "Huan."
-  },
-  {
-    "id": 75,
-    "question": "Qui ajoute à la complainte chantée pour Gandalf, un verset sur les feux d’artifices ?",
-    "bonneReponse": "Frodon.",
-    "reponseBonus": "Bilbon.",
-    "autreReponse1": "Aragorn.",
-    "autreReponse2": "Sam."
-  },
-  {
-    "id": 76,
-    "question": "Pourquoi Merry et Pippin s’asseyent-ils sur la table de Sylvebarbe ?",
-    "bonneReponse": "Les chaises sont toutes de taille Ent et donc beaucoup trop grandes pour eux.",
-    "reponseBonus": "Les chaises sont toutes couvertes de plantes diverses.",
-    "autreReponse1": "Il n’y a pas de chaises dans les maisons ent.",
-    "autreReponse2": "Toutes les chaises sont cassées."
-  },
-  {
-    "id": 77,
-    "question": "Quelle est d’après Gandalf la seule chose qui peut assurer la victoire dans cette guerre ?",
-    "bonneReponse": "Tous les gens libres de l’Ouest travaillant de concert.",
-    "reponseBonus": "Les armées du Rohan.",
-    "autreReponse1": "L’utilisation de l’Anneau.",
-    "autreReponse2": "La valeur des hommes du Gondor."
-  },
-  {
-    "id": 78,
-    "question": "Qui a bâti Meduseld ?",
-    "bonneReponse": "Brego, fils d’Eorl.",
-    "reponseBonus": "Eorl le Jeune.",
-    "autreReponse1": "Theoden, fils de Thengel.",
-    "autreReponse2": "Les Intendants du Gondor."
-  },
-  {
-    "id": 79,
-    "question": "Comment appelle-t-on les grands piliers qui flanquent l’Anduin ?",
-    "bonneReponse": "L’Argonath.",
-    "reponseBonus": "Les Argonoms.",
-    "autreReponse1": "Les Argonautes.",
-    "autreReponse2": "L’Argoplum."
-  },
-  {
-    "id": 80,
-    "question": "Quel est le nom des \"collines grises\" à travers lesquelles Sam et Frodon doivent trouver une route ?",
-    "bonneReponse": "Emyn Muil.",
-    "reponseBonus": "Les Monts Brumeux.",
-    "autreReponse1": "Les Montagnes Grises.",
-    "autreReponse2": "Cairngorms."
-  },
-  {
-    "id": 81,
-    "question": "Comment Eomer appelle-t-il les Hobbits ?",
-    "bonneReponse": "Les Semi-hommes.",
-    "reponseBonus": "Snaga.",
-    "autreReponse1": "Les Nains.",
-    "autreReponse2": "Les Perian."
-  },
-  {
-    "id": 82,
-    "question": "Quand les Hobbits rencontrent pour la première fois Tom Bombadil, de quelle couleur est son manteau ?",
-    "bonneReponse": "Bleu.",
-    "reponseBonus": "Jaune.",
-    "autreReponse1": "Vert.",
-    "autreReponse2": "Noir."
-  },
-  {
-    "id": 83,
-    "question": "De quelle couleur, sont les bottes que porte Tom Bombadil dans sa chanson ?",
-    "bonneReponse": "Jaunes.",
-    "reponseBonus": "Rouges.",
-    "autreReponse1": "Bleues",
-    "autreReponse2": "Vertes."
-  },
-  {
-    "id": 84,
-    "question": "Qui est mentionné dans la chanson chantée par les Êtres des Galgals ?",
-    "bonneReponse": "Le Seigneur Ténébreux.",
-    "reponseBonus": "Saroumane.",
-    "autreReponse1": "Morgoth.",
-    "autreReponse2": "Gandalf."
-  },
-  {
-    "id": 85,
-    "question": "Quel chef des cavaliers du Nord vient à la recherche d’Aragorn au Rohan ?",
-    "bonneReponse": "Halbarad.",
-    "reponseBonus": "Theodred.",
-    "autreReponse1": "Elladan.",
-    "autreReponse2": "Elrohir."
-  },
-  {
-    "id": 86,
-    "question": "Quel Hobbit chevauche avec le roi Theoden vers le Rassemblement du Rohan ?",
-    "bonneReponse": "Merry.",
-    "reponseBonus": "Frodon.",
-    "autreReponse1": "Sam.",
-    "autreReponse2": "Pippin."
-  },
-  {
-    "id": 87,
-    "question": "Que mange Pippin au petit déjeuner lors de son premier jour à Minas Tirith ?",
-    "bonneReponse": "Un petit pain et du beurre.",
-    "reponseBonus": "Des toasts et de la confiture.",
-    "autreReponse1": "Une pomme et du fromage.",
-    "autreReponse2": "Du gruau et du miel."
-  },
-  {
-    "id": 88,
-    "question": "D’après les gardes de la ville, qui se trouve dans les bateaux remontant l’Anduin ?",
-    "bonneReponse": "Des corsaires.",
-    "reponseBonus": "Des pirates.",
-    "autreReponse1": "Des Orques.",
-    "autreReponse2": "Des Fantômes."
-  },
-  {
-    "id": 89,
-    "question": "Quand la Compagnie quitte la Lorien, quel cadeau donne Galadriel à Frodon ?",
-    "bonneReponse": "Une fiole de cristal.",
-    "reponseBonus": "Un anneau.",
-    "autreReponse1": "Une épée.",
-    "autreReponse2": "Une ceinture en or."
-  },
-  {
-    "id": 90,
-    "question": "Quel est le nom du cheval qu’Eomer prête à Legolas ?",
-    "bonneReponse": "Arod.",
-    "reponseBonus": "Elendil.",
-    "autreReponse1": "Gripoil.",
-    "autreReponse2": "Nivacrin."
-  },
-  {
-    "id": 91,
-    "question": "Quel endroit Legolas appelle-t-il \"La plus belle de toutes les demeures de mon peuple\" ?",
-    "bonneReponse": "La Lorien.",
-    "reponseBonus": "Fondcombe.",
-    "autreReponse1": "Les Havres Gris.",
-    "autreReponse2": "Le Royaume des Bois."
-  },
-  {
-    "id": 92,
-    "question": "A quel membre de la Compagnie Celeborn parle-t-il d’une amitié renouvelée ?",
-    "bonneReponse": "Gimli.",
-    "reponseBonus": "Legolas.",
-    "autreReponse1": "Aragorn.",
-    "autreReponse2": "Boromir."
-  },
-  {
-    "id": 93,
-    "question": "Quel est le nom des petites galettes elfiques ?",
-    "bonneReponse": "Lembas.",
-    "reponseBonus": "Lembod.",
-    "autreReponse1": "Laybas.",
-    "autreReponse2": "Laybod."
-  },
-  {
-    "id": 94,
-    "question": "Quel nom crie Legolas quand Gandalf se dévoile à Fangorn ?",
-    "bonneReponse": "Mithrandir.",
-    "reponseBonus": "Gandalf.",
-    "autreReponse1": "Saroumane.",
-    "autreReponse2": "Elbereth Gilthoniel."
-  },
-  {
-    "id": 95,
-    "question": "Qui est le fils de Theoden ?",
-    "bonneReponse": "Theodred.",
-    "reponseBonus": "Hama.",
-    "autreReponse1": "Eomer.",
-    "autreReponse2": "Thengol."
-  },
-  {
-    "id": 96,
-    "question": "Quel est le symbole présent sur le grand pilier noir, à l’extérieur d’Isengard ?",
-    "bonneReponse": "Une main blanche.",
-    "reponseBonus": "Un étalon dressé.",
-    "autreReponse1": "Un œil rouge.",
-    "autreReponse2": "Un bouclier d’argent."
-  },
-  {
-    "id": 97,
-    "question": "Au Poney Fringant, qu’utilise Nob pour imiter la tête de Frodon ?",
-    "bonneReponse": "Un tapis en laine marron.",
-    "reponseBonus": "Un porc-épic.",
-    "autreReponse1": "Une noix de coco.",
-    "autreReponse2": "Un coussin."
-  },
-  {
-    "id": 98,
-    "question": "Que crie Frodon lorsqu’il est poignardé sur le Mont Venteux ?",
-    "bonneReponse": "O Elbereth ! Gilthoniel !",
-    "reponseBonus": "Elen sila lumenn !",
-    "autreReponse1": "Namarie !",
-    "autreReponse2": "Luthien Tinuviel !"
-  },
-  {
-    "id": 99,
-    "question": "Comment appelle-t-on les fleurs jaunes qui poussent à Cerin Amroth, en Lorien ?",
-    "bonneReponse": "Elanor.",
-    "reponseBonus": "Rosie.",
-    "autreReponse1": "Diamant.",
-    "autreReponse2": "Primula."
-  },
-  {
-    "id": 100,
-    "question": "Qui est la femme la plus âgée travaillant dans les Maisons de Guérison où Faramir est emmené ?",
-    "bonneReponse": "Ioreth.",
-    "reponseBonus": "Idril.",
-    "autreReponse1": "Indis.",
-    "autreReponse2": "Ivorwen."
-  },
-  {
-    "id": 101,
-    "question": "Que fait le Roi des Morts quand Aragorn lui dit que son serment est à présent accompli ?",
-    "bonneReponse": "Il rompt sa lance et la jette au sol.",
-    "reponseBonus": "Il disparait en brouillard.",
-    "autreReponse1": "Il pose son épée aux pieds d’Aragorn.",
-    "autreReponse2": "Il enlève sa couronne et la pose sur un rocher."
-  },
-  {
-    "id": 102,
-    "question": "Qui mène les éclaireurs lors de la longue marche vers la Porte Noire ?",
-    "bonneReponse": "Mablung.",
-    "reponseBonus": "Maeglin.",
-    "autreReponse1": "Melkor.",
-    "autreReponse2": "Malbeth."
-  },
-  {
-    "id": 103,
-    "question": "Que signifie Orthanc dans le langage des Elfes ?",
-    "bonneReponse": "Mont du Croc.",
-    "reponseBonus": "Langue de Serpent.",
-    "autreReponse1": "Colline du Désespoir.",
-    "autreReponse2": "Tour de la Dent."
-  },
-  {
-    "id": 104,
-    "question": "Combien de temps met l’armée de Saroumane à traverser les Portes d’Isengard ?",
-    "bonneReponse": "Une heure.",
-    "reponseBonus": "3 heures.",
-    "autreReponse1": "30 minutes.",
-    "autreReponse2": "Toute la nuit."
-  },
-  {
-    "id": 105,
-    "question": "Où Sam dit qu’il doit accrocher la corde tout en la mettant à la cheville de Gollum ?",
-    "bonneReponse": "Autour de son cou, un bon nœud bien serré.",
-    "reponseBonus": "Autour de ses deux jambes.",
-    "autreReponse1": "Autour des deux bras de Gollum ?",
-    "autreReponse2": "Autour de sa taille pour qu’il ne puisse pas s’échapper pendant que les Hobbits dorment."
-  },
-  {
-    "id": 106,
-    "question": "Quel est la première chose que dit Faramir quand Aragorn le ranime ?",
-    "bonneReponse": "Vous m’avez appelé, mon seigneur.",
-    "reponseBonus": "Père ?",
-    "autreReponse1": "Que s’est-il passé ?",
-    "autreReponse2": "Je vous reconnais, mon roi."
-  },
-  {
-    "id": 107,
-    "question": "Quand la Bouche de Sauron nargue Gandalf avec la cape, la maille et l’épée, que dit-il que Sauron n’aime pas ?",
-    "bonneReponse": "Les espions.",
-    "reponseBonus": "Les traqueurs.",
-    "autreReponse1": "Les mouchards.",
-    "autreReponse2": "Les fouineurs."
-  },
-  {
-    "id": 108,
-    "question": "De quoi sont fait les 3 trônes dans les champs de Cormallen ?",
-    "bonneReponse": "De gazon.",
-    "reponseBonus": "De boucliers.",
-    "autreReponse1": "De bois.",
-    "autreReponse2": "De crânes ennemis."
-  },
-  {
-    "id": 109,
-    "question": "Qui a peur de \"rester derrière des barreaux jusqu’à ce que l’habitude de la vieillesse les accepte\" ?",
-    "bonneReponse": "Eowyn.",
-    "reponseBonus": "Eomer.",
-    "autreReponse1": "Saroumane.",
-    "autreReponse2": "Bilbon."
-  },
-  {
-    "id": 110,
-    "question": "Comment Merry rejoint-il secrètement l’armée en route pour Minas Tirith ?",
-    "bonneReponse": "Sous la cape d’un Cavalier.",
-    "reponseBonus": "Dans les chariots de ravitaillement.",
-    "autreReponse1": "En suivant à pied.",
-    "autreReponse2": "Sur son poney."
-  },
-  {
-    "id": 111,
-    "question": "Qui apporte la nouvelle de l’assaut d’Osgiliath à Minas Tirith ?",
-    "bonneReponse": "Gandalf.",
-    "reponseBonus": "Faramir.",
-    "autreReponse1": "Beregond.",
-    "autreReponse2": "Le Prince de Dol Amroth."
-  },
-  {
-    "id": 112,
-    "question": "En Lorien, qu’arrive-t-il aux feuilles de Mallorn en Automne ?",
-    "bonneReponse": "Elles deviennent dorées.",
-    "reponseBonus": "Elles chantent.",
-    "autreReponse1": "Elles tombent.",
-    "autreReponse2": "Elles deviennent argentées."
-  },
-  {
-    "id": 113,
-    "question": "Quel membre de la Compagnie est manquant quand elle arrive en Lorien ?",
-    "bonneReponse": "Gandalf.",
-    "reponseBonus": "Boromir.",
-    "autreReponse1": "Frodon.",
-    "autreReponse2": "Gimli."
-  },
-  {
-    "id": 114,
-    "question": "Qui, selon Gimli, sont les meilleurs boulangers ?",
-    "bonneReponse": "Les Béornides.",
-    "reponseBonus": "",
-    "autreReponse1": "Les Nains.",
-    "autreReponse2": "Les Hobbits."
-  },
-  {
-    "id": 115,
-    "question": "Que laisse tomber Pippin dans le puits de la Moria ?",
-    "bonneReponse": "Une pierre.",
-    "reponseBonus": "Sa pipe.",
-    "autreReponse1": "Un casque.",
-    "autreReponse2": "Une bouteille."
-  },
-  {
-    "id": 116,
-    "question": "Qui traverse le premier l’étroit pont de la Moria ?",
-    "bonneReponse": "Gimli.",
-    "reponseBonus": "Frodon.",
-    "autreReponse1": "Aragorn.",
-    "autreReponse2": "Pippin."
-  },
-  {
-    "id": 117,
-    "question": "Que signifie Galadhrim ?",
-    "bonneReponse": "Le peuple des Arbres.",
-    "reponseBonus": "Pont de bois.",
-    "autreReponse1": "Métal noir.",
-    "autreReponse2": "Bateau cygne."
-  },
-  {
-    "id": 118,
-    "question": "Au Conseil d’Elrond, qui suggére que l’Anneau soit utilisé contre Sauron ?",
-    "bonneReponse": "Boromir.",
-    "reponseBonus": "Bilbon.",
-    "autreReponse1": "Gandalf.",
-    "autreReponse2": "Erestor."
-  },
-  {
-    "id": 119,
-    "question": "Quelle montagne la Compagnie tente-t-elle de traverser ?",
-    "bonneReponse": "Le Caradhras.",
-    "reponseBonus": "Shathur.",
-    "autreReponse1": "Le Mont Solitaire.",
-    "autreReponse2": "Celebdil."
-  },
-  {
-    "id": 120,
-    "question": "Qui donne à Bilbon la cotte de mailles de mithril ?",
-    "bonneReponse": "Thorin.",
-    "reponseBonus": "Gollum.",
-    "autreReponse1": "Gandalf.",
-    "autreReponse2": "Gimli."
-  },
-  {
-    "id": 121,
-    "question": "A qui \"l’ampleur de sa propre folie\" est-elle révélée dans un flash aveuglant ?",
-    "bonneReponse": "Sauron.",
-    "reponseBonus": "Denethor.",
-    "autreReponse1": "Gandalf.",
-    "autreReponse2": "Elrond."
-  },
-  {
-    "id": 122,
-    "question": "Quand Sam se réveille dans les Champs de Cormallen, Gandalf lui dit qu’il est sous la bonne garde ... ?",
-    "bonneReponse": "Du Roi.",
-    "reponseBonus": "De l’Intendant.",
-    "autreReponse1": "Du Prince Imrahil.",
-    "autreReponse2": "Des fils d’Elrond."
-  },
-  {
-    "id": 123,
-    "question": "Quelle bannière est d’un argent brillant, ne portant ni enseigne, ni ornement ?",
-    "bonneReponse": "Les Intendants du Gondor.",
-    "reponseBonus": "Eorl.",
-    "autreReponse1": "Imrahil de Dol Amroth.",
-    "autreReponse2": "Saroumane."
-  },
-  {
-    "id": 124,
-    "question": "Quelle objet marque le lieu où Durin vit pour la première fois le Lac du Miroir ?",
-    "bonneReponse": "Une pierre levée.",
-    "reponseBonus": "Le Pont de Durin.",
-    "autreReponse1": "Un Biscornu.",
-    "autreReponse2": "Une épée dans la pierre."
-  },
-  {
-    "id": 125,
-    "question": "Quelle couleur portaient Celeborn et Galadriel quand ils accueillirent la Compagnie en Lorien ?",
-    "bonneReponse": "Blanc.",
-    "reponseBonus": "Vert.",
-    "autreReponse1": "Bleu.",
-    "autreReponse2": "Jaune."
-  },
-  {
-    "id": 126,
-    "question": "Après avoir quitté la Lorien, sur quelle fleuve voyage la Compagnie ?",
-    "bonneReponse": "L’Anduin.",
-    "reponseBonus": "Le Brandevin.",
-    "autreReponse1": "Le Celebrant.",
-    "autreReponse2": "La Rivière Courante."
-  },
-  {
-    "id": 127,
-    "question": "Comment Aragorn utilise-t-il la pierre d’Orthanc pour effrayer Sauron ?",
-    "bonneReponse": "Il lui montre l’épée d’Elendil.",
-    "reponseBonus": "Il brise la pierre.",
-    "autreReponse1": "Il lui montre un faux futur.",
-    "autreReponse2": "Il lui parle de l’Anneau Unique."
-  },
-  {
-    "id": 128,
-    "question": "Combien de \"lances\" Theoden pense-t-il pouvoir emmener à Minas Tirith ?",
-    "bonneReponse": "6 000.",
-    "reponseBonus": "50 000.",
-    "autreReponse1": "500.",
-    "autreReponse2": "Aucune."
-  },
-  {
-    "id": 129,
-    "question": "Quand Faramir voit Pippin, il dit : \"Ce n’est pas le premier semi-homme que j’ai vu sortir ...\" ?",
-    "bonneReponse": "Des légendes du Nord.",
-    "reponseBonus": "Des anciens contes pour enfants.",
-    "autreReponse1": "Des chansons elfes des jours anciens.",
-    "autreReponse2": "De l’histoire ancienne de nos ancêtres."
-  },
-  {
-    "id": 130,
-    "question": "Où sont mis les corps des brigands après la bataille de Lézeau ?",
-    "bonneReponse": "Dans une fosse de sable plus tard connue sous le nom de fosse de la Bataille.",
-    "reponseBonus": "Dans le lac de Lézeau.",
-    "autreReponse1": "Sous les roues du Vieux Moulin.",
-    "autreReponse2": "Brûlés sur un bûcher puis leurs cendres sont dispersées aux quatre vents."
-  },
-  {
-    "id": 131,
-    "question": "Pour quelle forme de portes et de fenêtres, les hobbits avaient une préférence ?",
-    "bonneReponse": "Rondes.",
-    "reponseBonus": "Carrées.",
-    "autreReponse1": "Triangulaires.",
-    "autreReponse2": "Trapézoïdales."
-  },
-  {
-    "id": 132,
-    "question": "Quel fut le signal du dîner à la réception depuis longtemps attendue ?",
-    "bonneReponse": "Un dragon explosif.",
-    "reponseBonus": "L’allumage des feux de camp.",
-    "autreReponse1": "Le son de la grand cloche.",
-    "autreReponse2": "Une annonce à haute voix."
-  },
-  {
-    "id": 133,
-    "question": "Dans quelle forêt les Rohirrims font un campement près du phare d’Eilenach ?",
-    "bonneReponse": "Dans la Forêt de Druadan.",
-    "reponseBonus": "À Eryn Vorn.",
-    "autreReponse1": "Dans le Bois Gris.",
-    "autreReponse2": "Dans les Bois de Nuath."
-  },
-  {
-    "id": 134,
-    "question": "Quelles armes utilisent habituellement les Suderons dans les batailles ?",
-    "bonneReponse": "Des cimeterres.",
-    "reponseBonus": "Des fouets.",
-    "autreReponse1": "Arcs et flèches.",
-    "autreReponse2": "Des piques."
-  },
-  {
-    "id": 135,
-    "question": "Quand Pippin et Gandalf chevauchent Gripoil dans Minas Tirith vers les Tombeaux qui croisent-ils ?",
-    "bonneReponse": "Imrahil.",
-    "reponseBonus": "Ioneth.",
-    "autreReponse1": "Beregond.",
-    "autreReponse2": "Hurin."
-  },
-  {
-    "id": 136,
-    "question": "Quel est le sujet de la tapisserie sur laquelle brille la lumière dans le hall de Theoden ?",
-    "bonneReponse": "La chevauchée d’Eorl depuis le Nord.",
-    "reponseBonus": "Theoden combattant les Orques.",
-    "autreReponse1": "Les funérailles de Theodred.",
-    "autreReponse2": "La construction de Meduseld."
-  },
-  {
-    "id": 137,
-    "question": "Quel est le nom du grand puits à Fort le Cor, où les Orques furent enterrés ?",
-    "bonneReponse": "La Colline de la Mort.",
-    "reponseBonus": "Le Trou aux Orques.",
-    "autreReponse1": "Le tombeau maudit.",
-    "autreReponse2": "Le mont mortuaire."
-  },
-  {
-    "id": 138,
-    "question": "Quel est le nom Orque de la Tour Noire ?",
-    "bonneReponse": "Lugburz.",
-    "reponseBonus": "Buglurz.",
-    "autreReponse1": "Tharkun.",
-    "autreReponse2": "Barazinbar."
-  },
-  {
-    "id": 139,
-    "question": "Où est Gandalf quand le Roi Sorcier est tué ?",
-    "bonneReponse": "Assis sur le siège de Denethor.",
-    "reponseBonus": "Dans l’Auberge, rue des Lanterniers.",
-    "autreReponse1": "Aux portes des Maisons de Guérison.",
-    "autreReponse2": "A l’écurie avec Gripoil."
-  },
-  {
-    "id": 140,
-    "question": "Quelle est la première chose que dit Eowyn quand Aragorn la ranime ?",
-    "bonneReponse": "Eomer ! Quelle est donc cette joie ?",
-    "reponseBonus": "Mon Seigneur, je m’éveille à quoi ?",
-    "autreReponse1": "Eomer ! Quel terrible cauchemar !",
-    "autreReponse2": "Vous étiez pour moi comme un père, Roi Theoden !"
-  },
-  {
-    "id": 141,
-    "question": "Que dit la Bouche de Sauron que les hommes du Gondor et leurs alliés doivent reconstruire ?",
-    "bonneReponse": "Isengard.",
-    "reponseBonus": "Numenor.",
-    "autreReponse1": "Dol Guldur.",
-    "autreReponse2": "Osgiliath."
-  },
-  {
-    "id": 142,
-    "question": "Qui est envoyé pour surveiller Pippin et Merry quand ils courent à la recherche de Frodon à Parth Galen ?",
-    "bonneReponse": "Boromir.",
-    "reponseBonus": "Sam.",
-    "autreReponse1": "Legolas.",
-    "autreReponse2": "Gimli."
-  },
-  {
-    "id": 143,
-    "question": "Quel grade possède Eomer parmi les Cavaliers du Rohan ?",
-    "bonneReponse": "Troisième Maréchal de la Marche.",
-    "reponseBonus": "Capitaine.",
-    "autreReponse1": "Général de cavalerie.",
-    "autreReponse2": "Seigneur des Cavaliers."
-  },
-  {
-    "id": 144,
-    "question": "A qui Ouglouk reproche-t-il d’avoir dévoilé la présence des Orques aux Cavaliers de Rohan ?",
-    "bonneReponse": "Grishnakh.",
-    "reponseBonus": "Shagrat.",
-    "autreReponse1": "Snaga.",
-    "autreReponse2": "Lugdush."
-  },
-  {
-    "id": 145,
-    "question": "D’après Sam, à quoi ressemble Gollum en descendant le long de la falaise ?",
-    "bonneReponse": "À une araignée.",
-    "reponseBonus": "À un Orque.",
-    "autreReponse1": "À une horrible mouche noire.",
-    "autreReponse2": "À un gros crapaud."
-  },
-  {
-    "id": 146,
-    "question": "Que mangerait Gollum s’il devenait le Seigneur Smeagol",
-    "bonneReponse": "Du poisson tous les jours, 3 fois par jour.",
-    "reponseBonus": "Tout ce qu’il voudrait que le vil Hobbit fasse cuire pour lui.",
-    "autreReponse1": "Plus aucun ver sans goût ou scarabée.",
-    "autreReponse2": "Des œufs et des oisillons autant qu’il en voudrait."
-  },
-  {
-    "id": 147,
-    "question": "Selon Gollum, dans quelle direction se trouve le plus grand danger pour Sauron ?",
-    "bonneReponse": "A l’Ouest, à Minas Tirith.",
-    "reponseBonus": "Au Sud, en Harad.",
-    "autreReponse1": "À l’Est, à Rhun.",
-    "autreReponse2": "Au Nord, dans le Morannon."
-  },
-  {
-    "id": 148,
-    "question": "Qui \"Etait le marin qui traînait en Arvernien\" ?",
-    "bonneReponse": "Earendil.",
-    "reponseBonus": "Merry.",
-    "autreReponse1": "Legolas.",
-    "autreReponse2": "Elrond."
-  },
-  {
-    "id": 149,
-    "question": "Lequel de ces titres ne clamait pas Saroumane ?",
-    "bonneReponse": "Saroumane le Grand.",
-    "reponseBonus": "Saroumane le Multicolore.",
-    "autreReponse1": "Saroumane le blanc.",
-    "autreReponse2": "Saroumane le Faiseur d’Anneau."
-  },
-  {
-    "id": 150,
-    "question": "Quel est le nom des corbeaux noirs de Fangorn et du Pays de Dun ?",
-    "bonneReponse": "Crebain.",
-    "reponseBonus": "Celebdil.",
-    "autreReponse1": "Fanuidhol.",
-    "autreReponse2": "Barazinbar."
-  },
-  {
-    "id": 151,
-    "question": "Quelle est l’utilité du cadeau reçu par Frodon en Lorien ?",
-    "bonneReponse": "Il est fait pour être une lumière dans les lieux obscurs.",
-    "reponseBonus": "C’est un porte-bonheur.",
-    "autreReponse1": "Il le dissimule aux yeux hostiles.",
-    "autreReponse2": "Il augmente ses forces."
-  },
-  {
-    "id": 152,
-    "question": "Combien de chevaux \"les 3 chasseurs\" empruntent-ils à Eomer?",
-    "bonneReponse": "2.",
-    "reponseBonus": "1.",
-    "autreReponse1": "3.",
-    "autreReponse2": "4."
-  },
-  {
-    "id": 153,
-    "question": "Comment Pippin interrompt-il le Cercle des Ents ?",
-    "bonneReponse": "Il rote.",
-    "reponseBonus": "Il a le hoquet.",
-    "autreReponse1": "Il baille.",
-    "autreReponse2": "Il tousse poliment."
-  },
-  {
-    "id": 154,
-    "question": "Que sait Sylvebarbe de Gandalf ?",
-    "bonneReponse": "Il est le seul magicien qui se préoccupe vraiment des arbres.",
-    "reponseBonus": "Radagast les avait présenté il y a fort longtemps à Carad Galadhon.",
-    "autreReponse1": "Leurs barbes sont de la même longueur.",
-    "autreReponse2": "C'est Sylvebarbe lui-même qui a accueillit Gandalf quand il vint la première fois en Terre du Milieu."
-  },
-  {
-    "id": 155,
-    "question": "Monsieur Fierpieds avait deux... sur la table lors de l’anniversaire de Bilbon.",
-    "bonneReponse": "Pieds.",
-    "reponseBonus": "Femmes.",
-    "autreReponse1": "Pichets de bière.",
-    "autreReponse2": "Coudes."
-  },
-  {
-    "id": 156,
-    "question": "Quel groupe d’Elfes garde Gollum prisonnier ?",
-    "bonneReponse": "Les Elfes des bois.",
-    "reponseBonus": "Les Elfes noirs.",
-    "autreReponse1": "Les Elfes des montagnes.",
-    "autreReponse2": "Les Elfes aquatiques."
-  },
-  {
-    "id": 157,
-    "question": "Comment Denethor dit qu’il \"récompensera\" ceux qui ne respectent pas leur parole quand Pippin lui jura hommage ?",
-    "bonneReponse": "Par la mort.",
-    "reponseBonus": "Par l’emprisonnement.",
-    "autreReponse1": "Par l’exil.",
-    "autreReponse2": "Par la vengeance."
-  },
-  {
-    "id": 158,
-    "question": "Sur le Chemin des Morts, qui doit appeler le peuple oublié ?",
-    "bonneReponse": "L’héritier d’Isildur.",
-    "reponseBonus": "L’héritier de Theoden.",
-    "autreReponse1": "L’héritier de Denethor.",
-    "autreReponse2": "L’héritier du chien."
-  },
-  {
-    "id": 159,
-    "question": "D’où vient le grand nuage noir qui assombrit le Rohan ?",
-    "bonneReponse": "Du Mordor.",
-    "reponseBonus": "De Gondor.",
-    "autreReponse1": "De l’Ouest.",
-    "autreReponse2": "Du Nord."
-  },
-  {
-    "id": 160,
-    "question": "Quel fut le seul membre de la Compagnie à qui on ne donna pas de rame pendant la descente de l’Anduin ?",
-    "bonneReponse": "Sam.",
-    "reponseBonus": "Frodon.",
-    "autreReponse1": "Merry.",
-    "autreReponse2": "Pippin."
-  },
-  {
-    "id": 161,
-    "question": "Comment Frodon échappe-t-il à la tentative de Boromir de lui prendre l’Anneau de force ?",
-    "bonneReponse": "Il met l’Anneau.",
-    "reponseBonus": "Il tire son épée.",
-    "autreReponse1": "Il plonge sous un pont.",
-    "autreReponse2": "Il s’enfuit."
-  },
-  {
-    "id": 162,
-    "question": "Que décide de faire la Compagnie du corps de Boromir ?",
-    "bonneReponse": "Le mettre dans un bateau avec ses armes.",
-    "reponseBonus": "L’enterrer.",
-    "autreReponse1": "Eriger un tertre de pierres.",
-    "autreReponse2": "Construire un cairn."
-  },
-  {
-    "id": 163,
-    "question": "Combien de lieues vers le Nord voyage Boromir de Minas Tirith à Fondcombe ?",
-    "bonneReponse": "400.",
-    "reponseBonus": "300.",
-    "autreReponse1": "1 000.",
-    "autreReponse2": "150."
-  },
-  {
-    "id": 164,
-    "question": "Qui n’est pas d’accord avec Aragorn sur la route à suivre à partir de Sarn Gebir ?",
-    "bonneReponse": "Boromir.",
-    "reponseBonus": "Frodon.",
-    "autreReponse1": "Gimli.",
-    "autreReponse2": "Legolas."
-  },
-  {
-    "id": 165,
-    "question": "Que fait Sam quand Frodon tente de quitter la Compagnie par bateau ?",
-    "bonneReponse": "Il saute à l’eau et manque de se noyer.",
-    "reponseBonus": "Il prend un autre bateau.",
-    "autreReponse1": "Il commence à construire un pont de cordes.",
-    "autreReponse2": "Il menace d’appeler Aragorn."
-  },
-  {
-    "id": 166,
-    "question": "Faramir parle à Frodon des Pierres de Vision de ?",
-    "bonneReponse": "Numenor.",
-    "reponseBonus": "Nurnen.",
-    "autreReponse1": "Nan Curunir.",
-    "autreReponse2": "Nargothrond."
-  },
-  {
-    "id": 167,
-    "question": "Quel nom reçoit Smeagol du gentil maître Samsagace ?",
-    "bonneReponse": "Puant.",
-    "reponseBonus": "Gollum.",
-    "autreReponse1": "Mouchard.",
-    "autreReponse2": "Mon Précieux."
-  },
-  {
-    "id": 168,
-    "question": "Comment Sauron appelle-t-il Arachne ?",
-    "bonneReponse": "Son chat.",
-    "reponseBonus": "Son chien.",
-    "autreReponse1": "Son amie à huit pattes.",
-    "autreReponse2": "Son esclave."
-  },
-  {
-    "id": 169,
-    "question": "Comment Sam passe-t-il entre les deux Gardiens des tours de Cirith Ungol ?",
-    "bonneReponse": "Il sort la fiole de Galadriel.",
-    "reponseBonus": "Il leur chante une berceuse.",
-    "autreReponse1": "Il met l’Anneau.",
-    "autreReponse2": "Il grimpe par-dessus."
-  },
-  {
-    "id": 170,
-    "question": "A quoi fait référence un soldat Orque en parlant des \"sales Gueulards\" ?",
-    "bonneReponse": "Les Nazgûls.",
-    "reponseBonus": "Les Beornides.",
-    "autreReponse1": "Les Aigles.",
-    "autreReponse2": "Les Dragons."
-  },
-  {
-    "id": 171,
-    "question": "Dans quelle direction est tournée l’entrée des Chambres de Feu ?",
-    "bonneReponse": "Nord.",
-    "reponseBonus": "Ouest.",
-    "autreReponse1": "Sud.",
-    "autreReponse2": "Est."
-  },
-  {
-    "id": 172,
-    "question": "Que signifie le nom Anduril ?",
-    "bonneReponse": "Flamme de l’Ouest.",
-    "reponseBonus": "Trancheur d’Orques.",
-    "autreReponse1": "Tenez-vous à l’écart.",
-    "autreReponse2": "Fléau des Cavaliers Noirs."
-  },
-  {
-    "id": 173,
-    "question": "En quoi sont faites les portes de la Moria ?",
-    "bonneReponse": "En ithildin.",
-    "reponseBonus": "En or.",
-    "autreReponse1": "En diamants.",
-    "autreReponse2": "En lembas."
-  },
-  {
-    "id": 174,
-    "question": "De quelle couleur sont les yeux de Sam ?",
-    "bonneReponse": "Marrons.",
-    "reponseBonus": "Gris.",
-    "autreReponse1": "Rouges.",
-    "autreReponse2": "Bleus."
-  },
-  {
-    "id": 175,
-    "question": "Quelle auberge Tom Bombadil recommande-t-il aux Hobbits ?",
-    "bonneReponse": "Le Poney Fringant.",
-    "reponseBonus": "La Dernière Maison Ouverte.",
-    "autreReponse1": "Le Dragon Vert.",
-    "autreReponse2": "La Perche Dorée."
-  },
-  {
-    "id": 176,
-    "question": "A l’époque où l’Anneau entame son voyage, qui est le plus gros Hobbit du quartier Ouest ?",
-    "bonneReponse": "Bolger le Gros.",
-    "reponseBonus": "Otho Sacquet de Besace.",
-    "autreReponse1": "Will Piedblanc.",
-    "autreReponse2": "Bulgy Brandebouc."
-  },
-  {
-    "id": 177,
-    "question": "Quelle est la prochaine ligne de \"Tout ce qui est or ne brille pas...\" ?",
-    "bonneReponse": "Tous ceux qui errent ne sont pas perdus.",
-    "reponseBonus": "Comme vous le découvrirez par vous-mêmes.",
-    "autreReponse1": "Les jeunes peuvent être frappés par le gel.",
-    "autreReponse2": "L’étoile que vous suivez est perdue."
-  },
-  {
-    "id": 178,
-    "question": "Quand Gandalf annonce que le règne de Sauron est fini, qui d’après lui a réussi à accomplir sa quête ?",
-    "bonneReponse": "Le Porteur de l’Anneau.",
-    "reponseBonus": "Les Hobbits.",
-    "autreReponse1": "Frodon.",
-    "autreReponse2": "La Compagnie."
-  },
-  {
-    "id": 179,
-    "question": "Où Faramir embrasse-t-il pour la première fois Eowyn ?",
-    "bonneReponse": "Sur le front.",
-    "reponseBonus": "Sur l’épaule.",
-    "autreReponse1": "Sur la main.",
-    "autreReponse2": "Dans le cou."
-  },
-  {
-    "id": 180,
-    "question": "D’après Aragorn, quelle est la plus belle chose du Royaume de Rohan ?",
-    "bonneReponse": "Eowyn.",
-    "reponseBonus": "Meduseld.",
-    "autreReponse1": "Gripoil.",
-    "autreReponse2": "Les vertes plaines vallonnées."
-  },
-  {
-    "id": 181,
-    "question": "Dans la chanson que chante Aragorn en traquant les Hobbits, quel pays se trouve entre les montagnes et la mer ?",
-    "bonneReponse": "Gondor.",
-    "reponseBonus": "Umbar.",
-    "autreReponse1": "Lindon.",
-    "autreReponse2": "Beleriand."
-  },
-  {
-    "id": 182,
-    "question": "D’où venait Ouglouk pour capturer les Hobbits ?",
-    "bonneReponse": "D’Isengard.",
-    "reponseBonus": "De la Comté.",
-    "autreReponse1": "Du Mordor.",
-    "autreReponse2": "De la Moria."
-  },
-  {
-    "id": 183,
-    "question": "Quel est le nom de la rivière que suivent les Hobbits vers Fangorn ?",
-    "bonneReponse": "Entallure.",
-    "reponseBonus": "Entwade.",
-    "autreReponse1": "Enedwaith.",
-    "autreReponse2": "Entwater."
-  },
-  {
-    "id": 184,
-    "question": "Sous quel nom Torech Ungol est-elle plus connue ?",
-    "bonneReponse": "L’Antre d’Arachne.",
-    "reponseBonus": "La Porte Noire.",
-    "autreReponse1": "Les Crevasses du Destin.",
-    "autreReponse2": "Les Marais de l’Eau aux Cousins."
-  },
-  {
-    "id": 185,
-    "question": "Quand Sam voit Arachne penchée au-dessus de Frodon, quelle arme ramasse-t-il ?",
-    "bonneReponse": "Dard.",
-    "reponseBonus": "Une lance.",
-    "autreReponse1": "Un bâton.",
-    "autreReponse2": "Une bouteille cassée."
-  },
-  {
-    "id": 186,
-    "question": "Pippin s’accroche à la cape de Gandalf par peur d’une créature, laquelle ?",
-    "bonneReponse": "Des lycanthropes.",
-    "reponseBonus": "Les ogres.",
-    "autreReponse1": "Un Oliphant.",
-    "autreReponse2": "Les Dragons."
-  },
-  {
-    "id": 187,
-    "question": "D’après Pippin, où sauterait Sam pour sauver Frodon ?",
-    "bonneReponse": "Dans un trou.",
-    "reponseBonus": "Dans une chute d’eau.",
-    "autreReponse1": "Du haut d’une montagne.",
-    "autreReponse2": "A la gorge d’un dragon."
-  },
-  {
-    "id": 188,
-    "question": "Qu’est-ce qui retarde le départ des Hobbits de chez Tom Bombadil ?",
-    "bonneReponse": "Ils ont perdu les poneys.",
-    "reponseBonus": "Ils ont des cors aux pieds.",
-    "autreReponse1": "Il pleut.",
-    "autreReponse2": "Tom veut qu’ils restent un peu plus longtemps."
-  },
-  {
-    "id": 189,
-    "question": "Où Tom Bombadil conseille-t-il aux Hobbits de se rendre en partant de chez lui ?",
-    "bonneReponse": "À Bree.",
-    "reponseBonus": "À Fondcombe.",
-    "autreReponse1": "En Comté.",
-    "autreReponse2": "Au Mont Venteux."
-  },
-  {
-    "id": 190,
-    "question": "Qui est le frère de Gwaihir ?",
-    "bonneReponse": "Landroval.",
-    "reponseBonus": "Searoval.",
-    "autreReponse1": "Rangeroval.",
-    "autreReponse2": "Windroval."
-  },
-  {
-    "id": 191,
-    "question": "Qui a dit : \"Un seul combattant suffit à faire une guerre, nul besoin de deux...\" ?",
-    "bonneReponse": "Eowyn.",
-    "reponseBonus": "Saroumane.",
-    "autreReponse1": "Elrond.",
-    "autreReponse2": "Tom Bombadil."
-  },
-  {
-    "id": 192,
-    "question": "En mémoire de qui Arwen donne-t-elle à Frodon la gemme accrochée à une chaîne d’argent ?",
-    "bonneReponse": "Pierre Elfique et Etoile du Soir.",
-    "reponseBonus": "Aragorn et Arwen.",
-    "autreReponse1": "Le Roi et la Reine de Minas Tirith.",
-    "autreReponse2": "Telcontar et Tinuviel."
-  },
-  {
-    "id": 193,
-    "question": "Que répond Frodon à Faramir quand celui-ci lui demande ce qu’est le Fléau d’Isildur ?",
-    "bonneReponse": "Je n’en ai jamais entendu parler.",
-    "reponseBonus": "C’est mon maître d’armes.",
-    "autreReponse1": "J’ai promis à Gandalf de ne pas en parler.",
-    "autreReponse2": "C’est secret."
-  },
-  {
-    "id": 194,
-    "question": "Qui ou quoi, selon Sam, les suit vers Henneth Annun ?",
-    "bonneReponse": "Gollum.",
-    "reponseBonus": "Les Spectres de l’Anneau.",
-    "autreReponse1": "Les Orques.",
-    "autreReponse2": "Gandalf."
-  },
-  {
-    "id": 195,
-    "question": "Faramir avertit Frodon que Gollum ... ?",
-    "bonneReponse": "A déjà commis des meurtres.",
-    "reponseBonus": "Est un mouchard.",
-    "autreReponse1": "Est déjà parti pêcher.",
-    "autreReponse2": "A déjà brûlé des gâteaux."
-  }
-]
+    "reponseBonus":
