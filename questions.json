@@ -1041,4 +1041,454 @@
     "autreReponse1": "Est déjà parti pêcher.",
     "autreReponse2": "A déjà brûlé des gâteaux."
   }
+  {
+    "id": 196,
+    "category": "Silmarillion",
+    "question": "Qui fut le premier Roi Suprême des Noldor en Terre du Milieu après la mort de Fëanor ?",
+    "bonneReponse": "Fingolfin.",
+    "reponseBonus": "Maedhros.",
+    "autreReponse1": "Finrod.",
+    "autreReponse2": "Turgon."
+  },
+  {
+    "id": 197,
+    "category": "Silmarillion",
+    "question": "Quel est le nom de la grande forteresse de Morgoth avant Angband, détruite par les Valar ?",
+    "bonneReponse": "Utumno.",
+    "reponseBonus": "Almaren.",
+    "autreReponse1": "Thangorodrim.",
+    "autreReponse2": "Tol-in-Gaurhoth."
+  },
+  {
+    "id": 198,
+    "category": "Silmarillion",
+    "question": "Quelle substance Fëanor utilisa-t-il pour capturer la lumière des Deux Arbres dans les Silmarils ?",
+    "bonneReponse": "La silima.",
+    "reponseBonus": "Le mithril.",
+    "autreReponse1": "L'adamant.",
+    "autreReponse2": "Le galvorn."
+  },
+  {
+    "id": 199,
+    "category": "Silmarillion",
+    "question": "Qui tua Gothmog, le Seigneur des Balrogs, lors de la Chute de Gondolin ?",
+    "bonneReponse": "Ecthelion de la Source.",
+    "reponseBonus": "Glorfindel.",
+    "autreReponse1": "Turgon.",
+    "autreReponse2": "Tuor."
+  },
+  {
+    "id": 200,
+    "category": "Silmarillion",
+    "question": "Comment s'appelait le grand collier des Nains dans lequel fut serti un Silmaril ?",
+    "bonneReponse": "Le Nauglamír.",
+    "reponseBonus": "L'Angainor.",
+    "autreReponse1": "Le Nimphelos.",
+    "autreReponse2": "Le Dragon-Helm."
+  },
+  {
+    "id": 201,
+    "category": "Silmarillion",
+    "question": "Quel animal aida Beren et Lúthien à récupérer le Silmaril en endormant Morgoth ?",
+    "bonneReponse": "Aucun, c'est le chant de Lúthien.",
+    "reponseBonus": "Huan le Chien.",
+    "autreReponse1": "Thorondor l'Aigle.",
+    "autreReponse2": "Draugluin le Loup."
+  },
+  {
+    "id": 202,
+    "category": "Silmarillion",
+    "question": "Qui forgea Anglachel, l'épée noire qui tua plus tard Túrin ?",
+    "bonneReponse": "Eöl l'Elfe Noir.",
+    "reponseBonus": "Telchar de Nogrod.",
+    "autreReponse1": "Fëanor.",
+    "autreReponse2": "Curufin."
+  },
+  {
+    "id": 203,
+    "category": "Silmarillion",
+    "question": "Quel est le nom de la région désertique au nord du Beleriand où l'hiver est mortel ?",
+    "bonneReponse": "Anfauglith.",
+    "reponseBonus": "Dor-nu-Fauglith.",
+    "autreReponse1": "Hithlum.",
+    "autreReponse2": "Dorthonion."
+  },
+  {
+    "id": 204,
+    "category": "Silmarillion",
+    "question": "Lequel des fils de Fëanor n'a pas prêté le serment immédiatement ou a tenté de s'en défaire (le 'déshérité') ?",
+    "bonneReponse": "Aucun, ils l'ont tous prêté.",
+    "reponseBonus": "Maedhros a hésité.",
+    "autreReponse1": "Maglor.",
+    "autreReponse2": "Amrod."
+  },
+  {
+    "id": 205,
+    "category": "Silmarillion",
+    "question": "Qui était la mère de Fëanor, qui s'est laissée mourir de fatigue après sa naissance ?",
+    "bonneReponse": "Míriel.",
+    "reponseBonus": "Indis.",
+    "autreReponse1": "Eärwen.",
+    "autreReponse2": "Aredhel."
+  },
+  {
+    "id": 206,
+    "category": "Silmarillion",
+    "question": "Quel héros humain a pu voir Gondolin et en ressortir vivant avant sa chute ?",
+    "bonneReponse": "Húrin.",
+    "reponseBonus": "Huor.",
+    "autreReponse1": "Beren.",
+    "autreReponse2": "Túrin."
+  },
+  {
+    "id": 207,
+    "category": "Silmarillion",
+    "question": "Quel est le nom du loup géant qui a avalé la main de Beren contenant le Silmaril ?",
+    "bonneReponse": "Carcharoth.",
+    "reponseBonus": "Draugluin.",
+    "autreReponse1": "Huan.",
+    "autreReponse2": "Gaurhoth."
+  },
+  {
+    "id": 208,
+    "category": "Silmarillion",
+    "question": "Quelle île servit de refuge aux survivants de la chute des Havres du Sirion ?",
+    "bonneReponse": "L'île de Balar.",
+    "reponseBonus": "Tol Morwen.",
+    "autreReponse1": "Tol Eressëa.",
+    "autreReponse2": "Himling."
+  },
+  {
+    "id": 209,
+    "category": "Silmarillion",
+    "question": "Qui est le père de Gil-galad selon la version publiée du Silmarillion ?",
+    "bonneReponse": "Fingon.",
+    "reponseBonus": "Orodreth.",
+    "autreReponse1": "Fingolfin.",
+    "autreReponse2": "Finrod."
+  },
+  {
+    "id": 210,
+    "category": "Silmarillion",
+    "question": "Quel Vala est l'époux de Yavanna ?",
+    "bonneReponse": "Aulë.",
+    "reponseBonus": "Oromë.",
+    "autreReponse1": "Ulmo.",
+    "autreReponse2": "Mandos."
+  },
+  {
+    "id": 211,
+    "category": "Silmarillion",
+    "question": "Combien de Balrogs ont existé (selon les notes tardives de Tolkien, contredisant les premiers récits) ?",
+    "bonneReponse": "Au plus 7.",
+    "reponseBonus": "Une centaine.",
+    "autreReponse1": "Trois.",
+    "autreReponse2": "Un millier."
+  },
+  {
+    "id": 212,
+    "category": "Silmarillion",
+    "question": "Qui a construit la tour de Barad-dûr (au Second Âge) ?",
+    "bonneReponse": "Sauron.",
+    "reponseBonus": "Les Nains esclaves.",
+    "autreReponse1": "Morgoth.",
+    "autreReponse2": "Les Nazgûls."
+  },
+  {
+    "id": 213,
+    "category": "Silmarillion",
+    "question": "Quelle est la signification du nom 'Noldor' ?",
+    "bonneReponse": "Ceux qui savent.",
+    "reponseBonus": "Les profonds.",
+    "autreReponse1": "Les forgerons.",
+    "autreReponse2": "Les exilés."
+  },
+  {
+    "id": 214,
+    "category": "Silmarillion",
+    "question": "Quel objet Eärendil porte-t-il sur son front lors de son voyage vers Valinor ?",
+    "bonneReponse": "Un Silmaril.",
+    "reponseBonus": "L'Etoile du Soir.",
+    "autreReponse1": "Le Nauglamír.",
+    "autreReponse2": "Une gemme blanche."
+  },
+  {
+    "id": 215,
+    "category": "Silmarillion",
+    "question": "Qui a tué Glaurung, le Père des Dragons ?",
+    "bonneReponse": "Túrin Turambar.",
+    "reponseBonus": "Niënor.",
+    "autreReponse1": "Beleg Cúthalion.",
+    "autreReponse2": "Fingon."
+  },
+  {
+    "id": 216,
+    "category": "Silmarillion",
+    "question": "Quelle cité elfique fut bâtie sur la colline de Tumladen ?",
+    "bonneReponse": "Gondolin.",
+    "reponseBonus": "Nargothrond.",
+    "autreReponse1": "Menegroth.",
+    "autreReponse2": "Vinyamar."
+  },
+  {
+    "id": 217,
+    "category": "Silmarillion",
+    "question": "Qui a trahi la cité de Gondolin auprès de Morgoth ?",
+    "bonneReponse": "Maeglin.",
+    "reponseBonus": "Salgant.",
+    "autreReponse1": "Eöl.",
+    "autreReponse2": "Voronwë."
+  },
+  {
+    "id": 218,
+    "category": "Silmarillion",
+    "question": "Quelle est la parenté entre Elrond et Elros ?",
+    "bonneReponse": "Frères jumeaux.",
+    "reponseBonus": "Cousins germains.",
+    "autreReponse1": "Père et fils.",
+    "autreReponse2": "Oncle et neveu."
+  },
+  {
+    "id": 219,
+    "category": "Silmarillion",
+    "question": "Qui fut le premier Roi de Númenor ?",
+    "bonneReponse": "Elros Tar-Minyatur.",
+    "reponseBonus": "Elrond.",
+    "autreReponse1": "Vardamir.",
+    "autreReponse2": "Silmariën."
+  },
+  {
+    "id": 220,
+    "category": "Silmarillion",
+    "question": "Quelle région du Beleriand était protégée par la Ceinture de Melian ?",
+    "bonneReponse": "Doriath.",
+    "reponseBonus": "Neldoreth.",
+    "autreReponse1": "Ossiriand.",
+    "autreReponse2": "Brethil."
+  },
+  {
+    "id": 221,
+    "category": "Silmarillion",
+    "question": "Comment est mort Fingolfin ?",
+    "bonneReponse": "En duel singulier contre Morgoth.",
+    "reponseBonus": "Tué par Gothmog.",
+    "autreReponse1": "Écrasé par Grond.",
+    "autreReponse2": "Brûlé par Glaurung."
+  },
+  {
+    "id": 222,
+    "category": "Silmarillion",
+    "question": "Quel était le nom elfique de la Lune ?",
+    "bonneReponse": "Isil.",
+    "reponseBonus": "Rana.",
+    "autreReponse1": "Anar.",
+    "autreReponse2": "Vasa."
+  },
+  {
+    "id": 223,
+    "category": "Silmarillion",
+    "question": "Qui a sauvé Maedhros suspendu par le poignet au Thangorodrim ?",
+    "bonneReponse": "Fingon.",
+    "reponseBonus": "Thorondor.",
+    "autreReponse1": "Maglor.",
+    "autreReponse2": "Turgon."
+  },
+  {
+    "id": 224,
+    "category": "Silmarillion",
+    "question": "Quelle est la couleur de la bannière de la Maison de Fingolfin ?",
+    "bonneReponse": "Bleu et argent.",
+    "reponseBonus": "Rouge et or.",
+    "autreReponse1": "Noir et or.",
+    "autreReponse2": "Vert et argent."
+  },
+  {
+    "id": 225,
+    "category": "Silmarillion",
+    "question": "Qui a tué Thingol dans ses propres cavernes ?",
+    "bonneReponse": "Des artisans Nains.",
+    "reponseBonus": "Des Elfes rebelles.",
+    "autreReponse1": "Beren par erreur.",
+    "autreReponse2": "Un loup de Morgoth."
+  },
+  {
+    "id": 226,
+    "category": "Silmarillion",
+    "question": "Quel est le nom du navire d'Eärendil ?",
+    "bonneReponse": "Vingilot.",
+    "reponseBonus": "Rothinzil.",
+    "autreReponse1": "Hirilondë.",
+    "autreReponse2": "Entulessë."
+  },
+  {
+    "id": 227,
+    "category": "Silmarillion",
+    "question": "Qui a prononcé la Malédiction de Mandos (le Jugement des Noldor) ?",
+    "bonneReponse": "Mandos.",
+    "reponseBonus": "Manwë.",
+    "autreReponse1": "Fëanor.",
+    "autreReponse2": "Eru Ilúvatar."
+  },
+  {
+    "id": 228,
+    "category": "Silmarillion",
+    "question": "Quelle est la seule femme Noldor à avoir traversé l'Helcaraxë pour revenir en Terre du Milieu ?",
+    "bonneReponse": "Galadriel.",
+    "reponseBonus": "Aredhel.",
+    "autreReponse1": "Idril.",
+    "autreReponse2": "Finduilas."
+  },
+  {
+    "id": 229,
+    "category": "Silmarillion",
+    "question": "Comment se nomme le marteau de guerre de Morgoth ?",
+    "bonneReponse": "Grond.",
+    "reponseBonus": "Le Marteau des Enfers.",
+    "autreReponse1": "Dramborleg.",
+    "autreReponse2": "Mormegil."
+  },
+  {
+    "id": 230,
+    "category": "Silmarillion",
+    "question": "Qui a tué Ancalagon le Noir, le plus grand des dragons ?",
+    "bonneReponse": "Eärendil.",
+    "reponseBonus": "Tulkas.",
+    "autreReponse1": "Thorondor.",
+    "autreReponse2": "Gil-galad."
+  },
+  {
+    "id": 231,
+    "category": "Silmarillion",
+    "question": "Quel est le sort final de Maglor, fils de Fëanor ?",
+    "bonneReponse": "Il jette son Silmaril dans la mer et erre sur les rivages.",
+    "reponseBonus": "Il se jette dans une crevasse ardente.",
+    "autreReponse1": "Il est tué par Eonwë.",
+    "autreReponse2": "Il retourne à Valinor pardonné."
+  },
+  {
+    "id": 232,
+    "category": "Silmarillion",
+    "question": "Qui était le Seigneur des Elfes Verts (Laiquendi) en Ossiriand ?",
+    "bonneReponse": "Denethor.",
+    "reponseBonus": "Saeros.",
+    "autreReponse1": "Mablung.",
+    "autreReponse2": "Beleg."
+  },
+  {
+    "id": 233,
+    "category": "Silmarillion",
+    "question": "De qui Lúthien est-elle la fille ?",
+    "bonneReponse": "Thingol et Melian.",
+    "reponseBonus": "Turgon et Elenwë.",
+    "autreReponse1": "Finrod et Amarië.",
+    "autreReponse2": "Orodreth."
+  },
+  {
+    "id": 234,
+    "category": "Silmarillion",
+    "question": "Quelle bataille est surnommée 'La Bataille des Larmes Innombrables' ?",
+    "bonneReponse": "Nirnaeth Arnoediad.",
+    "reponseBonus": "Dagor Bragollach.",
+    "autreReponse1": "Dagor Aglareb.",
+    "autreReponse2": "Dagor-nuin-Giliath."
+  },
+  {
+    "id": 235,
+    "category": "Silmarillion",
+    "question": "Qui tua le dragon Glaurung mais perdit la mémoire à cause de son sortilège ?",
+    "bonneReponse": "Túrin.",
+    "reponseBonus": "Niënor.",
+    "autreReponse1": "Morwen.",
+    "autreReponse2": "Mablung."
+  },
+  {
+    "id": 236,
+    "category": "Silmarillion",
+    "question": "Quel est le nom de la colline où furent entassés les morts de la Nirnaeth Arnoediad ?",
+    "bonneReponse": "Haudh-en-Ndengin.",
+    "reponseBonus": "Haudh-en-Nirnaeth.",
+    "autreReponse1": "Amon Rûdh.",
+    "autreReponse2": "Ethel Brandir."
+  },
+  {
+    "id": 237,
+    "category": "Silmarillion",
+    "question": "Qui succéda à Fingolfin comme Haut Roi des Noldor ?",
+    "bonneReponse": "Fingon.",
+    "reponseBonus": "Turgon.",
+    "autreReponse1": "Gil-galad.",
+    "autreReponse2": "Maedhros."
+  },
+  {
+    "id": 238,
+    "category": "Silmarillion",
+    "question": "Quel est le nom de l'épée de Turgon, retrouvée plus tard par Gandalf ?",
+    "bonneReponse": "Glamdring.",
+    "reponseBonus": "Orcrist.",
+    "autreReponse1": "Dard.",
+    "autreReponse2": "Aranrúth."
+  },
+  {
+    "id": 239,
+    "category": "Silmarillion",
+    "question": "Quel humain a épousé Idril Celebrindal de Gondolin ?",
+    "bonneReponse": "Tuor.",
+    "reponseBonus": "Beren.",
+    "autreReponse1": "Húrin.",
+    "autreReponse2": "Huor."
+  },
+  {
+    "id": 240,
+    "category": "Silmarillion",
+    "question": "Quelle ville portuaire fut le théâtre du premier massacre fratricide des Elfes ?",
+    "bonneReponse": "Alqualondë.",
+    "reponseBonus": "Tirion.",
+    "autreReponse1": "Avallónë.",
+    "autreReponse2": "Vinyamar."
+  },
+  {
+    "id": 241,
+    "category": "Silmarillion",
+    "question": "Qui a créé les Nains en secret ?",
+    "bonneReponse": "Aulë.",
+    "reponseBonus": "Melkor.",
+    "autreReponse1": "Manwë.",
+    "autreReponse2": "Yavanna."
+  },
+  {
+    "id": 242,
+    "category": "Silmarillion",
+    "question": "Quel est le nom du fils de Beren et Lúthien, premier demi-elfe enregistré ?",
+    "bonneReponse": "Dior.",
+    "reponseBonus": "Elured.",
+    "autreReponse1": "Elwing.",
+    "autreReponse2": "Eärendil."
+  },
+  {
+    "id": 243,
+    "category": "Silmarillion",
+    "question": "Quelle partie du corps Maedhros a-t-il perdue ?",
+    "bonneReponse": "La main droite.",
+    "reponseBonus": "Le bras gauche.",
+    "autreReponse1": "Un œil.",
+    "autreReponse2": "Une jambe."
+  },
+  {
+    "id": 244,
+    "category": "Silmarillion",
+    "question": "Quel est le nom du grand fleuve qui divise le Beleriand en Est et Ouest ?",
+    "bonneReponse": "Le Sirion.",
+    "reponseBonus": "Le Gelion.",
+    "autreReponse1": "L'Anduin.",
+    "autreReponse2": "Le Narog."
+  },
+  {
+    "id": 245,
+    "category": "Silmarillion",
+    "question": "Qui a donné l'Anneau de Barahir au père de Beren ?",
+    "bonneReponse": "Finrod Felagund.",
+    "reponseBonus": "Fingolfin.",
+    "autreReponse1": "Thingol.",
+    "autreReponse2": "Angrod."
+  }
 ]
