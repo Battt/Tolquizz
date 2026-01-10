@@ -8,11 +8,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%23d4af37%22 stroke-width=%2210%22 fill=%22none%22/></svg>">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Georgia', serif;
@@ -56,15 +52,8 @@
             font-style: italic;
         }
 
-        .screen {
-            display: none;
-            width: 100%;
-        }
-
-        .screen.active {
-            display: block;
-            animation: fadeIn 0.4s ease-in-out;
-        }
+        .screen { display: none; width: 100%; }
+        .screen.active { display: block; animation: fadeIn 0.4s ease-in-out; }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -78,7 +67,7 @@
             margin-bottom: 30px;
         }
 
-        /* --- SÉLECTION --- */
+        /* --- SELECTION --- */
         .selection-grid {
             display: flex;
             flex-direction: column;
@@ -118,12 +107,12 @@
             font-style: italic;
         }
 
-        /* --- QUIZ UI --- */
+        /* --- UI QUIZ --- */
         .question-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px; /* Réduit un peu */
+            margin-bottom: 20px;
             color: #b8b8b8;
             font-size: 0.9em;
         }
@@ -133,11 +122,9 @@
             position: relative;
         }
 
-        /* BARRE DE PROGRESSION EN HAUT */
-        .progress-wrapper {
-            margin-bottom: 25px; /* Espace entre la barre et la question */
-        }
-
+        /* BARRE PROGRESSION (TOP) */
+        .progress-wrapper { margin-bottom: 25px; }
+        
         .progress-container {
             width: 100%;
             height: 8px;
@@ -163,11 +150,11 @@
             font-style: italic;
         }
 
-        /* NUMÉRO ID EN BAS */
+        /* ID BAS DROITE */
         .question-id-footer {
             text-align: right;
             font-size: 0.8em;
-            color: #555; /* Gris foncé discret */
+            color: #555;
             margin-top: 15px;
             font-family: monospace;
             opacity: 0.6;
@@ -228,9 +215,7 @@
             opacity: 0.7;
         }
 
-        .answer-btn:disabled {
-            cursor: default;
-        }
+        .answer-btn:disabled { cursor: default; }
 
         .next-btn {
             margin-top: 25px;
@@ -252,27 +237,10 @@
             transform: translateY(-2px);
         }
 
-        .results {
-            text-align: center;
-        }
-
-        .score {
-            font-size: 3em;
-            color: #d4af37;
-            margin: 30px 0;
-        }
-
-        .results-text {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
-
-        .loading {
-            text-align: center;
-            color: #d4af37;
-            font-size: 1.2em;
-        }
+        .results { text-align: center; }
+        .score { font-size: 3em; color: #d4af37; margin: 30px 0; }
+        .results-text { font-size: 1.3em; margin-bottom: 40px; line-height: 1.8; }
+        .loading { text-align: center; color: #d4af37; font-size: 1.2em; }
         
         .back-link {
             position: absolute;
@@ -285,7 +253,6 @@
             transition: color 0.3s;
         }
         .back-link:hover { color: #d4af37; }
-
     </style>
 </head>
 <body>
@@ -312,13 +279,13 @@
             
             <div style="text-align: center; margin-top: 30px;">
                 <button onclick="resetHistory()" style="background:none; border:none; color:#555; cursor:pointer; font-size:0.8em; text-decoration:underline;">
-                    Réinitialiser mon historique de questions
+                    Réinitialiser mon historique
                 </button>
             </div>
         </div>
 
         <div id="difficultyScreen" class="screen">
-            <a onclick="showScreen('categoryScreen')" class="back-link">← Retour aux thèmes</a>
+            <a onclick="showScreen('categoryScreen')" class="back-link">← Retour</a>
             <h2 class="section-title">Choisissez le défi</h2>
             <div class="selection-grid">
                 <button class="btn-large" onclick="startQuiz('facile')">
@@ -353,9 +320,7 @@
                 <p class="question-text" id="questionText"></p>
                 <div class="answers" id="answersContainer"></div>
                 
-                <div class="question-id-footer" id="questionIdDisplay">
-                    #0
-                </div>
+                <div class="question-id-footer" id="questionIdDisplay">#0</div>
             </div>
 
             <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
@@ -374,6 +339,7 @@
     </div>
 
     <script>
+        // --- VARIABLES GLOBALES ---
         let allQuestions = [];
         let currentDifficulty = '';
         let currentCategory = '';
@@ -381,180 +347,156 @@
         let currentScore = 0;
         let answeredQuestions = 0;
         let selectedQuestions = [];
-        
         const STORAGE_KEY = 'tolquizz_played_ids';
 
+        // --- DÉMARRAGE ---
         window.onload = function() {
             loadQuestions();
         };
 
         async function loadQuestions() {
             try {
-                const response = await fetch('questions.json?v=' + new Date().getTime());
+                const response = await fetch('questions.json?v=' + Date.now());
                 allQuestions = await response.json();
                 console.log("Questions chargées : " + allQuestions.length);
             } catch (error) {
-                console.error('Erreur:', error);
-                alert('Erreur: Impossible de charger les questions (vérifiez JSON ou serveur local).');
+                console.error('Erreur chargement:', error);
+                alert("Erreur : Impossible de lire 'questions.json'. Vérifiez votre fichier JSON sur jsonlint.com !");
             }
         }
 
-        // --- GESTION DE L'HISTORIQUE ---
-        function getPlayedHistory() {
-            const history = localStorage.getItem(STORAGE_KEY);
-            return history ? JSON.parse(history) : [];
+        // --- NAVIGATION ---
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
         }
 
-        function addToHistory(id) {
-            const history = getPlayedHistory();
-            if (!history.includes(id)) {
-                history.push(id);
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
-            }
-        }
-
-        function resetHistory() {
-            if(confirm("Voulez-vous vraiment oublier quelles questions vous avez déjà vues ?")) {
-                localStorage.removeItem(STORAGE_KEY);
-                alert("Mémoire effacée. Toutes les questions peuvent réapparaître.");
-            }
-        }
-        // -------------------------------
-
-        function chooseCategory(category) {
-            currentCategory = category;
+        function chooseCategory(cat) {
+            currentCategory = cat;
             showScreen('difficultyScreen');
         }
 
+        function restartQuiz() {
+            showScreen('categoryScreen');
+        }
+
+        // --- JEU ---
         function startQuiz(difficulty) {
             currentDifficulty = difficulty;
             
+            // Attendre chargement si besoin
             if (allQuestions.length === 0) {
                 showScreen('loadingScreen');
-                setTimeout(() => startQuiz(difficulty), 1000);
+                setTimeout(() => startQuiz(difficulty), 500);
                 return;
             }
 
-            // 1. Filtrer par catégorie
-            let categoryQuestions = allQuestions;
+            // 1. Filtrer Catégorie
+            let filtered = allQuestions;
             if (currentCategory !== 'all') {
-                categoryQuestions = allQuestions.filter(q => q.category === currentCategory);
+                filtered = allQuestions.filter(q => q.category === currentCategory);
             }
 
-            if (categoryQuestions.length === 0) {
-                alert("Pas de questions dans cette catégorie !");
+            if (filtered.length === 0) {
+                alert("Aucune question trouvée pour cette catégorie !");
                 showScreen('categoryScreen');
                 return;
             }
 
-            // 2. Filtrer les questions déjà jouées
-            const playedIds = getPlayedHistory();
-            let availableQuestions = categoryQuestions.filter(q => !playedIds.includes(q.id));
+            // 2. Filtrer Historique
+            const history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            let available = filtered.filter(q => !history.includes(q.id));
 
-            // 3. Gestion de la pénurie
-            if (availableQuestions.length < 10) {
-                if (availableQuestions.length === 0) {
-                    availableQuestions = [...categoryQuestions];
-                    alert("Vous avez fait le tour de toutes les questions de cette catégorie ! On recommence à zéro !");
+            // 3. Gestion Pénurie
+            if (available.length === 0) {
+                if(confirm("Toutes les questions de cette catégorie ont été jouées ! Réinitialiser l'historique ?")) {
                     localStorage.removeItem(STORAGE_KEY);
+                    available = filtered; // On reprend tout
                 } else {
-                    const needed = 10 - availableQuestions.length;
-                    const oldQuestions = categoryQuestions.filter(q => playedIds.includes(q.id));
-                    const randomOld = shuffleArray([...oldQuestions]).slice(0, needed);
-                    availableQuestions = availableQuestions.concat(randomOld);
+                    // On joue quand même avec des anciennes questions
+                    available = filtered; 
                 }
+            } else if (available.length < 10) {
+                // On complète avec des anciennes
+                const needed = 10 - available.length;
+                const old = filtered.filter(q => history.includes(q.id));
+                const oldRandom = shuffleArray([...old]).slice(0, needed);
+                available = available.concat(oldRandom);
             }
 
-            // 4. Mélanger et prendre 10
-            selectedQuestions = shuffleArray([...availableQuestions]).slice(0, 10);
+            // 4. Sélection 10
+            selectedQuestions = shuffleArray([...available]).slice(0, 10);
             
-            // 5. Initialisation
+            // 5. Init UI
             currentQuestionIndex = 0;
             currentScore = 0;
             answeredQuestions = 0;
-
-            document.getElementById('difficultyBadge').textContent = difficulty === 'facile' ? 'Facile' : 'Normal';
+            document.getElementById('difficultyBadge').textContent = (difficulty === 'facile' ? 'Facile' : 'Normal');
             
             showScreen('quizScreen');
             displayQuestion();
         }
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
         function displayQuestion() {
-            const question = selectedQuestions[currentQuestionIndex];
+            const q = selectedQuestions[currentQuestionIndex];
             
-            // Ajout historique
-            if (question.id) {
-                addToHistory(question.id);
+            // Sauvegarde historique
+            const history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+            if (q.id && !history.includes(q.id)) {
+                history.push(q.id);
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
             }
 
-            // Mise à jour de la barre de progression (en haut)
-            document.getElementById('progressBar').style.width = ((currentQuestionIndex + 1) / selectedQuestions.length * 100) + '%';
+            // UI Updates
+            const percent = ((currentQuestionIndex + 1) / selectedQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
             document.getElementById('progressText').textContent = `Question ${currentQuestionIndex + 1} / ${selectedQuestions.length}`;
+            document.getElementById('questionIdDisplay').textContent = q.id ? `#${q.id}` : '';
+            document.getElementById('score').textContent = `Score: ${currentScore}`;
+            document.getElementById('questionText').textContent = q.question;
 
-            // Mise à jour de l'ID (en bas)
-            document.getElementById('questionIdDisplay').textContent = question.id ? `#${question.id}` : '';
+            const container = document.getElementById('answersContainer');
+            container.innerHTML = '';
 
-            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
-            document.getElementById('questionText').textContent = question.question;
-            
-            const answersContainer = document.getElementById('answersContainer');
-            answersContainer.innerHTML = '';
-            
+            // Choix réponses
             let answers = [];
-            let correctIndex = 0;
-            
             if (currentDifficulty === 'facile') {
-                answers = [question.bonneReponse, question.autreReponse1, question.autreReponse2];
+                answers = [q.bonneReponse, q.autreReponse1, q.autreReponse2];
             } else {
-                answers = [question.bonneReponse, question.reponseBonus, question.autreReponse1, question.autreReponse2];
+                answers = [q.bonneReponse, q.reponseBonus, q.autreReponse1, q.autreReponse2];
             }
-            
-            const shuffledAnswers = answers.map((ans, idx) => ({answer: ans, isCorrect: idx === 0}));
-            for (let i = shuffledAnswers.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
-            }
-            
-            correctIndex = shuffledAnswers.findIndex(item => item.isCorrect);
-            
-            shuffledAnswers.forEach((item, index) => {
+
+            // Mélange réponses
+            const shuffled = shuffleArray(answers.map((txt, i) => ({text: txt, correct: i === 0})));
+            // Trouver le bon index après mélange
+            const correctIndex = shuffled.findIndex(item => item.correct);
+
+            shuffled.forEach((item, index) => {
                 const btn = document.createElement('button');
                 btn.className = 'answer-btn';
-                btn.textContent = item.answer;
-                btn.onclick = () => selectAnswer(index, correctIndex);
-                answersContainer.appendChild(btn);
+                btn.textContent = item.text;
+                btn.onclick = () => handleAnswer(btn, index, correctIndex);
+                container.appendChild(btn);
             });
 
             document.getElementById('nextBtn').style.display = 'none';
         }
 
-        function selectAnswer(selectedIndex, correctIndex) {
+        function handleAnswer(btn, selectedIndex, correctIndex) {
             const buttons = document.querySelectorAll('.answer-btn');
-            
-            buttons.forEach((btn, index) => {
-                btn.disabled = true;
-                if (index === correctIndex) {
-                    btn.classList.add('correct');
-                }
-                if (index === selectedIndex && index !== correctIndex) {
-                    btn.classList.add('incorrect');
-                }
-            });
+            buttons.forEach(b => b.disabled = true);
 
             answeredQuestions++;
+
             if (selectedIndex === correctIndex) {
                 currentScore++;
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('incorrect');
+                buttons[correctIndex].classList.add('correct');
             }
 
-            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
+            document.getElementById('score').textContent = `Score: ${currentScore}`;
             document.getElementById('nextBtn').style.display = 'block';
         }
 
@@ -568,37 +510,32 @@
         }
 
         function showResults() {
-            const percentage = Math.round((currentScore / selectedQuestions.length) * 100);
-            document.getElementById('finalScore').textContent = `${currentScore}/${selectedQuestions.length}`;
+            const percent = Math.round((currentScore / selectedQuestions.length) * 100);
+            document.getElementById('finalScore').textContent = `${currentScore} / ${selectedQuestions.length}`;
             
-            let message = '';
-            if (percentage >= 90) {
-                message = 'Exceptionnel ! Un véritable Maître du Savoir ! 🏆';
-            } else if (percentage >= 70) {
-                message = 'Très bien ! La Terre du Milieu n\'a plus de secrets pour vous ! ⚔️';
-            } else if (percentage >= 50) {
-                message = 'Pas mal ! Continuez votre voyage ! 📖';
-            } else {
-                message = 'Même les plus petits peuvent changer le cours de l\'avenir. Réessayez ! 📚';
-            }
+            let msg = '';
+            if (percent >= 90) msg = 'Légendaire ! 🏆';
+            else if (percent >= 70) msg = 'Héroïque ! ⚔️';
+            else if (percent >= 50) msg = 'Bien joué ! 📖';
+            else msg = 'Le voyage continue... 🍂';
             
-            document.getElementById('resultsMessage').textContent = message;
+            document.getElementById('resultsMessage').textContent = msg;
             showScreen('resultsScreen');
         }
 
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            currentScore = 0;
-            answeredQuestions = 0;
-            selectedQuestions = [];
-            showScreen('categoryScreen');
+        function resetHistory() {
+            if(confirm("Effacer l'historique ?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                alert("Mémoire effacée !");
+            }
         }
 
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(screen => {
-                screen.classList.remove('active');
-            });
-            document.getElementById(screenId).classList.add('active');
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
         }
     </script>
 </body>
