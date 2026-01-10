@@ -123,32 +123,26 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px; /* Réduit un peu */
             color: #b8b8b8;
             font-size: 0.9em;
         }
 
         .question-container {
-            margin: 20px 0;
+            margin: 10px 0;
             position: relative;
         }
 
-        .question-text {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: #e8e8e8;
-            text-align: center;
-            min-height: 60px; /* Évite les sauts de taille */
+        /* BARRE DE PROGRESSION EN HAUT */
+        .progress-wrapper {
+            margin-bottom: 25px; /* Espace entre la barre et la question */
         }
 
-        /* --- NOUVELLE BARRE DE PROGRESSION --- */
         .progress-container {
             width: 100%;
-            height: 10px;
+            height: 8px;
             background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            margin-top: 30px;
+            border-radius: 4px;
             overflow: hidden;
             position: relative;
         }
@@ -162,12 +156,31 @@
         }
         
         .progress-text {
-            text-align: center;
-            font-size: 0.8em;
-            color: #777;
-            margin-top: 5px;
+            text-align: right;
+            font-size: 0.85em;
+            color: #d4af37;
+            margin-bottom: 5px;
+            font-style: italic;
         }
-        /* ------------------------------------ */
+
+        /* NUMÉRO ID EN BAS */
+        .question-id-footer {
+            text-align: right;
+            font-size: 0.8em;
+            color: #555; /* Gris foncé discret */
+            margin-top: 15px;
+            font-family: monospace;
+            opacity: 0.6;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #e8e8e8;
+            text-align: center;
+            min-height: 60px;
+        }
 
         .difficulty-badge {
             background: rgba(212, 175, 55, 0.2);
@@ -330,13 +343,19 @@
             </div>
             
             <div class="question-container">
+                <div class="progress-wrapper">
+                    <div class="progress-text" id="progressText">Question 1 / 10</div>
+                    <div class="progress-container">
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+                </div>
+
                 <p class="question-text" id="questionText"></p>
                 <div class="answers" id="answersContainer"></div>
                 
-                <div class="progress-container">
-                    <div id="progressBar" class="progress-bar"></div>
+                <div class="question-id-footer" id="questionIdDisplay">
+                    #0
                 </div>
-                <div class="progress-text" id="progressText">1 / 10</div>
             </div>
 
             <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
@@ -363,10 +382,8 @@
         let answeredQuestions = 0;
         let selectedQuestions = [];
         
-        // Clé pour le stockage local
         const STORAGE_KEY = 'tolquizz_played_ids';
 
-        // Chargement initial
         window.onload = function() {
             loadQuestions();
         };
@@ -430,25 +447,17 @@
                 return;
             }
 
-            // 2. Filtrer les questions déjà jouées (Historique)
+            // 2. Filtrer les questions déjà jouées
             const playedIds = getPlayedHistory();
             let availableQuestions = categoryQuestions.filter(q => !playedIds.includes(q.id));
 
-            // 3. Gestion de la pénurie de questions
+            // 3. Gestion de la pénurie
             if (availableQuestions.length < 10) {
-                console.log("Plus assez de nouvelles questions. Réinitialisation partielle ou mélange.");
-                
-                // Si on a moins de 10 nouvelles, on complète avec des anciennes
-                // Ou alors on réinitialise tout si vraiment tout est joué
                 if (availableQuestions.length === 0) {
-                    // Reset implicite pour ce tour (sans effacer le localStorage définitivement pour ne pas frustrer, 
-                    // mais on pioche dans tout le pool)
                     availableQuestions = [...categoryQuestions];
                     alert("Vous avez fait le tour de toutes les questions de cette catégorie ! On recommence à zéro !");
-                    // Optionnel : Effacer l'historique réel
                     localStorage.removeItem(STORAGE_KEY);
                 } else {
-                    // On complète avec des anciennes questions pour faire 10
                     const needed = 10 - availableQuestions.length;
                     const oldQuestions = categoryQuestions.filter(q => playedIds.includes(q.id));
                     const randomOld = shuffleArray([...oldQuestions]).slice(0, needed);
@@ -481,16 +490,17 @@
         function displayQuestion() {
             const question = selectedQuestions[currentQuestionIndex];
             
-            // Sauvegarde dans l'historique dès l'affichage
+            // Ajout historique
             if (question.id) {
                 addToHistory(question.id);
             }
 
-            // Mise à jour de la barre de progression
-            const progressPercent = ((currentQuestionIndex) / selectedQuestions.length) * 100; 
-            // Astuce UX : on commence à 0%, mais on affichera l'avancement après
+            // Mise à jour de la barre de progression (en haut)
             document.getElementById('progressBar').style.width = ((currentQuestionIndex + 1) / selectedQuestions.length * 100) + '%';
-            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1} / ${selectedQuestions.length}`;
+            document.getElementById('progressText').textContent = `Question ${currentQuestionIndex + 1} / ${selectedQuestions.length}`;
+
+            // Mise à jour de l'ID (en bas)
+            document.getElementById('questionIdDisplay').textContent = question.id ? `#${question.id}` : '';
 
             document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
             document.getElementById('questionText').textContent = question.question;
@@ -529,67 +539,4 @@
         function selectAnswer(selectedIndex, correctIndex) {
             const buttons = document.querySelectorAll('.answer-btn');
             
-            buttons.forEach((btn, index) => {
-                btn.disabled = true;
-                if (index === correctIndex) {
-                    btn.classList.add('correct');
-                }
-                if (index === selectedIndex && index !== correctIndex) {
-                    btn.classList.add('incorrect');
-                }
-            });
-
-            answeredQuestions++;
-            if (selectedIndex === correctIndex) {
-                currentScore++;
-            }
-
-            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
-            document.getElementById('nextBtn').style.display = 'block';
-        }
-
-        function nextQuestion() {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < selectedQuestions.length) {
-                displayQuestion();
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            const percentage = Math.round((currentScore / selectedQuestions.length) * 100);
-            document.getElementById('finalScore').textContent = `${currentScore}/${selectedQuestions.length}`;
-            
-            let message = '';
-            if (percentage >= 90) {
-                message = 'Exceptionnel ! Un véritable Maître du Savoir ! 🏆';
-            } else if (percentage >= 70) {
-                message = 'Très bien ! La Terre du Milieu n\'a plus de secrets pour vous ! ⚔️';
-            } else if (percentage >= 50) {
-                message = 'Pas mal ! Continuez votre voyage ! 📖';
-            } else {
-                message = 'Même les plus petits peuvent changer le cours de l\'avenir. Réessayez ! 📚';
-            }
-            
-            document.getElementById('resultsMessage').textContent = message;
-            showScreen('resultsScreen');
-        }
-
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            currentScore = 0;
-            answeredQuestions = 0;
-            selectedQuestions = [];
-            showScreen('categoryScreen');
-        }
-
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(screen => {
-                screen.classList.remove('active');
-            });
-            document.getElementById(screenId).classList.add('active');
-        }
-    </script>
-</body>
-</html>
+            buttons.forEach((btn,
