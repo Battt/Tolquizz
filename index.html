@@ -34,6 +34,10 @@
             padding: 40px;
             box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
             position: relative;
+            min-height: 500px; /* Hauteur min pour éviter les sauts */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         h1 {
@@ -54,11 +58,12 @@
 
         .screen {
             display: none;
+            width: 100%;
         }
 
         .screen.active {
             display: block;
-            animation: fadeIn 0.5s;
+            animation: fadeIn 0.4s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -66,85 +71,53 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- STYLES SÉLECTION CATÉGORIE --- */
-        .category-container {
-            margin-bottom: 30px;
+        .section-title {
             text-align: center;
-        }
-
-        .category-label {
-            display: block;
-            margin-bottom: 10px;
             color: #d4af37;
-            font-size: 1.1em;
-        }
-
-        .category-select {
-            padding: 10px 20px;
-            font-size: 1.1em;
-            background: rgba(30, 30, 50, 0.8);
-            border: 1px solid #d4af37;
-            color: #e8e8e8;
-            border-radius: 5px;
-            font-family: 'Georgia', serif;
-            cursor: pointer;
-            width: 100%;
-            max-width: 300px;
-            outline: none;
-        }
-
-        .category-select:hover {
-            background: rgba(212, 175, 55, 0.1);
-        }
-        /* ---------------------------------- */
-
-        .difficulty-section {
-            text-align: center;
-        }
-
-        .difficulty-section p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-bottom: 30px;
-            line-height: 1.6;
         }
 
-        .difficulty-buttons {
+        /* --- STYLES DES BOUTONS DE SÉLECTION --- */
+        .selection-grid {
             display: flex;
+            flex-direction: column;
             gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
         }
 
-        .btn {
-            padding: 15px 40px;
-            font-size: 1.2em;
+        .btn-large {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            font-size: 1.3em;
             border: 2px solid #d4af37;
-            background: transparent;
+            background: rgba(30, 30, 50, 0.6);
             color: #d4af37;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: all 0.3s;
             font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .btn:hover {
+        .btn-large:hover {
             background: #d4af37;
             color: #1a1a2e;
-            transform: translateY(-2px);
+            transform: scale(1.02);
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
-        .btn small {
-            display: block;
-            font-size: 0.8em;
+        .btn-large small {
+            font-size: 0.6em;
             margin-top: 5px;
+            opacity: 0.8;
+            font-style: italic;
         }
-
-        .question-container {
-            margin: 30px 0;
-            position: relative;
-            padding-bottom: 30px; /* Espace pour le numéro */
-        }
+        /* -------------------------------------- */
 
         .question-header {
             display: flex;
@@ -155,16 +128,29 @@
             font-size: 0.9em;
         }
 
-        /* --- STYLE NUMÉRO QUESTION (BAS DROITE) --- */
+        .question-container {
+            margin: 30px 0;
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .question-text {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #e8e8e8;
+            text-align: center;
+        }
+
+        /* Numéro de question en bas à droite */
         .question-footer-number {
             text-align: right;
             font-size: 0.9em;
-            color: #d4af37; /* Couleur dorée */
+            color: #d4af37;
             margin-top: 15px;
             font-style: italic;
             opacity: 0.8;
         }
-        /* ----------------------------------------- */
 
         .difficulty-badge {
             background: rgba(212, 175, 55, 0.2);
@@ -173,13 +159,6 @@
             border-radius: 20px;
             font-size: 0.85em;
             border: 1px solid #d4af37;
-        }
-
-        .question-text {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: #e8e8e8;
         }
 
         .answers {
@@ -224,6 +203,19 @@
         .next-btn {
             margin-top: 20px;
             width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            background: #d4af37;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+        
+        .next-btn:hover {
+            background: #b5932a;
         }
 
         .results {
@@ -247,6 +239,19 @@
             color: #d4af37;
             font-size: 1.2em;
         }
+        
+        /* Bouton retour simple */
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #777;
+            text-decoration: none;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .back-link:hover { color: #d4af37; }
+
     </style>
 </head>
 <body>
@@ -254,34 +259,41 @@
         <h1>⚔️ Tolquizz ⚔️</h1>
         <p class="subtitle">Testez vos connaissances sur la Terre du Milieu</p>
 
-        <div id="difficultyScreen" class="screen active">
-            
-            <div class="category-container">
-                <label for="categorySelect" class="category-label">Choisissez votre thème :</label>
-                <select id="categorySelect" class="category-select">
-                    <option value="all">Tout l'univers</option>
-                    <option value="SdA">Le Seigneur des Anneaux</option>
-                    <option value="Silmarillion">Le Silmarillion</option>
-                </select>
+        <div id="categoryScreen" class="screen active">
+            <h2 class="section-title">Choisissez votre aventure</h2>
+            <div class="selection-grid">
+                <button class="btn-large" onclick="chooseCategory('all')">
+                    Tout l'Univers
+                    <small>Mélange de toutes les questions</small>
+                </button>
+                <button class="btn-large" onclick="chooseCategory('SdA')">
+                    Le Seigneur des Anneaux
+                    <small>L'épopée de l'Anneau Unique</small>
+                </button>
+                <button class="btn-large" onclick="chooseCategory('Silmarillion')">
+                    Le Silmarillion
+                    <small>Les Légendes du Premier Âge</small>
+                </button>
             </div>
+        </div>
 
-            <div class="difficulty-section">
-                <p>Puis choisissez la difficulté :</p>
-                <div class="difficulty-buttons">
-                    <button class="btn" onclick="startQuiz('facile')">
-                        Facile
-                        <small>3 réponses</small>
-                    </button>
-                    <button class="btn" onclick="startQuiz('normal')">
-                        Normal
-                        <small>4 réponses</small>
-                    </button>
-                </div>
+        <div id="difficultyScreen" class="screen">
+            <a onclick="showScreen('categoryScreen')" class="back-link">← Retour aux thèmes</a>
+            <h2 class="section-title">Choisissez le défi</h2>
+            <div class="selection-grid">
+                <button class="btn-large" onclick="startQuiz('facile')">
+                    Facile
+                    <small>3 choix de réponse</small>
+                </button>
+                <button class="btn-large" onclick="startQuiz('normal')">
+                    Normal
+                    <small>4 choix de réponse (Mode Difficile)</small>
+                </button>
             </div>
         </div>
 
         <div id="loadingScreen" class="screen">
-            <p class="loading">Chargement des archives...</p>
+            <p class="loading">Ouverture des archives...</p>
         </div>
 
         <div id="quizScreen" class="screen">
@@ -299,14 +311,212 @@
                 </div>
             </div>
 
-            <button class="btn next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
+            <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
                 Question suivante
             </button>
         </div>
 
         <div id="resultsScreen" class="screen">
             <div class="results">
-                <h2 style="color: #d4af37; margin-bottom: 20px;">Quiz terminé !</h2>
+                <h2 style="color: #d4af37; margin-bottom: 20px;">Aventure terminée !</h2>
                 <div class="score" id="finalScore"></div>
                 <p class="results-text" id="resultsMessage"></p>
-                <button class="btn" onclick
+                <button class="btn-large" onclick="restartQuiz()">Recommencer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allQuestions = [];
+        let currentDifficulty = '';
+        let currentCategory = '';
+        let currentQuestionIndex = 0;
+        let currentScore = 0;
+        let answeredQuestions = 0;
+        let selectedQuestions = [];
+
+        // Chargement initial des questions dès le lancement
+        window.onload = function() {
+            loadQuestions();
+        };
+
+        async function loadQuestions() {
+            try {
+                // Charge le fichier JSON (ajoute un timestamp pour éviter le cache)
+                const response = await fetch('questions.json?v=' + new Date().getTime());
+                allQuestions = await response.json();
+                console.log("Questions chargées : " + allQuestions.length);
+            } catch (error) {
+                console.error('Erreur lors du chargement:', error);
+                alert('Erreur: Impossible de charger les questions.');
+            }
+        }
+
+        // ÉTAPE 1 : CHOIX DE LA CATÉGORIE
+        function chooseCategory(category) {
+            currentCategory = category;
+            showScreen('difficultyScreen');
+        }
+
+        // ÉTAPE 2 : DÉMARRAGE DU QUIZ
+        function startQuiz(difficulty) {
+            currentDifficulty = difficulty;
+            
+            if (allQuestions.length === 0) {
+                // Si les questions n'ont pas encore chargé (connexion lente)
+                showScreen('loadingScreen');
+                // On réessaie dans 1 seconde
+                setTimeout(() => startQuiz(difficulty), 1000);
+                return;
+            }
+
+            // 1. Filtrer par catégorie
+            let filteredQuestions = allQuestions;
+            if (currentCategory !== 'all') {
+                filteredQuestions = allQuestions.filter(q => q.category === currentCategory);
+            }
+
+            if (filteredQuestions.length === 0) {
+                alert("Aucune question trouvée pour cette catégorie !");
+                showScreen('categoryScreen');
+                return;
+            }
+
+            // 2. Mélanger et prendre 10 questions
+            selectedQuestions = shuffleArray([...filteredQuestions]).slice(0, 10);
+            
+            // 3. Reset des scores
+            currentQuestionIndex = 0;
+            currentScore = 0;
+            answeredQuestions = 0;
+
+            document.getElementById('difficultyBadge').textContent = difficulty === 'facile' ? 'Facile' : 'Normal';
+            
+            showScreen('quizScreen');
+            displayQuestion();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function displayQuestion() {
+            const question = selectedQuestions[currentQuestionIndex];
+            
+            const questionId = question.id ? `#${question.id} ` : '';
+            document.getElementById('questionNumber').textContent = `Question ${questionId}(${currentQuestionIndex + 1}/${selectedQuestions.length})`;
+
+            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
+            document.getElementById('questionText').textContent = question.question;
+            
+            const answersContainer = document.getElementById('answersContainer');
+            answersContainer.innerHTML = '';
+            
+            let answers = [];
+            let correctIndex = 0;
+            
+            if (currentDifficulty === 'facile') {
+                answers = [
+                    question.bonneReponse,
+                    question.autreReponse1,
+                    question.autreReponse2
+                ];
+            } else {
+                answers = [
+                    question.bonneReponse,
+                    question.reponseBonus,
+                    question.autreReponse1,
+                    question.autreReponse2
+                ];
+            }
+            
+            const shuffledAnswers = answers.map((ans, idx) => ({answer: ans, isCorrect: idx === 0}));
+            for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
+            }
+            
+            correctIndex = shuffledAnswers.findIndex(item => item.isCorrect);
+            
+            shuffledAnswers.forEach((item, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer-btn';
+                btn.textContent = item.answer;
+                btn.onclick = () => selectAnswer(index, correctIndex);
+                answersContainer.appendChild(btn);
+            });
+
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+
+        function selectAnswer(selectedIndex, correctIndex) {
+            const buttons = document.querySelectorAll('.answer-btn');
+            
+            buttons.forEach((btn, index) => {
+                btn.disabled = true;
+                if (index === correctIndex) {
+                    btn.classList.add('correct');
+                }
+                if (index === selectedIndex && index !== correctIndex) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            answeredQuestions++;
+            if (selectedIndex === correctIndex) {
+                currentScore++;
+            }
+
+            document.getElementById('score').textContent = `Score: ${currentScore}/${answeredQuestions}`;
+            document.getElementById('nextBtn').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < selectedQuestions.length) {
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            const percentage = Math.round((currentScore / selectedQuestions.length) * 100);
+            document.getElementById('finalScore').textContent = `${currentScore}/${selectedQuestions.length}`;
+            
+            let message = '';
+            if (percentage >= 90) {
+                message = 'Exceptionnel ! Un véritable Maître du Savoir ! 🏆';
+            } else if (percentage >= 70) {
+                message = 'Très bien ! La Terre du Milieu n\'a plus de secrets pour vous ! ⚔️';
+            } else if (percentage >= 50) {
+                message = 'Pas mal ! Continuez votre voyage ! 📖';
+            } else {
+                message = 'Même les plus petits peuvent changer le cours de l\'avenir. Réessayez ! 📚';
+            }
+            
+            document.getElementById('resultsMessage').textContent = message;
+            showScreen('resultsScreen');
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            currentScore = 0;
+            answeredQuestions = 0;
+            selectedQuestions = [];
+            showScreen('categoryScreen'); // Retour au tout début
+        }
+
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
