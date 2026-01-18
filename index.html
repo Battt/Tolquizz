@@ -17,7 +17,7 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Changé de center à flex-start pour le scroll */
+            align-items: flex-start;
             padding: 20px;
         }
 
@@ -106,10 +106,10 @@
             font-style: italic;
         }
 
-        /* --- UI QUIZ STREAM (NEW) --- */
+        /* --- UI QUIZ STREAM --- */
         .sticky-header {
             position: sticky;
-            top: -40px; /* Compensation du padding */
+            top: -40px;
             background: rgba(15, 15, 30, 0.98);
             z-index: 100;
             padding-bottom: 15px;
@@ -127,14 +127,12 @@
             font-size: 0.9em;
         }
 
-        /* Conteneur pour le flux de questions */
         #quizStream {
             display: flex;
             flex-direction: column;
             gap: 40px;
         }
 
-        /* Bloc d'une question individuelle */
         .question-block {
             opacity: 0;
             animation: slideUpFade 0.6s forwards;
@@ -144,7 +142,7 @@
 
         .question-block.past-question {
             opacity: 0.5;
-            pointer-events: none; /* Désactive les clics sur les anciennes */
+            pointer-events: none;
             filter: grayscale(0.8);
             transition: all 0.5s;
         }
@@ -195,7 +193,7 @@
             margin-bottom: 20px;
             line-height: 1.6;
             color: #e8e8e8;
-            text-align: left; /* Meilleur pour le chat style */
+            text-align: left;
             border-left: 3px solid #d4af37;
             padding-left: 15px;
         }
@@ -253,7 +251,7 @@
 
         .results { text-align: center; }
         .score { font-size: 3em; color: #d4af37; margin: 30px 0; }
-        .results-text { font-size: 1.3em; margin-bottom: 40px; line-height: 1.8; }
+        .results-text { font-size: 1.3em; margin-bottom: 40px; line-height: 1.8; font-style: italic; }
         .loading { text-align: center; color: #d4af37; font-size: 1.2em; }
         
         .back-link {
@@ -302,9 +300,9 @@
                     Facile
                     <small>3 choix de réponse</small>
                 </button>
-                <button class="btn-large" onclick="startQuiz('normal')">
-                    Normal
-                    <small>4 choix de réponse (Mode Difficile)</small>
+                <button class="btn-large" onclick="startQuiz('difficile')">
+                    Difficile
+                    <small>4 choix de réponse</small>
                 </button>
             </div>
         </div>
@@ -371,7 +369,6 @@
         function showScreen(screenId) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById(screenId).classList.add('active');
-            // Scroll top automatique en changeant d'écran
             window.scrollTo(0, 0);
         }
 
@@ -394,7 +391,7 @@
                 return;
             }
 
-            // 1. Filtrer Catégorie (Option ALL supprimée ici aussi)
+            // Filtrage et sélection des questions
             let filtered = allQuestions.filter(q => q.category === currentCategory);
 
             if (filtered.length === 0) {
@@ -403,11 +400,9 @@
                 return;
             }
 
-            // 2. Filtrer Historique
             const history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
             let available = filtered.filter(q => !history.includes(q.id));
 
-            // 3. Gestion Pénurie
             if (available.length === 0) {
                 if(confirm("Toutes les questions de cette catégorie ont été jouées ! Réinitialiser l'historique ?")) {
                     localStorage.removeItem(STORAGE_KEY);
@@ -422,47 +417,37 @@
                 available = available.concat(oldRandom);
             }
 
-            // 4. Sélection 10
             selectedQuestions = shuffleArray([...available]).slice(0, 10);
             
-            // 5. Init UI
+            // Init UI
             currentQuestionIndex = 0;
             currentScore = 0;
-            document.getElementById('difficultyBadge').textContent = (difficulty === 'facile' ? 'Facile' : 'Normal');
+            document.getElementById('difficultyBadge').textContent = (difficulty === 'facile' ? 'Facile' : 'Difficile');
             
-            // Nettoyage du flux de questions précédent
             document.getElementById('quizStream').innerHTML = '';
-            
             showScreen('quizScreen');
-            
-            // Lancer la première question
             appendQuestion();
         }
 
-        // Nouvelle fonction pour ajouter une question à la suite (Chat style)
         function appendQuestion() {
             const q = selectedQuestions[currentQuestionIndex];
             const stream = document.getElementById('quizStream');
             
-            // Mise à jour header (fixe)
-            const percent = ((currentQuestionIndex) / selectedQuestions.length) * 100; // Barre basée sur le début
+            const percent = ((currentQuestionIndex) / selectedQuestions.length) * 100;
             document.getElementById('progressBar').style.width = percent + '%';
             document.getElementById('progressText').textContent = `Question ${currentQuestionIndex + 1} / ${selectedQuestions.length}`;
             document.getElementById('score').textContent = `Score: ${currentScore}`;
 
-            // Sauvegarde historique
             const history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
             if (q.id && !history.includes(q.id)) {
                 history.push(q.id);
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
             }
 
-            // Création dynamique du bloc question
             const qBlock = document.createElement('div');
             qBlock.className = 'question-block';
             qBlock.id = `q-block-${currentQuestionIndex}`;
 
-            // Contenu HTML de la question
             qBlock.innerHTML = `
                 <p class="question-text">${q.question}</p>
                 <div class="answers" id="answers-${currentQuestionIndex}"></div>
@@ -471,9 +456,9 @@
 
             stream.appendChild(qBlock);
 
-            // Génération des boutons réponses
             const answersContainer = qBlock.querySelector(`#answers-${currentQuestionIndex}`);
             let answers = [];
+            // Si facile : 3 réponses. Si difficile : 4 réponses.
             if (currentDifficulty === 'facile') {
                 answers = [q.bonneReponse, q.autreReponse1, q.autreReponse2];
             } else {
@@ -487,12 +472,10 @@
                 const btn = document.createElement('button');
                 btn.className = 'answer-btn';
                 btn.textContent = item.text;
-                // On passe l'ID du bloc pour pouvoir désactiver les boutons spécifiques plus tard
                 btn.onclick = () => handleAnswer(btn, index, correctIndex, `answers-${currentQuestionIndex}`, qBlock);
                 answersContainer.appendChild(btn);
             });
 
-            // Scroll doux vers la nouvelle question
             setTimeout(() => {
                 qBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
@@ -502,7 +485,6 @@
             const container = document.getElementById(containerId);
             const buttons = container.querySelectorAll('.answer-btn');
             
-            // Désactiver uniquement les boutons de cette question
             buttons.forEach(b => b.disabled = true);
 
             if (selectedIndex === correctIndex) {
@@ -510,30 +492,24 @@
                 btn.classList.add('correct');
             } else {
                 btn.classList.add('incorrect');
-                buttons[correctIndex].classList.add('correct'); // Montrer la bonne réponse
+                buttons[correctIndex].classList.add('correct');
             }
 
-            // Mettre à jour le score dans le header
             document.getElementById('score').textContent = `Score: ${currentScore}`;
-
-            // Griser la question (effet visuel "passé")
             qBlock.classList.add('past-question');
 
-            // Passer à la suite automatiquement après délai
             setTimeout(() => {
                 nextQuestion();
-            }, 1200); // 1.2 secondes de pause pour lire
+            }, 1200);
         }
 
         function nextQuestion() {
             currentQuestionIndex++;
-            
-            // Mise à jour barre progression (fin du tour)
             const percent = (currentQuestionIndex / selectedQuestions.length) * 100;
             document.getElementById('progressBar').style.width = percent + '%';
 
             if (currentQuestionIndex < selectedQuestions.length) {
-                appendQuestion(); // Ajoute la suivante en dessous
+                appendQuestion();
             } else {
                 showResults();
             }
@@ -543,18 +519,57 @@
             const percent = Math.round((currentScore / selectedQuestions.length) * 100);
             document.getElementById('finalScore').textContent = `${currentScore} / ${selectedQuestions.length}`;
             
-            let msg = '';
-            if (percent >= 90) msg = 'Légendaire ! 🏆';
-            else if (percent >= 70) msg = 'Héroïque ! ⚔️';
-            else if (percent >= 50) msg = 'Bien joué ! 📖';
-            else msg = 'Le voyage continue... 🍂';
+            const msg = getResultMessage(percent);
+            document.getElementById('resultsMessage').textContent = `"${msg}"`;
             
-            document.getElementById('resultsMessage').textContent = msg;
-            
-            // Petit délai pour que l'utilisateur réalise que c'est fini avant de changer d'écran
             setTimeout(() => {
                 showScreen('resultsScreen');
             }, 500);
+        }
+
+        // NOUVEAU : Fonction pour générer des messages variés
+        function getResultMessage(percent) {
+            let messages = [];
+
+            if (percent === 100) {
+                messages = [
+                    "Par la barbe de Durin ! Un sans-faute !",
+                    "Sauron lui-même tremble devant tant de savoir.",
+                    "Vous avez lu les annexes, avouez-le !",
+                    "Un esprit plus vif que celui de Fëanor.",
+                    "Elrond vous offre une place à son Conseil."
+                ];
+            } else if (percent >= 80) {
+                messages = [
+                    "Une mémoire digne d'un Elfe de Fondcombe.",
+                    "Gandalf serait fier de vous.",
+                    "Vous pourriez enseigner à l'Académie de Minas Tirith.",
+                    "Presque parfait ! Il ne manquait qu'un poil de Hobbit."
+                ];
+            } else if (percent >= 50) {
+                messages = [
+                    "Pas mal pour un Hobbit !",
+                    "Vous avez l'étoffe d'un Rôdeur.",
+                    "C'est un bon début, le voyage forme la jeunesse.",
+                    "Vous connaissez le chemin, mais attention aux pièges."
+                ];
+            } else if (percent >= 20) {
+                messages = [
+                    "Il va falloir relire les parchemins...",
+                    "Un peu de Tabac du Vieux Toby pour se concentrer ?",
+                    "Ne désespérez pas, même Frodon a eu des débuts difficiles.",
+                    "Vous avez trébuché sur une racine de la Vieille Forêt."
+                ];
+            } else {
+                messages = [
+                    "Fuyez, pauvres fous !",
+                    "Un Troll des cavernes aurait fait mieux (peut-être).",
+                    "Vous ne passerez pas !",
+                    "Oubliez ce score, et repartez à l'aventure !"
+                ];
+            }
+
+            return messages[Math.floor(Math.random() * messages.length)];
         }
 
         function resetHistory() {
