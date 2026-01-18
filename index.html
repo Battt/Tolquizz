@@ -232,20 +232,27 @@
             transform: translateX(5px);
         }
 
+        /* --- CORRECTION COULEURS VIVES --- */
         .answer-btn.correct {
-            border-color: #4caf50;
-            background: rgba(76, 175, 80, 0.3);
+            border-color: #2ecc71; /* Vert vif */
+            background: rgba(46, 204, 113, 0.6); /* Plus opaque pour plus de couleur */
             color: #fff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.4); /* Glow vert */
             position: relative;
         }
-        .answer-btn.correct::after { content: " ✔"; float: right; }
+        .answer-btn.correct::after { content: " ✔"; float: right; font-weight: bold; }
 
         .answer-btn.incorrect {
-            border-color: #f44336;
-            background: rgba(244, 67, 54, 0.3);
-            opacity: 0.7;
+            border-color: #e74c3c; /* Rouge vif */
+            background: rgba(231, 76, 60, 0.6); /* Plus opaque */
+            color: #fff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.4); /* Glow rouge */
+            opacity: 0.9;
         }
-        .answer-btn.incorrect::after { content: " ✘"; float: right; }
+        .answer-btn.incorrect::after { content: " ✘"; float: right; font-weight: bold; }
+        /* --------------------------------- */
 
         .answer-btn:disabled { cursor: default; }
 
@@ -391,7 +398,7 @@
                 return;
             }
 
-            // Filtrage et sélection des questions
+            // Filtrage
             let filtered = allQuestions.filter(q => q.category === currentCategory);
 
             if (filtered.length === 0) {
@@ -458,7 +465,6 @@
 
             const answersContainer = qBlock.querySelector(`#answers-${currentQuestionIndex}`);
             let answers = [];
-            // Si facile : 3 réponses. Si difficile : 4 réponses.
             if (currentDifficulty === 'facile') {
                 answers = [q.bonneReponse, q.autreReponse1, q.autreReponse2];
             } else {
@@ -527,7 +533,6 @@
             }, 500);
         }
 
-        // NOUVEAU : Fonction pour générer des messages variés
         function getResultMessage(percent) {
             let messages = [];
 
