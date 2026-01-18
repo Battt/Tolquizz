@@ -17,14 +17,12 @@
             --gold-bright: #ffd700;
             --dark-bg: #0b0c15;
             --glass-bg: rgba(20, 20, 35, 0.75);
-            --green-glow: #2ecc71;
-            --red-glow: #e74c3c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Lato', sans-serif; /* Police de lecture propre */
+            font-family: 'Lato', sans-serif;
             background-color: var(--dark-bg);
             background-image: 
                 radial-gradient(circle at 50% 0%, #2a2d45 0%, transparent 70%),
@@ -38,7 +36,6 @@
             overflow-y: scroll;
         }
 
-        /* Effet vignette pour l'immersion */
         body::after {
             content: "";
             position: fixed;
@@ -52,7 +49,7 @@
             max-width: 750px;
             width: 100%;
             background: var(--glass-bg);
-            backdrop-filter: blur(15px); /* Effet verre flouté */
+            backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border: 1px solid rgba(197, 160, 89, 0.3);
             border-radius: 16px;
@@ -66,7 +63,7 @@
 
         /* --- TYPOGRAPHIE --- */
         h1, h2, .btn-large {
-            font-family: 'Cinzel', serif; /* La police style Tolkien */
+            font-family: 'Cinzel', serif;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -94,7 +91,7 @@
             margin-right: auto;
         }
 
-        /* --- NAVIGATION & ECRANS --- */
+        /* --- NAVIGATION --- */
         .screen { display: none; width: 100%; }
         .screen.active { display: block; animation: zoomIn 0.5s ease cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 
@@ -118,7 +115,6 @@
             align-items: center;
         }
 
-        /* --- BOUTONS PRINCIPAUX --- */
         .btn-large {
             width: 100%;
             max-width: 450px;
@@ -165,14 +161,14 @@
             color: #888;
         }
 
-        /* --- HEADER QUIZ (STICKY) --- */
+        /* --- HEADER & PROGRESS --- */
         .sticky-header {
             position: sticky;
-            top: -41px; /* Colle en haut */
-            background: rgba(11, 12, 21, 0.95); /* Fond sombre pour cacher le défilement */
+            top: -41px;
+            background: rgba(11, 12, 21, 0.95);
             z-index: 100;
             padding: 15px 0 20px 0;
-            margin: 0 -40px 30px -40px; /* S'étend sur toute la largeur */
+            margin: 0 -40px 30px -40px;
             padding-left: 40px;
             padding-right: 40px;
             border-bottom: 1px solid rgba(197, 160, 89, 0.2);
@@ -206,11 +202,11 @@
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
         }
 
-        /* --- FLUX DE QUESTIONS --- */
+        /* --- FLUX QUESTIONS --- */
         #quizStream {
             display: flex;
             flex-direction: column;
-            gap: 60px; /* Plus d'espace entre les questions */
+            gap: 60px;
         }
 
         .question-block {
@@ -242,8 +238,17 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
+        /* STYLISATION DU NUMERO DE QUESTION */
         .question-id-footer {
-            display: none; /* On cache l'ID, c'est pas très joli */
+            display: block; /* Réactivé */
+            text-align: right;
+            font-size: 0.7em;
+            color: rgba(197, 160, 89, 0.4);
+            margin-top: 15px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 5px;
         }
 
         /* --- REPONSES --- */
@@ -272,10 +277,9 @@
             background: rgba(197, 160, 89, 0.15);
             border-color: var(--gold);
             color: #fff;
-            padding-left: 35px; /* Petit effet de décalage */
+            padding-left: 35px;
         }
 
-        /* BOUTON CORRECT (Vert Peps) */
         .answer-btn.correct {
             background: linear-gradient(90deg, #1d976c 0%, #93f9b9 100%);
             border: none;
@@ -286,7 +290,6 @@
         }
         .answer-btn.correct::after { content: "✓"; position: absolute; right: 20px; font-weight: 900; }
 
-        /* BOUTON INCORRECT (Rouge Peps) */
         .answer-btn.incorrect {
             background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 100%);
             border: none;
@@ -329,7 +332,6 @@
         }
         .back-link:hover { color: var(--gold); }
 
-        /* Mobile Responsive */
         @media (max-width: 600px) {
             .container { padding: 20px; margin-top: 10px; }
             h1 { font-size: 2em; }
@@ -518,9 +520,11 @@
             qBlock.className = 'question-block';
             qBlock.id = `q-block-${currentQuestionIndex}`;
 
+            // Ajout du numéro ID en bas
             qBlock.innerHTML = `
                 <p class="question-text">${q.question}</p>
                 <div class="answers" id="answers-${currentQuestionIndex}"></div>
+                <div class="question-id-footer">Archives #${q.id || '?'}</div>
             `;
 
             stream.appendChild(qBlock);
