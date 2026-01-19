@@ -331,7 +331,17 @@
         }
         .back-link:hover { color: var(--gold); }
         
-        .error-msg { color: #ef473a; text-align: center; margin-top: 20px; font-size: 0.9em; }
+        .error-msg { 
+            color: #ef473a; 
+            text-align: center; 
+            margin-top: 30px; 
+            font-size: 1em; 
+            background: rgba(239, 71, 58, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ef473a;
+            display: none; /* Caché par défaut */
+        }
 
         @media (max-width: 600px) {
             .container { padding: 20px; margin-top: 10px; }
@@ -429,10 +439,11 @@
             loadQuestions();
         };
 
-        // --- CHARGEMENT JSON (FETCH) ---
+        // --- CHARGEMENT JSON VIA FETCH ---
         async function loadQuestions() {
             try {
-                // Le chemin './questions.json' est relatif à la racine du site
+                // ATTENTION : Le fichier doit s'appeler exactement 'questions.json'
+                // Et doit être dans le même dossier que index.html
                 const response = await fetch('./questions.json?v=' + Date.now());
                 
                 if (!response.ok) {
@@ -441,11 +452,20 @@
 
                 allQuestions = await response.json();
                 console.log("Questions chargées depuis JSON : " + allQuestions.length);
-                document.getElementById('errorContainer').textContent = ""; // Clear errors
+                
+                // Cacher message erreur si ça marche
+                document.getElementById('errorContainer').style.display = 'none';
             } catch (error) {
                 console.error('Erreur chargement:', error);
-                document.getElementById('errorContainer').innerHTML = 
-                    "Erreur : Impossible de lire 'questions.json'.<br>Vérifiez que le fichier est bien sur GitHub.";
+                
+                const errDiv = document.getElementById('errorContainer');
+                errDiv.style.display = 'block';
+                errDiv.innerHTML = `
+                    <strong>Erreur de chargement !</strong><br><br>
+                    1. Vérifiez que le fichier s'appelle bien <code>questions.json</code><br>
+                    2. Vérifiez que le fichier est au même endroit que <code>index.html</code><br>
+                    3. Ce site doit être hébergé (GitHub Pages) pour fonctionner.
+                `;
             }
         }
 
@@ -465,7 +485,7 @@
                         currentCategory = cat;
                         showScreen('difficultyScreen');
                     } else {
-                        alert("Les questions n'ont pas pu être chargées. Vérifiez la console.");
+                        alert("Les questions n'ont pas pu être chargées. Vérifiez le message d'erreur.");
                     }
                 });
                 return;
@@ -498,7 +518,7 @@
 
             // Gestion manque de questions
             if (available.length === 0) {
-                if(confirm("Toutes les questions ont été jouées ! Réinitialiser l'historique ?")) {
+                if(confirm("Toutes les questions de cette catégorie ont été jouées ! Réinitialiser l'historique ?")) {
                     localStorage.removeItem(STORAGE_KEY);
                     available = filtered; 
                 } else {
@@ -558,16 +578,15 @@
             
             // Logique de difficulté
             if (currentDifficulty === 'facile') {
-                // On vérifie que les champs existent dans le JSON, sinon fallback
                 answers = [
                     q.bonneReponse, 
-                    q.autreReponse1 || "...", 
-                    q.autreReponse2 || "..."
+                    q.autreReponse1, 
+                    q.autreReponse2
                 ];
             } else {
                 answers = [
                     q.bonneReponse, 
-                    q.reponseBonus || q.autreReponse1, // Fallback si pas de bonus
+                    q.reponseBonus,
                     q.autreReponse1, 
                     q.autreReponse2
                 ];
