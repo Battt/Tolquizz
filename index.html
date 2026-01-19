@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 stroke=%22%23c5a059%22 stroke-width=%2210%22 fill=%22none%22/></svg>">
 
     <style>
@@ -24,7 +24,6 @@
         body {
             font-family: 'Lato', sans-serif;
             background-color: var(--dark-bg);
-            /* Fond sombre avec effet de lumière */
             background-image: 
                 radial-gradient(circle at 50% 0%, #2a2d45 0%, transparent 70%),
                 radial-gradient(circle at 0% 100%, #1a1505 0%, transparent 50%);
@@ -34,10 +33,9 @@
             justify-content: center;
             align-items: flex-start;
             padding: 20px;
-            overflow-y: scroll; /* Permet le scroll */
+            overflow-y: scroll;
         }
 
-        /* Vignette cinématique */
         body::after {
             content: "";
             position: fixed;
@@ -163,7 +161,7 @@
             color: #888;
         }
 
-        /* --- HEADER & PROGRESS --- */
+        /* --- UI JEU (STICKY & STREAM) --- */
         .sticky-header {
             position: sticky;
             top: -41px;
@@ -204,7 +202,7 @@
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
         }
 
-        /* --- FLUX DE QUESTIONS (STREAM) --- */
+        /* FLUX */
         #quizStream {
             display: flex;
             flex-direction: column;
@@ -252,7 +250,7 @@
             padding-top: 5px;
         }
 
-        /* --- REPONSES --- */
+        /* --- BOUTONS REPONSES --- */
         .answers {
             display: grid;
             grid-template-columns: 1fr;
@@ -281,7 +279,6 @@
             padding-left: 35px;
         }
 
-        /* COULEUR VERTE PEPS */
         .answer-btn.correct {
             background: linear-gradient(90deg, #1d976c 0%, #93f9b9 100%);
             border: none;
@@ -292,7 +289,6 @@
         }
         .answer-btn.correct::after { content: "✓"; position: absolute; right: 20px; font-weight: 900; }
 
-        /* COULEUR ROUGE PEPS */
         .answer-btn.incorrect {
             background: linear-gradient(90deg, #cb2d3e 0%, #ef473a 100%);
             border: none;
@@ -334,6 +330,8 @@
             text-transform: uppercase;
         }
         .back-link:hover { color: var(--gold); }
+        
+        .error-msg { color: #ef473a; text-align: center; margin-top: 20px; font-size: 0.9em; }
 
         @media (max-width: 600px) {
             .container { padding: 20px; margin-top: 10px; }
@@ -362,6 +360,8 @@
                 </button>
             </div>
             
+            <div id="errorContainer" class="error-msg"></div>
+
             <div style="text-align: center; margin-top: 40px;">
                 <button onclick="resetHistory()" style="background:none; border:none; color:#555; cursor:pointer; font-size:0.7em; text-transform:uppercase; letter-spacing:1px; transition:0.3s;">
                     Oublier le passé (Reset)
@@ -382,6 +382,10 @@
                     <small>Mode Difficile - 4 Choix</small>
                 </button>
             </div>
+        </div>
+
+        <div id="loadingScreen" class="screen">
+            <p class="loading" style="font-family:'Cinzel', serif; margin-top:50px; text-align:center; color:var(--gold);">Consultation des archives...</p>
         </div>
 
         <div id="quizScreen" class="screen">
@@ -411,24 +415,8 @@
     </div>
 
     <script>
-        // --- BASE DE DONNÉES INTÉGRÉE (Plus besoin de questions.json) ---
-        const QUESTIONS_DB = [
-            { id: 1, category: "SdA", question: "Qui forge l'Anneau Unique ?", bonneReponse: "Sauron", reponseBonus: "Morgoth", autreReponse1: "Saroumane", autreReponse2: "Celebrimbor" },
-            { id: 2, category: "SdA", question: "Combien y a-t-il de membres dans la Fraternité de l'Anneau ?", bonneReponse: "9", reponseBonus: "7", autreReponse1: "11", autreReponse2: "13" },
-            { id: 3, category: "SdA", question: "Quel est le nom de l'épée de Frodon ?", bonneReponse: "Dard", reponseBonus: "Glamdring", autreReponse1: "Andúril", autreReponse2: "Orcrist" },
-            { id: 4, category: "SdA", question: "Dans quelle auberge les Hobbits rencontrent-ils Grand-Pas ?", bonneReponse: "Le Poney Fringant", reponseBonus: "Le Dragon Vert", autreReponse1: "L'Aigle d'Or", autreReponse2: "La Dernière Maison Simple" },
-            { id: 5, category: "Silmarillion", question: "Qui est le premier Seigneur des Ténèbres ?", bonneReponse: "Morgoth", reponseBonus: "Sauron", autreReponse1: "Ungoliant", autreReponse2: "Gothmog" },
-            { id: 6, category: "Silmarillion", question: "Quel Elfe a créé les Silmarils ?", bonneReponse: "Fëanor", reponseBonus: "Fingolfin", autreReponse1: "Turgon", autreReponse2: "Thingol" },
-            { id: 7, category: "SdA", question: "Quel jour fête Bilbon lors de son départ ?", bonneReponse: "Son 111ème anniversaire", reponseBonus: "Son 100ème anniversaire", autreReponse1: "Son 33ème anniversaire", autreReponse2: "Le Nouvel An" },
-            { id: 8, category: "SdA", question: "Quel est le mot de passe pour ouvrir les portes de la Moria ?", bonneReponse: "Mellon (Ami)", reponseBonus: "Edro (Ouvre-toi)", autreReponse1: "Galadriel", autreReponse2: "Feu" },
-            { id: 9, category: "Silmarillion", question: "Quelle créature détruit les Deux Arbres de Valinor avec Morgoth ?", bonneReponse: "Ungoliant", reponseBonus: "Carcharoth", autreReponse1: "Glaurung", autreReponse2: "Ancalagon" },
-            { id: 10, category: "SdA", question: "Qui tue le Roi-Sorcier d'Angmar ?", bonneReponse: "Éowyn", reponseBonus: "Gandalf", autreReponse1: "Aragorn", autreReponse2: "Merry" },
-            { id: 11, category: "SdA", question: "Quel cadeau Galadriel offre-t-elle à Gimli ?", bonneReponse: "Trois cheveux", reponseBonus: "Une mèche", autreReponse1: "Une dague", autreReponse2: "De la terre" },
-            { id: 12, category: "SdA", question: "Comment s'appelle le cheval de Gandalf ?", bonneReponse: "Gripoil", reponseBonus: "Nivacrin", autreReponse1: "Hasufel", autreReponse2: "Bill" }
-        ];
-
         // --- VARIABLES GLOBALES ---
-        let allQuestions = QUESTIONS_DB; // Utilisation directe
+        let allQuestions = [];
         let currentDifficulty = '';
         let currentCategory = '';
         let currentQuestionIndex = 0;
@@ -438,9 +426,28 @@
 
         // --- DÉMARRAGE ---
         window.onload = function() {
-            // Plus de fetch nécessaire
-            console.log("Questions chargées : " + allQuestions.length);
+            loadQuestions();
         };
+
+        // --- CHARGEMENT JSON (FETCH) ---
+        async function loadQuestions() {
+            try {
+                // Le chemin './questions.json' est relatif à la racine du site
+                const response = await fetch('./questions.json?v=' + Date.now());
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP Error: ${response.status}`);
+                }
+
+                allQuestions = await response.json();
+                console.log("Questions chargées depuis JSON : " + allQuestions.length);
+                document.getElementById('errorContainer').textContent = ""; // Clear errors
+            } catch (error) {
+                console.error('Erreur chargement:', error);
+                document.getElementById('errorContainer').innerHTML = 
+                    "Erreur : Impossible de lire 'questions.json'.<br>Vérifiez que le fichier est bien sur GitHub.";
+            }
+        }
 
         // --- NAVIGATION ---
         function showScreen(screenId) {
@@ -450,6 +457,20 @@
         }
 
         function chooseCategory(cat) {
+            // Sécurité : si le chargement a échoué ou n'est pas fini
+            if (allQuestions.length === 0) {
+                // On tente de recharger une fois
+                loadQuestions().then(() => {
+                    if (allQuestions.length > 0) {
+                        currentCategory = cat;
+                        showScreen('difficultyScreen');
+                    } else {
+                        alert("Les questions n'ont pas pu être chargées. Vérifiez la console.");
+                    }
+                });
+                return;
+            }
+            
             currentCategory = cat;
             showScreen('difficultyScreen');
         }
@@ -462,46 +483,49 @@
         function startQuiz(difficulty) {
             currentDifficulty = difficulty;
             
-            // Filtrage
+            // 1. Filtrage
             let filtered = allQuestions.filter(q => q.category === currentCategory);
 
             if (filtered.length === 0) {
-                alert("Aucune question trouvée pour cette catégorie !");
+                alert("Aucune question trouvée dans le JSON pour la catégorie : " + currentCategory);
                 showScreen('categoryScreen');
                 return;
             }
 
+            // 2. Historique
             const history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
             let available = filtered.filter(q => !history.includes(q.id));
 
+            // Gestion manque de questions
             if (available.length === 0) {
                 if(confirm("Toutes les questions ont été jouées ! Réinitialiser l'historique ?")) {
                     localStorage.removeItem(STORAGE_KEY);
                     available = filtered; 
                 } else {
-                    available = filtered; // On rejoue tout
+                    available = filtered; 
                 }
-            } else if (available.length < 5) { // Seuil réduit pour la démo
-                const needed = 5 - available.length;
+            } else if (available.length < 10) {
+                const needed = 10 - available.length;
                 const old = filtered.filter(q => history.includes(q.id));
                 const oldRandom = shuffleArray([...old]).slice(0, needed);
                 available = available.concat(oldRandom);
             }
 
-            // Sélection de 5 questions pour la démo (au lieu de 10 si la DB est petite)
-            const questionsCount = Math.min(available.length, 10);
-            selectedQuestions = shuffleArray([...available]).slice(0, questionsCount);
+            // Sélection
+            const count = Math.min(available.length, 10);
+            selectedQuestions = shuffleArray([...available]).slice(0, count);
             
             // Init UI
             currentQuestionIndex = 0;
             currentScore = 0;
             document.getElementById('difficultyBadge').textContent = (difficulty === 'facile' ? 'Initié' : 'Maître');
             
-            document.getElementById('quizStream').innerHTML = '';
+            document.getElementById('quizStream').innerHTML = ''; // Reset du stream
             showScreen('quizScreen');
             appendQuestion();
         }
 
+        // Ajout question (Stream / Chat style)
         function appendQuestion() {
             const q = selectedQuestions[currentQuestionIndex];
             const stream = document.getElementById('quizStream');
@@ -521,6 +545,149 @@
             qBlock.className = 'question-block';
             qBlock.id = `q-block-${currentQuestionIndex}`;
 
-            // --- C'EST ICI QUE LES QUESTIONS SONT AFFICHÉES ---
             qBlock.innerHTML = `
-                <p class="question
+                <p class="question-text">${q.question}</p>
+                <div class="answers" id="answers-${currentQuestionIndex}"></div>
+                <div class="question-id-footer">Archives #${q.id || '?'}</div>
+            `;
+
+            stream.appendChild(qBlock);
+
+            const answersContainer = qBlock.querySelector(`#answers-${currentQuestionIndex}`);
+            let answers = [];
+            
+            // Logique de difficulté
+            if (currentDifficulty === 'facile') {
+                // On vérifie que les champs existent dans le JSON, sinon fallback
+                answers = [
+                    q.bonneReponse, 
+                    q.autreReponse1 || "...", 
+                    q.autreReponse2 || "..."
+                ];
+            } else {
+                answers = [
+                    q.bonneReponse, 
+                    q.reponseBonus || q.autreReponse1, // Fallback si pas de bonus
+                    q.autreReponse1, 
+                    q.autreReponse2
+                ];
+            }
+
+            // Nettoyage des doublons éventuels
+            answers = [...new Set(answers)];
+
+            const shuffled = shuffleArray(answers.map((txt, i) => ({text: txt, correct: i === 0})));
+            const correctIndex = shuffled.findIndex(item => item.correct);
+
+            shuffled.forEach((item, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'answer-btn';
+                btn.textContent = item.text;
+                btn.onclick = () => handleAnswer(btn, index, correctIndex, `answers-${currentQuestionIndex}`, qBlock);
+                answersContainer.appendChild(btn);
+            });
+
+            setTimeout(() => {
+                qBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function handleAnswer(btn, selectedIndex, correctIndex, containerId, qBlock) {
+            const container = document.getElementById(containerId);
+            const buttons = container.querySelectorAll('.answer-btn');
+            
+            buttons.forEach(b => b.disabled = true);
+
+            if (selectedIndex === correctIndex) {
+                currentScore++;
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('incorrect');
+                buttons[correctIndex].classList.add('correct');
+            }
+
+            document.getElementById('score').textContent = `${currentScore} Points`;
+            qBlock.classList.add('past-question');
+
+            setTimeout(() => {
+                nextQuestion();
+            }, 1200);
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            const percent = (currentQuestionIndex / selectedQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+
+            if (currentQuestionIndex < selectedQuestions.length) {
+                appendQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            const percent = Math.round((currentScore / selectedQuestions.length) * 100);
+            document.getElementById('finalScore').textContent = `${currentScore} / ${selectedQuestions.length}`;
+            
+            const msg = getResultMessage(percent);
+            document.getElementById('resultsMessage').textContent = `"${msg}"`;
+            
+            setTimeout(() => {
+                showScreen('resultsScreen');
+            }, 500);
+        }
+
+        function getResultMessage(percent) {
+            let messages = [];
+            if (percent === 100) {
+                messages = [
+                    "Par la barbe de Durin ! Un sans-faute !",
+                    "Sauron lui-même tremble devant tant de savoir.",
+                    "Une performance digne des Rois de Númenor."
+                ];
+            } else if (percent >= 80) {
+                messages = [
+                    "Une mémoire digne d'un Elfe de Fondcombe.",
+                    "Gandalf serait fier de vous.",
+                    "Presque parfait ! Il ne manquait qu'un poil de Hobbit."
+                ];
+            } else if (percent >= 50) {
+                messages = [
+                    "Pas mal pour un Hobbit !",
+                    "Vous avez l'étoffe d'un Rôdeur.",
+                    "C'est un bon début, le voyage forme la jeunesse."
+                ];
+            } else if (percent >= 20) {
+                messages = [
+                    "Il va falloir relire les parchemins...",
+                    "Un peu de Tabac du Vieux Toby pour se concentrer ?",
+                    "Ne désespérez pas, même Frodon a eu des débuts difficiles."
+                ];
+            } else {
+                messages = [
+                    "Fuyez, pauvres fous !",
+                    "Un Troll des cavernes aurait fait mieux (peut-être).",
+                    "Vous ne passerez pas !"
+                ];
+            }
+            return messages[Math.floor(Math.random() * messages.length)];
+        }
+
+        function resetHistory() {
+            if(confirm("Effacer l'historique ?")) {
+                localStorage.removeItem(STORAGE_KEY);
+                alert("Mémoire effacée !");
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+    </script>
+</body>
+</html>
